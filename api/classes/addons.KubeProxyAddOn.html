@@ -26,7 +26,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">KubeProxyAddOn</span></li></ul></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/kube-proxy/index.ts#L6">lib/addons/kube-proxy/index.ts:6</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/kube-proxy/index.ts#L6">lib/addons/kube-proxy/index.ts:6</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -43,6 +43,7 @@
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading">Methods</h3>
 <div class="tsd-index-list"><a href="addons.KubeProxyAddOn.html#deploy" class="tsd-index-link tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF4DB8" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-2048-path"></rect><path d="M9.162 16V7.24H10.578L11.514 10.072C11.602 10.328 11.674 10.584 11.73 10.84C11.794 11.088 11.842 11.28 11.874 11.416C11.906 11.28 11.954 11.088 12.018 10.84C12.082 10.584 12.154 10.324 12.234 10.06L13.122 7.24H14.538V16H13.482V12.82C13.482 12.468 13.49 12.068 13.506 11.62C13.53 11.172 13.558 10.716 13.59 10.252C13.622 9.78 13.654 9.332 13.686 8.908C13.726 8.476 13.762 8.1 13.794 7.78L12.366 12.16H11.334L9.894 7.78C9.934 8.092 9.97 8.456 10.002 8.872C10.042 9.28 10.078 9.716 10.11 10.18C10.142 10.636 10.166 11.092 10.182 11.548C10.206 12.004 10.218 12.428 10.218 12.82V16H9.162Z" fill="var(--color-text)" id="icon-2048-text"></path></svg><span>deploy</span></a>
+<a href="addons.KubeProxyAddOn.html#providePolicyDocument" class="tsd-index-link tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>provide<wbr/>Policy<wbr/>Document</span></a>
 </div></section></div></details></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Constructors</h2>
@@ -59,7 +60,7 @@
 <h4 class="tsd-returns-title">Returns <a href="../modules/addons.html" class="tsd-signature-type" data-tsd-kind="Namespace">addons</a><span class="tsd-signature-symbol">.</span><a href="addons.KubeProxyAddOn.html" class="tsd-signature-type" data-tsd-kind="Class">KubeProxyAddOn</a></h4><aside class="tsd-sources">
 <p>Overrides CoreAddOn.constructor</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/kube-proxy/index.ts#L8">lib/addons/kube-proxy/index.ts:8</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/kube-proxy/index.ts#L8">lib/addons/kube-proxy/index.ts:8</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a id="coreAddOnProps" class="tsd-anchor"></a>
@@ -67,7 +68,7 @@
 <div class="tsd-signature">core<wbr/>Add<wbr/>On<wbr/>Props<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CoreAddOnProps</span></div><aside class="tsd-sources">
 <p>Inherited from CoreAddOn.coreAddOnProps</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/core-addon/index.ts#L39">lib/addons/core-addon/index.ts:39</a></li></ul></aside></section></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/core-addon/index.ts#L48">lib/addons/core-addon/index.ts:48</a></li></ul></aside></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a id="deploy" class="tsd-anchor"></a>
@@ -83,7 +84,21 @@
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Construct</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <p>Inherited from CoreAddOn.deploy</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/core-addon/index.ts#L45">lib/addons/core-addon/index.ts:45</a></li></ul></aside></li></ul></section></section></div>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/core-addon/index.ts#L55">lib/addons/core-addon/index.ts:55</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a id="providePolicyDocument" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>provide<wbr/>Policy<wbr/>Document</span><a href="#providePolicyDocument" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+<li class="tsd-signature tsd-anchor-link" id="providePolicyDocument.providePolicyDocument-1">provide<wbr/>Policy<wbr/>Document<span class="tsd-signature-symbol">(</span>clusterInfo<span class="tsd-signature-symbol">: </span><a href="ClusterInfo.html" class="tsd-signature-type" data-tsd-kind="Class">ClusterInfo</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PolicyDocument</span><a href="#providePolicyDocument.providePolicyDocument-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>clusterInfo: <a href="ClusterInfo.html" class="tsd-signature-type" data-tsd-kind="Class">ClusterInfo</a></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PolicyDocument</span></h4><aside class="tsd-sources">
+<p>Inherited from CoreAddOn.providePolicyDocument</p>
+<ul>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/core-addon/index.ts#L95">lib/addons/core-addon/index.ts:95</a></li></ul></aside></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
@@ -120,7 +135,8 @@
 <ul>
 <li class="tsd-kind-constructor tsd-parent-kind-class"><a href="addons.KubeProxyAddOn.html#constructor" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-512-path"></use><use href="#icon-512-text"></use></svg>constructor</a></li>
 <li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="addons.KubeProxyAddOn.html#coreAddOnProps" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>core<wbr/>Add<wbr/>On<wbr/>Props</a></li>
-<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="addons.KubeProxyAddOn.html#deploy" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>deploy</a></li></ul></li></ul></nav></div></div>
+<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="addons.KubeProxyAddOn.html#deploy" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>deploy</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="addons.KubeProxyAddOn.html#providePolicyDocument" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>provide<wbr/>Policy<wbr/>Document</a></li></ul></li></ul></nav></div></div>
 <div class="container tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
 <div class="overlay"></div><script src="../assets/main.js"></script></body></html>

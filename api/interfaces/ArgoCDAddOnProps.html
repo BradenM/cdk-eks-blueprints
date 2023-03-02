@@ -25,7 +25,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">ArgoCDAddOnProps</span></li></ul></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/argocd/index.ts#L18">lib/addons/argocd/index.ts:18</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/argocd/index.ts#L20">lib/addons/argocd/index.ts:20</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -37,6 +37,7 @@
 <a href="ArgoCDAddOnProps.html#bootstrapRepo" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>bootstrap<wbr/>Repo?</span></a>
 <a href="ArgoCDAddOnProps.html#bootstrapValues" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>bootstrap<wbr/>Values?</span></a>
 <a href="ArgoCDAddOnProps.html#chart" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>chart?</span></a>
+<a href="ArgoCDAddOnProps.html#dependencyMode" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>dependency<wbr/>Mode?</span></a>
 <a href="ArgoCDAddOnProps.html#name" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>name?</span></a>
 <a href="ArgoCDAddOnProps.html#namespace" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>namespace?</span></a>
 <a href="ArgoCDAddOnProps.html#release" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>release?</span></a>
@@ -44,6 +45,7 @@
 <a href="ArgoCDAddOnProps.html#skipVersionValidation" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>skip<wbr/>Version<wbr/>Validation?</span></a>
 <a href="ArgoCDAddOnProps.html#values" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>values?</span></a>
 <a href="ArgoCDAddOnProps.html#version" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>version?</span></a>
+<a href="ArgoCDAddOnProps.html#workloadApplications" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>workload<wbr/>Applications?</span></a>
 </div></section></div></details></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
@@ -52,28 +54,30 @@
 <div class="tsd-signature">admin<wbr/>Password<wbr/>Secret<wbr/>Name<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>Optional admin password secret name as defined in AWS Secrets Manager (plaintext).
 This allows to control admin password across the enterprise. Password will be retrieved and 
-stored as a non-reverisble bcrypt hash. 
+stored as a non-reversible bcrypt hash. 
 Note: at present, change of password may require manual restart of argocd server.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/argocd/index.ts#L50">lib/addons/argocd/index.ts:50</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/argocd/index.ts#L61">lib/addons/argocd/index.ts:61</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="bootstrapRepo" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>bootstrap<wbr/>Repo</span><a href="#bootstrapRepo" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">bootstrap<wbr/>Repo<span class="tsd-signature-symbol">?:</span> <a href="ApplicationRepository.html" class="tsd-signature-type" data-tsd-kind="Interface">ApplicationRepository</a></div>
 <div class="tsd-comment tsd-typography"><p>If provided, the addon will bootstrap the app or apps in the provided repository.
 In general, the repo is expected to have the app of apps, which can enable to bootstrap all workloads,
-after the infrastructure and team provisioning is complete.</p>
+after the infrastructure and team provisioning is complete.
+When GitOps mode is enabled via <code>ArgoGitOpsFactory</code> for deploying the AddOns, this bootstrap
+repository will be used for provisioning all <code>HelmAddOn</code> based AddOns.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/argocd/index.ts#L36">lib/addons/argocd/index.ts:36</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/argocd/index.ts#L40">lib/addons/argocd/index.ts:40</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="bootstrapValues" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>bootstrap<wbr/>Values</span><a href="#bootstrapValues" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">bootstrap<wbr/>Values<span class="tsd-signature-symbol">?:</span> <a href="../types/Values.html" class="tsd-signature-type" data-tsd-kind="Type alias">Values</a></div>
-<div class="tsd-comment tsd-typography"><p>Optional values for the bootstrap application. These may contain values such as domain named provisioned by other add-ons, certifcate, and other paramters to pass 
+<div class="tsd-comment tsd-typography"><p>Optional values for the bootstrap application. These may contain values such as domain named provisioned by other add-ons, certificate, and other parameters to pass 
 to the applications.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/argocd/index.ts#L42">lib/addons/argocd/index.ts:42</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/argocd/index.ts#L46">lib/addons/argocd/index.ts:46</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a id="chart" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>chart</span><a href="#chart" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">chart<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -81,7 +85,21 @@ to the applications.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from HelmAddOnUserProps.chart</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/helm-addon/kubectl-provider.ts#L24">lib/addons/helm-addon/kubectl-provider.ts:24</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/helm-addon/kubectl-provider.ts#L24">lib/addons/helm-addon/kubectl-provider.ts:24</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a id="dependencyMode" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>dependency<wbr/>Mode</span><a href="#dependencyMode" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">dependency<wbr/>Mode<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
+<div class="tsd-comment tsd-typography"><p>Indicate the helm chart provided uses dependency mode (<a href="https://helm.sh/docs/helm/helm_dependency/">https://helm.sh/docs/helm/helm_dependency/</a>).
+Dependency mode is widely used in <code>aws-samples/eks-blueprints-add-ons</code> repository, for example:
+<a href="https://github.com/aws-samples/eks-blueprints-add-ons/blob/main/add-ons/appmesh-controller/Chart.yaml">https://github.com/aws-samples/eks-blueprints-add-ons/blob/main/add-ons/appmesh-controller/Chart.yaml</a>
+Dependency mode requires the chart values to be wrapped within the chart name.
+This value is only used to turn off dependency mode in case customers choose to copy the whole helm chart into their repo</p>
+
+<h3>Default</h3><p>true</p>
+</div><aside class="tsd-sources">
+<p>Inherited from HelmAddOnUserProps.dependencyMode</p>
+<ul>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/helm-addon/kubectl-provider.ts#L60">lib/addons/helm-addon/kubectl-provider.ts:60</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a id="name" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>name</span><a href="#name" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">name<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -89,7 +107,7 @@ to the applications.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from HelmAddOnUserProps.name</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/helm-addon/kubectl-provider.ts#L14">lib/addons/helm-addon/kubectl-provider.ts:14</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/helm-addon/kubectl-provider.ts#L14">lib/addons/helm-addon/kubectl-provider.ts:14</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="namespace" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>namespace</span><a href="#namespace" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">namespace<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -99,7 +117,7 @@ to the applications.</p>
 </div><aside class="tsd-sources">
 <p>Overrides HelmAddOnUserProps.namespace</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/argocd/index.ts#L23">lib/addons/argocd/index.ts:23</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/argocd/index.ts#L25">lib/addons/argocd/index.ts:25</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a id="release" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>release</span><a href="#release" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">release<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -107,7 +125,7 @@ to the applications.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from HelmAddOnUserProps.release</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/helm-addon/kubectl-provider.ts#L34">lib/addons/helm-addon/kubectl-provider.ts:34</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/helm-addon/kubectl-provider.ts#L34">lib/addons/helm-addon/kubectl-provider.ts:34</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a id="repository" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>repository</span><a href="#repository" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">repository<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -115,7 +133,7 @@ to the applications.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from HelmAddOnUserProps.repository</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/helm-addon/kubectl-provider.ts#L39">lib/addons/helm-addon/kubectl-provider.ts:39</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/helm-addon/kubectl-provider.ts#L39">lib/addons/helm-addon/kubectl-provider.ts:39</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a id="skipVersionValidation" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>skip<wbr/>Version<wbr/>Validation</span><a href="#skipVersionValidation" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">skip<wbr/>Version<wbr/>Validation<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -124,7 +142,7 @@ allows to skip validation for a particular helm add-on.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from HelmAddOnUserProps.skipVersionValidation</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/helm-addon/kubectl-provider.ts#L45">lib/addons/helm-addon/kubectl-provider.ts:45</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/helm-addon/kubectl-provider.ts#L45">lib/addons/helm-addon/kubectl-provider.ts:45</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="values" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>values</span><a href="#values" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">values<span class="tsd-signature-symbol">?:</span> <a href="../types/Values.html" class="tsd-signature-type" data-tsd-kind="Type alias">Values</a></div>
@@ -132,7 +150,7 @@ allows to skip validation for a particular helm add-on.</p>
 </div><aside class="tsd-sources">
 <p>Overrides HelmAddOnUserProps.values</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/argocd/index.ts#L55">lib/addons/argocd/index.ts:55</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/argocd/index.ts#L66">lib/addons/argocd/index.ts:66</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="version" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>version</span><a href="#version" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">version<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -142,7 +160,15 @@ allows to skip validation for a particular helm add-on.</p>
 </div><aside class="tsd-sources">
 <p>Overrides HelmAddOnUserProps.version</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/0964370a/lib/addons/argocd/index.ts#L29">lib/addons/argocd/index.ts:29</a></li></ul></aside></section></section></div>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/argocd/index.ts#L31">lib/addons/argocd/index.ts:31</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="workloadApplications" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>workload<wbr/>Applications</span><a href="#workloadApplications" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">workload<wbr/>Applications<span class="tsd-signature-symbol">?:</span> <a href="GitOpsApplicationDeployment.html" class="tsd-signature-type" data-tsd-kind="Interface">GitOpsApplicationDeployment</a><span class="tsd-signature-symbol">[]</span></div>
+<div class="tsd-comment tsd-typography"><p>Additional GitOps applications and repositories. If there is a split between infra and application repositories then
+bootstrap repo is expected to be leveraged for infrastructure and application deployments will contain additional applications.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/addons/argocd/index.ts#L53">lib/addons/argocd/index.ts:53</a></li></ul></aside></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
@@ -181,13 +207,15 @@ allows to skip validation for a particular helm add-on.</p>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="ArgoCDAddOnProps.html#bootstrapRepo" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>bootstrap<wbr/>Repo?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="ArgoCDAddOnProps.html#bootstrapValues" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>bootstrap<wbr/>Values?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="ArgoCDAddOnProps.html#chart" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>chart?</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="ArgoCDAddOnProps.html#dependencyMode" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>dependency<wbr/>Mode?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="ArgoCDAddOnProps.html#name" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>name?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="ArgoCDAddOnProps.html#namespace" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>namespace?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="ArgoCDAddOnProps.html#release" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>release?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="ArgoCDAddOnProps.html#repository" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>repository?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="ArgoCDAddOnProps.html#skipVersionValidation" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>skip<wbr/>Version<wbr/>Validation?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface"><a href="ArgoCDAddOnProps.html#values" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>values?</a></li>
-<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ArgoCDAddOnProps.html#version" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>version?</a></li></ul></li></ul></nav></div></div>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ArgoCDAddOnProps.html#version" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>version?</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ArgoCDAddOnProps.html#workloadApplications" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>workload<wbr/>Applications?</a></li></ul></li></ul></nav></div></div>
 <div class="container tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
 <div class="overlay"></div><script src="../assets/main.js"></script></body></html>

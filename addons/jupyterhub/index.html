@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -425,6 +425,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../aws-batch-on-eks/" class="md-nav__link">
+        AWS Batch for EKS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../argo-cd/" class="md-nav__link">
         ArgoCD
       </a>
@@ -748,6 +762,20 @@
     <li class="md-nav__item">
       <a href="https://github.com/keptn-sandbox/keptn-eks-blueprints-addon" class="md-nav__link">
         Keptn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../knative-operator/" class="md-nav__link">
+        Knative
       </a>
     </li>
   
@@ -1246,10 +1274,15 @@
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">cdk</span><span class="p">.</span><span class="nx">App</span><span class="p">();</span><span class="w"></span>
 
+<span class="kd">const</span><span class="w"> </span><span class="nx">subdomain</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">valueFromContext</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dev.subzone.name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;jupyterhub.some.example.com&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">parentDnsAccountId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">scope</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">tryGetContext</span><span class="p">(</span><span class="s2">&quot;parent.dns.account&quot;</span><span class="p">)</span><span class="o">!</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">parentDomain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">valueFromContext</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;parent.hostedzone.name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;some.example.com&quot;</span><span class="p">);</span><span class="w"></span>
+
 <span class="kd">const</span><span class="w"> </span><span class="nx">jupyterHubAddOn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">JupyterHubAddOn</span><span class="p">({</span><span class="w"></span>
-<span class="w">  </span><span class="nx">ebsConfig</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">storageClass</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;gp2&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">capacity</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;4Gi&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">efsConfig</span><span class="o">:</span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">removalPolicy</span><span class="o">:</span><span class="w"> </span><span class="kt">cdk.RemovalPolicy.DESTROY</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">pvcName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;efs-persist&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">capacity</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;120Gi&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="p">},</span><span class="w"></span>
 <span class="w">  </span><span class="nx">oidcConfig</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">callbackUrl</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;Callback URL&gt;&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1261,14 +1294,29 @@
 <span class="w">    </span><span class="nx">scope</span><span class="o">:</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="c1">//list of OIDC provider scopes</span><span class="w"></span>
 <span class="w">    </span><span class="nx">usernameKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;username key&gt;&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="p">},</span><span class="w"></span>
-<span class="w">  </span><span class="nx">enableIngress?</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nx">notebookStack</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;jupyter/datascience-notebook&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">serviceType</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprints.JupyterHubServiceType.ALB</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">ingressHosts</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">jupyterDNSname</span><span class="p">],</span><span class="w"></span>
+<span class="w">  </span><span class="nx">ingressAnnotations</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s1">&#39;external-dns.alpha.kubernetes.io/hostname&#39;</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">jupyterDNSname</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nx">notebookStack</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;jupyter/datascience-notebook&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">certificateResourceName</span><span class="o">?:</span><span class="w"> </span><span class="s1">&#39;your-certificate&#39;</span><span class="p">,</span><span class="w"></span>
 <span class="p">});</span><span class="w"></span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">ebsCsiAddOn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">EbsCsiDriverAddOn</span><span class="p">();</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">addOns</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">ClusterAddOn</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">ebsCsiAddOn</span><span class="p">,</span><span class="w"> </span><span class="nx">jupyterHubAddOn</span><span class="w"> </span><span class="p">];</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">awsAlbAddOn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">AwsLoadBalancerControllerAddOn</span><span class="p">(),</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">efsCsiAddOn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">EfsCsiDriverAddOn</span><span class="p">();</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">externalDnsAddOn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">ExternalDnsAddOn</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">hostedZoneResources</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">GlobalResources</span><span class="p">.</span><span class="nx">HostedZone</span><span class="p">]</span><span class="w"></span>
+<span class="p">}),</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">addOns</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">ClusterAddOn</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="nx">awsAlbAddOn</span><span class="p">,</span><span class="w"> </span><span class="nx">externalDnsAddOn</span><span class="p">,</span><span class="w"> </span><span class="nx">efsCsiAddOn</span><span class="p">,</span><span class="w"> </span><span class="nx">jupyterHubAddOn</span><span class="w"> </span><span class="p">];</span><span class="w"></span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nx">resourceProvider</span><span class="p">(</span><span class="nx">GlobalResources</span><span class="p">.</span><span class="nx">HostedZone</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">DelegatingHostedZoneProvider</span><span class="p">({</span><span class="w"></span>
+<span class="w">    </span><span class="nx">parentDomain</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">subdomain</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">parentDnsAccountId</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">delegatingRoleName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;DomainOperatorRole&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">wildcardSubdomain</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"></span>
+<span class="w">  </span><span class="p">}))</span><span class="w"></span>
 <span class="w">  </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(...</span><span class="nx">addOns</span><span class="p">)</span><span class="w"></span>
 <span class="w">  </span><span class="p">.</span><span class="nx">build</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;my-stack-name&#39;</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
@@ -1291,12 +1339,17 @@ user-scheduler-7dbd789bc4-gcb8z   <span class="m">1</span>/1     Running   <span
 <li>Leverage EBS as persistent storage with storage type and capacity provided. If you provide this configuration, <strong><em>EBS CSI Driver add-on must be present in add-on array</em></strong> and <strong><em>must be in add-on array before the JupyterHub add-on</em></strong> for it to work, as shown in above example. Otherwise it will not work.</li>
 <li>Leverage EFS as persistent storage with the name, capacity and file system removal policy provided. If you provide this configuration, <strong><em>EFS CSI Driver add-on must be present in add-on array</em></strong> and <strong><em>must be in add-on array before the JupyterHub add-on</em></strong> for it to work, as shown in above example. Otherwise it will not work.</li>
 <li>(Optional) Leverage OIDC Provider as a way to manage authentication and authorization. If not provided, the default creates no user, and the user will be able to login with any arbitrary username and password. <strong>It is highly recommended to leverage an Identity provider for any production use case.</strong></li>
-<li>(Optional) Leverage a different notebook stack than the standard one provided. Jupyter team maintains a set of Docker image definition in a GitHub repository as explained <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html">here</a>.</li>
+<li>Exposes the proxy service in three different way based on configuration:</li>
+<li>Expose using Ingress controller and AWS Application Load Balancer. <strong><em>This requires AWS Load Balancer Controller add-on and it must be in add-on array before the JupyterHub add-on</em></strong>. This will also look for any additional Ingress annotations provided by the user to be tagged.</li>
+<li>Expose using Loadbalancer Service and AWS Network Load Balancer. <strong><em>This requires AWS Load Balancer Controller add-on and it must be in add-on array before the JupyterHub add-on</em></strong>.</li>
+<li>Expose using ClusterIP Service. </li>
+<li>(Optional) Annotates Ingress with user-provided AWS Certificate Manager certificate name. It will be looked up and automatically tagged to be used with Ingress. It will require user to provide a DNS name and <strong><em>External DNS add-on to be added in add-on array before the JupyterHub add-on</em></strong>.</li>
+<li>(Optional) User can choose a different notebook stack than the standard one provided. Jupyter team maintains a set of Docker image definition in a GitHub repository as explained <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html">here</a>.</li>
 <li>Supports <a href="../#standard-helm-add-on-configuration-options">standard helm configuration options</a>.</li>
 </ol>
 <p><strong><em>Note</em></strong>: For custom helm values, please consult the <a href="https://zero-to-jupyterhub.readthedocs.io/en/latest/resources/reference.html#">official documentation</a>. </p>
 <h2 id="using-jupyterhub">Using JupyterHub<a class="headerlink" href="#using-jupyterhub" title="Permanent link">&para;</a></h2>
-<p>JupyterHub, by default, creates a proxy that is exposed to a <code>LoadBalancer</code> type Kubernetes service, which will integrate with AWS Load Balancer as indicated when running the following command:</p>
+<p>JupyterHub, by default, creates a proxy service called <code>proxy-public</code> that will be accessible in different way based on the user configuration setting under <code>serviceType</code>. For example, if you set it as <code>NLB</code>, then it is exposed to a <code>LoadBalancer</code> type Kubernetes service, which will integrate with AWS Network Load Balancer as indicated when running the following command:</p>
 <div class="highlight"><pre><span></span><code>kubectl get svc -n jupyterhub
 NAME           TYPE           CLUSTER-IP      EXTERNAL-IP                                                               PORT<span class="o">(</span>S<span class="o">)</span>        AGE
 hub            ClusterIP      <span class="m">172</span>.20.171.28   &lt;none&gt;                                                                    <span class="m">8081</span>/TCP       26m
@@ -1381,10 +1434,10 @@ proxy-public   LoadBalancer   <span class="m">172</span>.20.14.210   xxxxxxxx-12
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
       
     
   </body>

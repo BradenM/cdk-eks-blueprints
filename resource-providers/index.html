@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7a952b86.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
@@ -423,6 +423,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../addons/aws-batch-on-eks/" class="md-nav__link">
+        AWS Batch for EKS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../addons/argo-cd/" class="md-nav__link">
         ArgoCD
       </a>
@@ -691,6 +705,20 @@
     <li class="md-nav__item">
       <a href="https://github.com/keptn-sandbox/keptn-eks-blueprints-addon" class="md-nav__link">
         Keptn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../addons/knative-operator/" class="md-nav__link">
+        Knative
       </a>
     </li>
   
@@ -1129,6 +1157,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-resource-providers-with-cdk-constructs" class="md-nav__link">
+    Using Resource Providers with CDK Constructs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#implementing-custom-resource-providers" class="md-nav__link">
     Implementing Custom Resource Providers
   </a>
@@ -1230,6 +1265,13 @@
         <li class="md-nav__item">
   <a href="#usage" class="md-nav__link">
     Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-resource-providers-with-cdk-constructs" class="md-nav__link">
+    Using Resource Providers with CDK Constructs
   </a>
   
 </li>
@@ -1376,8 +1418,10 @@ A resource provider is a core Blueprints concept that enables customers to suppl
 <span class="w">    </span><span class="p">.</span><span class="nx">resourceProvider</span><span class="p">(</span><span class="nx">GlobalResources</span><span class="p">.</span><span class="nx">KmsKey</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">KmsKeyProvider</span><span class="p">(</span><span class="s1">&#39;my-alias-name&#39;</span><span class="p">)</span><span class="w">    </span>
 <span class="w">    </span><span class="c1">//  Register hosted zone and give it a name of GlobalResources.HostedZone</span><span class="w"></span>
 <span class="w">    </span><span class="p">.</span><span class="nx">resourceProvider</span><span class="p">(</span><span class="nx">GlobalResources</span><span class="p">.</span><span class="nx">HostedZone</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ImportHostedZoneProvider</span><span class="p">(</span><span class="s1">&#39;hosted-zone-id1&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;my.domain.com&#39;</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">resourceProvider</span><span class="p">(</span><span class="s2">&quot;internal-hosted-zone&quot;</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ImportHostedZoneProvider</span><span class="p">(</span><span class="s1">&#39;hosted-zone-id2&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;myinternal.domain.com&#39;</span><span class="p">))</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// Register certificate GlobalResources.Certificate name and reference the hosted zone registered in the previous step</span><span class="w"></span>
 <span class="w">    </span><span class="p">.</span><span class="nx">resourceProvider</span><span class="p">(</span><span class="nx">GlobalResources</span><span class="p">.</span><span class="nx">Certificate</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CreateCertificateProvider</span><span class="p">(</span><span class="s1">&#39;domain-wildcard-cert&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;*.my.domain.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">GlobalResources</span><span class="p">.</span><span class="nx">HostedZone</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">resourceProvider</span><span class="p">(</span><span class="s2">&quot;private-ca&quot;</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">CreateCertificateProvider</span><span class="p">(</span><span class="s1">&#39;internal-wildcard-cert&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;*.myinternal.domain.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;internal-hosted-zone&quot;</span><span class="p">))</span><span class="w"></span>
 <span class="w">    </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">AwsLoadBalancerControllerAddOn</span><span class="p">())</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// Use hosted zone for External DNS</span><span class="w"></span>
 <span class="w">    </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">ExternalDnsAddOn</span><span class="p">({</span><span class="nx">hostedZoneResources</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">GlobalResources</span><span class="p">.</span><span class="nx">HostedZone</span><span class="p">]}))</span><span class="w"></span>
@@ -1407,6 +1451,43 @@ A resource provider is a core Blueprints concept that enables customers to suppl
 <span class="w">    </span><span class="p">}))</span><span class="w"></span>
 <span class="w">    </span><span class="p">.</span><span class="nx">teams</span><span class="p">(...)</span><span class="w"></span>
 <span class="w">    </span><span class="p">.</span><span class="nx">build</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;stack-with-resource-providers&#39;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<h2 id="using-resource-providers-with-cdk-constructs">Using Resource Providers with CDK Constructs<a class="headerlink" href="#using-resource-providers-with-cdk-constructs" title="Permanent link">&para;</a></h2>
+<p>Some constructs used in the <code>EKSBlueprint</code> stack are standard CDK constructs that accept CDK resources. </p>
+<p>For example, <code>GenericClusterProvider</code> (which is the basis for all cluster providers) allows passing resources like <code>IRole</code>, <code>SecurityGroup</code> and other properties that customers may find inconvenient to define with a builder pattern.</p>
+<p>Blueprints provide a convenience API to register such resources in a declarative manner.</p>
+<p>Example with an anonymous resource:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">clusterProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">GenericClusterProvider</span><span class="p">({</span><span class="w"></span>
+<span class="w">    </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="kt">KubernetesVersion.V1_24</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">mastersRole</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprints.getResource</span><span class="p">(</span><span class="nx">context</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// will generate a unique name for resource. designed for cases when resource is defined once and needed in a single place.</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">iam</span><span class="p">.</span><span class="nx">Role</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">scope</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;AdminRole&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">assumedBy</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">AccountRootPrincipal</span><span class="p">()</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="p">}),</span><span class="w"></span>
+<span class="w">    </span><span class="nx">managedNodeGroups</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+
+<span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(...</span><span class="nx">addOns</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">clusterProvider</span><span class="p">(</span><span class="nx">clusterProvider</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">build</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span><span class="w"> </span><span class="nx">blueprintID</span><span class="p">,</span><span class="w"> </span><span class="nx">props</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>Example with a named resource: </p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">clusterProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">GenericClusterProvider</span><span class="p">({</span><span class="w"></span>
+<span class="w">    </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="kt">KubernetesVersion.V1_24</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">mastersRole</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprints.getNamedResource</span><span class="p">(</span><span class="s2">&quot;my-role&quot;</span><span class="p">),</span><span class="w"></span>
+<span class="w">    </span><span class="nx">managedNodeGroups</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">...</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+
+<span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">resourceProvider</span><span class="p">(</span><span class="s2">&quot;my-role&quot;</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">LookupRoleProvider</span><span class="p">(</span><span class="s2">&quot;SomeExistingRole&quot;</span><span class="p">))</span><span class="w"> </span><span class="c1">// enables to look up this role from ClusterInfo under &quot;my-role&quot; in add-ons, etc.</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(...</span><span class="nx">addOns</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">clusterProvider</span><span class="p">(</span><span class="nx">clusterProvider</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nx">build</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span><span class="w"> </span><span class="nx">blueprintID</span><span class="p">,</span><span class="w"> </span><span class="nx">props</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="implementing-custom-resource-providers">Implementing Custom Resource Providers<a class="headerlink" href="#implementing-custom-resource-providers" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1511,10 +1592,10 @@ A resource provider is a core Blueprints concept that enables customers to suppl
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["tabs"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["tabs"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.37e9125f.min.js"></script>
+      <script src="../assets/javascripts/bundle.8492ddcf.min.js"></script>
       
     
   </body>

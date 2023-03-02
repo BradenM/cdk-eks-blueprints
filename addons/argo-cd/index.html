@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -423,6 +423,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../aws-batch-on-eks/" class="md-nav__link">
+        AWS Batch for EKS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -483,6 +497,19 @@
   <a href="#bootstrapping" class="md-nav__link">
     Bootstrapping
   </a>
+  
+    <nav class="md-nav" aria-label="Bootstrapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gitops-for-eks-blueprints-addons" class="md-nav__link">
+    GitOps for EKS Blueprints AddOns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -789,6 +816,20 @@
     <li class="md-nav__item">
       <a href="https://github.com/keptn-sandbox/keptn-eks-blueprints-addon" class="md-nav__link">
         Keptn
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../knative-operator/" class="md-nav__link">
+        Knative
       </a>
     </li>
   
@@ -1259,6 +1300,19 @@
     Bootstrapping
   </a>
   
+    <nav class="md-nav" aria-label="Bootstrapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gitops-for-eks-blueprints-addons" class="md-nav__link">
+    GitOps for EKS Blueprints AddOns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1414,6 +1468,61 @@
 <span class="w">    </span><span class="p">.</span><span class="nx">build</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;argo-us-west-1&#39;</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <p>The application promotion process in the above example is handled entirely through GitOps. Each stage specific App of Apps contains references to respective application GitOps repository for each stage (e.g referencing the release vs work branches or path-based within individual app GitOps repository).</p>
+<h3 id="gitops-for-eks-blueprints-addons">GitOps for EKS Blueprints AddOns<a class="headerlink" href="#gitops-for-eks-blueprints-addons" title="Permanent link">&para;</a></h3>
+<p>By default all AddOns defined in a blueprint are deployed to the cluster via CDK. You can opt-in to deploy them following the GitOps model via ArgoCD. You will need a repository contains all the AddOns you would like to deploy via ArgoCD, such as, <a href="https://github.com/aws-samples/eks-blueprints-add-ons">eks-blueprints-add-ons</a>. You then configure ArgoCD bootstrapping with this repository as shown above.</p>
+<p>There are two types of GitOps deployments via ArgoCD depending on whether you would like to adopt the <a href="https://argoproj.github.io/argo-cd/operator-manual/cluster-bootstrapping/#app-of-apps-pattern">App of Apps</a> strategy:</p>
+<ul>
+<li>CDK deploys the <code>Application</code> resource for each AddOn enabled, and ArgoCD deploys the actual AddOn via GitOps based on the <code>Application</code> resource. Example:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">blueprints</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@aws-quickstart/eks-blueprints&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// enable gitops bootstrapping with argocd</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">prodBootstrapArgo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">ArgoCDAddOn</span><span class="p">({</span><span class="w"></span>
+<span class="w">        </span><span class="nx">bootstrapRepo</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">repoUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://github.com/aws-samples/eks-blueprints-add-ons&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;add-ons&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nx">targetRevision</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// addons</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">addOns</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">ClusterAddOn</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="nx">prodBootstrapArgo</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">AppMeshAddOn</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">MetricsServerAddOn</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">AwsLoadBalancerControllerAddOn</span><span class="p">(),</span><span class="w"></span>
+<span class="w">    </span><span class="p">];</span><span class="w"></span>
+
+<span class="w">    </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(...</span><span class="nx">addOns</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="nx">enableGitOps</span><span class="p">(</span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">GitOpsMode</span><span class="p">.</span><span class="nx">APPLICATION</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="nx">build</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span><span class="w"> </span><span class="nx">stackID</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<ul>
+<li>CDK deploys the only <code>Application</code> resource for the App of Apps, aka <code>bootstrap-apps</code>, and ArgoCD deploys all the AddOns based on the <code>bootstrap-apps</code>. This requires the naming pattern between the AddOns and App of Apps matches. Example:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">blueprints</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@aws-quickstart/eks-blueprints&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// enable gitops bootstrapping with argocd app of apps</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">prodBootstrapArgo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">ArgoCDAddOn</span><span class="p">({</span><span class="w"></span>
+<span class="w">        </span><span class="nx">bootstrapRepo</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">repoUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://github.com/aws-samples/eks-blueprints-add-ons&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;chart&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nx">targetRevision</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;main&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// addons</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">addOns</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">ClusterAddOn</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="nx">prodBootstrapArgo</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">AppMeshAddOn</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">MetricsServerAddOn</span><span class="p">(),</span><span class="w"></span>
+<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">AwsLoadBalancerControllerAddOn</span><span class="p">(),</span><span class="w"></span>
+<span class="w">    </span><span class="p">];</span><span class="w"></span>
+
+<span class="w">    </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(...</span><span class="nx">addOns</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="nx">enableGitOps</span><span class="p">(</span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">GitOpsMode</span><span class="p">.</span><span class="nx">APP_OF_APPS</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="nx">build</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span><span class="w"> </span><span class="nx">stackID</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
 <h2 id="secrets-support">Secrets Support<a class="headerlink" href="#secrets-support" title="Permanent link">&para;</a></h2>
 <p>The framework provides support to supply repository and administrator secrets in AWS Secrets Manager. This support is evolving and will be improved over time as ArgoCD itself matures. </p>
 <h3 id="private-repositories">Private Repositories<a class="headerlink" href="#private-repositories" title="Permanent link">&para;</a></h3>
@@ -1523,7 +1632,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../app-mesh/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AWS App Mesh" rel="prev">
+        <a href="../aws-batch-on-eks/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AWS Batch for EKS" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1532,7 +1641,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              AWS App Mesh
+              AWS Batch for EKS
             </div>
           </div>
         </a>
@@ -1576,10 +1685,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
       
     
   </body>
