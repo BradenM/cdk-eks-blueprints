@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -985,7 +985,7 @@
   
     <li class="md-nav__item">
       <a href="../vpc-cni/" class="md-nav__link">
-        Vpc Cni
+        VPC CNI
       </a>
     </li>
   
@@ -1291,7 +1291,7 @@
 
 <h1 id="efs-csi-driver-amazon-eks-add-on">EFS CSI Driver Amazon EKS Add-on<a class="headerlink" href="#efs-csi-driver-amazon-eks-add-on" title="Permanent link">&para;</a></h1>
 <p>The <code>EFS CSI Driver Amazon EKS Add-on</code> provides a CSI interface that allows Kubernetes clusters running on AWS to manage the lifecycle of Amazon EFS volumes for persistent storage.
-EFS CSI driver supports both dynamic and static provisioning of storage</p>
+EFS CSI driver supports both dynamic and static provisioning of storage.</p>
 <p>A couple of things to note:</p>
 <ul>
 <li>Driver is not compatible with Windows-based container images</li>
@@ -1300,7 +1300,7 @@ EFS CSI driver supports both dynamic and static provisioning of storage</p>
 <p>For more information on the driver, please review the <a href="https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html">user guide</a>.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li>The EFS file system itself must be created in AWS separately as the driver uses the EFS for storage, but it does not create it.</li>
+<li>The EFS file system itself must be created in AWS separately as the driver uses the EFS for storage, but it does not create it. You can create an EFS file system using the <code>CreateEfsFileSystemProvider</code>, e.g.: <code>.resourceProvider("efs-file-system", new CreateEfsFileSystemProvider('efs-file-system'))</code></li>
 </ul>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;source-map-support/register&#39;</span><span class="p">;</span><span class="w"></span>
@@ -1320,6 +1320,7 @@ EFS CSI driver supports both dynamic and static provisioning of storage</p>
 <li><code>version</code>: Version of the EFS CSI Driver add-on to be installed. Version 2.2.3 will be installed by default if a value is not provided</li>
 <li><code>replicaCount</code>: Number of replicas to be deployed. If not provided, two replicas will be deployed. Note that the number of replicas
   should be less than or equal to the number of nodes in the cluster otherwise some pods will be left of pending state</li>
+<li><code>kmsKeys</code>: List of KMS keys used for encryption-at-rest, so that the IAM policy can be updated to allow the EFS CSI driver to access the keys</li>
 </ul>
 <h2 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h2>
 <p>To validate that EFS CSI Driver add-on is installed properly, ensure that the ebs pods are running in the cluster</p>
@@ -1329,9 +1330,9 @@ EFS CSI driver supports both dynamic and static provisioning of storage</p>
 efs-csi-controller-7c9bd5d86d-v7jtk            <span class="m">3</span>/3     Running   <span class="m">0</span>          155m
 efs-csi-node-2c29j                             <span class="m">3</span>/3     Running   <span class="m">0</span>          155m
 </code></pre></div>
-<p>Additionally, the <a href="https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html">driver documentation</a> shows how to create an EFS file system to test the driver </p>
+<p>Additionally, the <a href="https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html">driver documentation</a> shows how to create an EFS file system to test the driver</p>
 <h2 id="functionality">Functionality<a class="headerlink" href="#functionality" title="Permanent link">&para;</a></h2>
-<p>Applies the EFS CSI Driver add-on to an Amazon EKS cluster. </p>
+<p>Applies the EFS CSI Driver add-on to an Amazon EKS cluster.</p>
 
 
 
@@ -1405,10 +1406,10 @@ efs-csi-node-2c29j                             <span class="m">3</span>/3     Ru
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
       
     
   </body>

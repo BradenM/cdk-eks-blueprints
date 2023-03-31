@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.20d9efc8.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
@@ -914,7 +914,7 @@
   
     <li class="md-nav__item">
       <a href="../../addons/vpc-cni/" class="md-nav__link">
-        Vpc Cni
+        VPC CNI
       </a>
     </li>
   
@@ -1188,7 +1188,9 @@
 
 
 <h1 id="generic-cluster-provider">Generic Cluster Provider<a class="headerlink" href="#generic-cluster-provider" title="Permanent link">&para;</a></h1>
-<p>The <code>GenericClusterProvider</code> allows you to provision an EKS cluster which leverages one or more <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">EKS managed node groups</a>(MNGs), or one or more autoscaling groups<a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">EC2 Auto Scaling groups</a> for its compute capacity. Users can also configure multiple Fargate profiles along with the EC2 based compute cpacity.</p>
+<p>The <code>GenericClusterProvider</code> allows you to provision an EKS cluster which leverages one or more <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">EKS managed node groups</a>(MNGs), or one or more autoscaling groups<a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">EC2 Auto Scaling groups</a> for its compute capacity. Users can also configure multiple Fargate profiles along with the EC2 based compute cpacity. </p>
+<p>Today it is not possible for an Amazon EKS Cluster to propagate tags to EC2 instance worker nodes directly when you create an EKS cluster. You can create a launch template with custom tags on <code>managedNodeGroups</code> with <code>GenericClusterProvider</code> as shown in <code>mng2-launchtemplate</code>. This will allow you to propagate custom tags to your EC2 instance worker nodes.</p>
+<p>Note: If <code>launchTemplate</code> is passed with <code>managedNodeGroups</code>, <code>diskSize</code> is not allowed.</p>
 <h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
 <p>Full list of configuration options:</p>
 <ul>
@@ -1210,19 +1212,42 @@
 <span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mng1&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="nx">amiType</span><span class="o">:</span><span class="w"> </span><span class="kt">NodegroupAmiType.AL2_X86_64</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="nx">instanceTypes</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">InstanceType</span><span class="p">(</span><span class="s1">&#39;m5.2xlarge&#39;</span><span class="p">)],</span><span class="w"></span>
-<span class="w">            </span><span class="nx">diskSize</span><span class="o">:</span><span class="w"> </span><span class="kt">50</span><span class="w"></span>
+<span class="w">            </span><span class="nx">desiredSize</span><span class="o">:</span><span class="w"> </span><span class="kt">2</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nx">maxSize</span><span class="o">:</span><span class="w"> </span><span class="kt">3</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="nx">nodeGroupSubnets</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">subnetType</span><span class="o">:</span><span class="w"> </span><span class="kt">ec2.SubnetType.PRIVATE_WITH_EGRESS</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">            </span><span class="nx">launchTemplate</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="c1">// You can pass Custom Tags to Launch Templates which gets propagated to worker nodes.</span><span class="w"></span>
+<span class="w">                </span><span class="nx">customTags</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mng1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Managed-Node-Group&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;LaunchTemplate&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Custom&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Instance&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ONDEMAND&quot;</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
 <span class="w">        </span><span class="p">},</span><span class="w"></span>
 <span class="w">        </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mng2-custom&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">instanceTypes</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">InstanceType</span><span class="p">(</span><span class="s1">&#39;m5.2xlarge&#39;</span><span class="p">)],</span><span class="w"></span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mng2-launchtemplate&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nx">instanceTypes</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">ec2</span><span class="p">.</span><span class="nx">InstanceType</span><span class="p">(</span><span class="s1">&#39;m5.2xlarge&#39;</span><span class="p">)],</span><span class="w"></span>
 <span class="w">            </span><span class="nx">nodeGroupCapacityType</span><span class="o">:</span><span class="w"> </span><span class="kt">CapacityType.SPOT</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nx">customAmi</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nx">desiredSize</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nx">minSize</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nx">launchTemplate</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                </span><span class="nx">machineImage</span><span class="o">:</span><span class="w"> </span><span class="kt">ec2.MachineImage.genericLinux</span><span class="p">({</span><span class="w"></span>
-<span class="w">                    </span><span class="s1">&#39;us-east-1&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ami-0b297a512e2852b89&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="s1">&#39;us-west-2&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ami-06a8c459c01f55c7b&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="s1">&#39;us-east-2&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ami-093d9796e55a5b860&#39;</span><span class="w"></span>
+<span class="w">                    </span><span class="s1">&#39;us-east-1&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ami-08e520f5673ee0894&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s1">&#39;us-west-2&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ami-0403ff342ceb30967&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s1">&#39;us-east-2&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ami-07109d69738d6e1ee&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s1">&#39;us-west-1&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ami-07bda4b61dc470985&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s1">&#39;us-gov-west-1&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ami-0e9ebbf0d3f263e9b&#39;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s1">&#39;us-gov-east-1&#39;</span><span class="o">:</span><span class="s1">&#39;ami-033eb9bc6daf8bfb1&#39;</span><span class="w"></span>
 <span class="w">                </span><span class="p">}),</span><span class="w"></span>
 <span class="w">                </span><span class="nx">userData</span><span class="o">:</span><span class="w"> </span><span class="kt">userData</span><span class="p">,</span><span class="w"></span>
+<span class="w">                </span><span class="c1">// You can pass Custom Tags to Launch Templates which gets propagated to worker nodes.</span><span class="w"></span>
+<span class="w">                </span><span class="nx">customTags</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mng2&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Managed-Node-Group&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;LaunchTemplate&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Custom&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="s2">&quot;Instance&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;SPOT&quot;</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">],</span><span class="w"></span>
@@ -1411,10 +1436,10 @@ For example cluster allows passing <code>mastersRole</code>, <code>securityGroup
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
       
     
   </body>

@@ -26,7 +26,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">AsgClusterProviderProps</span></li></ul></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/cluster-providers/asg-cluster-provider.ts#L8">lib/cluster-providers/asg-cluster-provider.ts:8</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/3c8801a5/lib/cluster-providers/asg-cluster-provider.ts#L8">lib/cluster-providers/asg-cluster-provider.ts:8</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -69,6 +69,7 @@
 <a href="AsgClusterProviderProps.html#signals" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>signals?</span></a>
 <a href="AsgClusterProviderProps.html#spotInterruptHandler" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>spot<wbr/>Interrupt<wbr/>Handler?</span></a>
 <a href="AsgClusterProviderProps.html#spotPrice" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>spot<wbr/>Price?</span></a>
+<a href="AsgClusterProviderProps.html#ssmSessionPermissions" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>ssm<wbr/>Session<wbr/>Permissions?</span></a>
 <a href="AsgClusterProviderProps.html#terminationPolicies" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>termination<wbr/>Policies?</span></a>
 <a href="AsgClusterProviderProps.html#updatePolicy" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>update<wbr/>Policy?</span></a>
 <a href="AsgClusterProviderProps.html#version" class="tsd-index-link tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>version</span></a>
@@ -145,7 +146,7 @@ manually invoke <code>autoscalingGroup.addUserData()</code>.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#bootstrapEnabled">bootstrapEnabled</a></p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/aws-eks/lib/cluster.d.ts:1242</li></ul></aside></section>
+<li>Defined in node_modules/aws-cdk-lib/aws-eks/lib/cluster.d.ts:1251</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a id="bootstrapOptions" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>bootstrap<wbr/>Options</span><a href="#bootstrapOptions" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">bootstrap<wbr/>Options<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">BootstrapOptions</span></div>
@@ -157,7 +158,7 @@ manually invoke <code>autoscalingGroup.addUserData()</code>.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#bootstrapOptions">bootstrapOptions</a></p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/aws-eks/lib/cluster.d.ts:1248</li></ul></aside></section>
+<li>Defined in node_modules/aws-cdk-lib/aws-eks/lib/cluster.d.ts:1257</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a id="capacityRebalance" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>capacity<wbr/>Rebalance</span><a href="#capacityRebalance" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">capacity<wbr/>Rebalance<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -219,7 +220,7 @@ step scaling policies, we strongly recommend that you enable the default instanc
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#desiredSize">desiredSize</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/cluster-providers/types.ts#L106">lib/cluster-providers/types.ts:106</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/3c8801a5/lib/cluster-providers/types.ts#L120">lib/cluster-providers/types.ts:120</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a id="groupMetrics" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>group<wbr/>Metrics</span><a href="#groupMetrics" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">group<wbr/>Metrics<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">GroupMetrics</span><span class="tsd-signature-symbol">[]</span></div>
@@ -253,7 +254,7 @@ Group metrics are reported in a granularity of 1 minute at no additional charge.
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#id">id</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/cluster-providers/types.ts#L89">lib/cluster-providers/types.ts:89</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/3c8801a5/lib/cluster-providers/types.ts#L103">lib/cluster-providers/types.ts:103</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a id="ignoreUnmodifiedSizeProperties" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>ignore<wbr/>Unmodified<wbr/>Size<wbr/>Properties</span><a href="#ignoreUnmodifiedSizeProperties" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">ignore<wbr/>Unmodified<wbr/>Size<wbr/>Properties<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -297,7 +298,7 @@ is charged a fee. When you disable detailed monitoring, CloudWatch generates met
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#instanceType">instanceType</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/cluster-providers/types.ts#L113">lib/cluster-providers/types.ts:113</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/3c8801a5/lib/cluster-providers/types.ts#L127">lib/cluster-providers/types.ts:127</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a id="keyName" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>key<wbr/>Name</span><a href="#keyName" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">key<wbr/>Name<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -320,7 +321,7 @@ is charged a fee. When you disable detailed monitoring, CloudWatch generates met
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#machineImageType">machineImageType</a></p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/aws-eks/lib/cluster.d.ts:1254</li></ul></aside></section>
+<li>Defined in node_modules/aws-cdk-lib/aws-eks/lib/cluster.d.ts:1263</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a id="mapRole" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>map<wbr/>Role</span><a href="#mapRole" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">map<wbr/>Role<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -334,7 +335,7 @@ role to RBAC.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#mapRole">mapRole</a></p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/aws-eks/lib/cluster.d.ts:1231</li></ul></aside></section>
+<li>Defined in node_modules/aws-cdk-lib/aws-eks/lib/cluster.d.ts:1240</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a id="maxInstanceLifetime" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>max<wbr/>Instance<wbr/>Lifetime</span><a href="#maxInstanceLifetime" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">max<wbr/>Instance<wbr/>Lifetime<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">Duration</span></div>
@@ -360,7 +361,7 @@ leave this property undefined.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#maxSize">maxSize</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/cluster-providers/types.ts#L101">lib/cluster-providers/types.ts:101</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/3c8801a5/lib/cluster-providers/types.ts#L115">lib/cluster-providers/types.ts:115</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a id="minSize" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>min<wbr/>Size</span><a href="#minSize" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">min<wbr/>Size<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div>
@@ -370,14 +371,14 @@ leave this property undefined.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#minSize">minSize</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/cluster-providers/types.ts#L95">lib/cluster-providers/types.ts:95</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/3c8801a5/lib/cluster-providers/types.ts#L109">lib/cluster-providers/types.ts:109</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface"><a id="name" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>name</span><a href="#name" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">name<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The name for the cluster.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/cluster-providers/asg-cluster-provider.ts#L13">lib/cluster-providers/asg-cluster-provider.ts:13</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/3c8801a5/lib/cluster-providers/asg-cluster-provider.ts#L13">lib/cluster-providers/asg-cluster-provider.ts:13</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a id="newInstancesProtectedFromScaleIn" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>new<wbr/>Instances<wbr/>Protected<wbr/>From<wbr/>Scale<wbr/>In</span><a href="#newInstancesProtectedFromScaleIn" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">new<wbr/>Instances<wbr/>Protected<wbr/>From<wbr/>Scale<wbr/>In<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -405,7 +406,7 @@ an ECS Capacity Provider with managed termination protection.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#nodeGroupSubnets">nodeGroupSubnets</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/cluster-providers/types.ts#L119">lib/cluster-providers/types.ts:119</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/3c8801a5/lib/cluster-providers/types.ts#L133">lib/cluster-providers/types.ts:133</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a id="notifications" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>notifications</span><a href="#notifications" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">notifications<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">NotificationConfiguration</span><span class="tsd-signature-symbol">[]</span></div>
@@ -451,7 +452,7 @@ Defaults to private_and_public cluster, set to true for private cluster</p>
 <h3>Default</h3><p>false</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/cluster-providers/asg-cluster-provider.ts#L20">lib/cluster-providers/asg-cluster-provider.ts:20</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/3c8801a5/lib/cluster-providers/asg-cluster-provider.ts#L20">lib/cluster-providers/asg-cluster-provider.ts:20</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a id="role" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>role</span><a href="#role" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">role<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">IRole</span></div>
@@ -510,7 +511,7 @@ already added. Only relevant if <code>spotPrice</code> is used.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#spotInterruptHandler">spotInterruptHandler</a></p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/aws-eks/lib/cluster.d.ts:1261</li></ul></aside></section>
+<li>Defined in node_modules/aws-cdk-lib/aws-eks/lib/cluster.d.ts:1270</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a id="spotPrice" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>spot<wbr/>Price</span><a href="#spotPrice" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">spot<wbr/>Price<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -523,6 +524,24 @@ launched when the price you specify exceeds the current Spot market price.</p>
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#spotPrice">spotPrice</a></p>
 <ul>
 <li>Defined in node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.d.ts:119</li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a id="ssmSessionPermissions" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>ssm<wbr/>Session<wbr/>Permissions</span><a href="#ssmSessionPermissions" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">ssm<wbr/>Session<wbr/>Permissions<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
+<div class="tsd-comment tsd-typography"><p>Add SSM session permissions to the instance role</p>
+<p>Setting this to <code>true</code> adds the necessary permissions to connect
+to the instance using SSM Session Manager. You can do this
+from the AWS Console.</p>
+<p>NOTE: Setting this flag to <code>true</code> may not be enough by itself.
+You must also use an AMI that comes with the SSM Agent, or install
+the SSM Agent yourself. See
+<a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html">Working with SSM Agent</a>
+in the SSM Developer Guide.</p>
+
+<h3>Default</h3><p>false</p>
+</div><aside class="tsd-sources">
+<p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#ssmSessionPermissions">ssmSessionPermissions</a></p>
+<ul>
+<li>Defined in node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.d.ts:281</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a id="terminationPolicies" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>termination<wbr/>Policies</span><a href="#terminationPolicies" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">termination<wbr/>Policies<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">TerminationPolicy</span><span class="tsd-signature-symbol">[]</span></div>
@@ -659,6 +678,7 @@ is done and only new instances are launched with the new config.</p>
 <li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="AsgClusterProviderProps.html#signals" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>signals?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="AsgClusterProviderProps.html#spotInterruptHandler" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>spot<wbr/>Interrupt<wbr/>Handler?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="AsgClusterProviderProps.html#spotPrice" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>spot<wbr/>Price?</a></li>
+<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="AsgClusterProviderProps.html#ssmSessionPermissions" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>ssm<wbr/>Session<wbr/>Permissions?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="AsgClusterProviderProps.html#terminationPolicies" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>termination<wbr/>Policies?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="AsgClusterProviderProps.html#updatePolicy" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>update<wbr/>Policy?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited tsd-is-external"><a href="AsgClusterProviderProps.html#version" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>version</a></li>

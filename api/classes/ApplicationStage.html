@@ -22,7 +22,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">ApplicationStage</span></li></ul></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/pipelines/code-pipeline.ts#L299">lib/pipelines/code-pipeline.ts:299</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/3c8801a5/lib/pipelines/code-pipeline.ts#L299">lib/pipelines/code-pipeline.ts:299</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -39,6 +39,7 @@
 <a href="ApplicationStage.html#asyncTask" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>async<wbr/>Task</span></a>
 <a href="ApplicationStage.html#node" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>node</span></a>
 <a href="ApplicationStage.html#parentStage" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>parent<wbr/>Stage?</span></a>
+<a href="ApplicationStage.html#policyValidationBeta1" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>policy<wbr/>Validation<wbr/>Beta1</span></a>
 <a href="ApplicationStage.html#region" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>region?</span></a>
 <a href="ApplicationStage.html#stageName" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>stage<wbr/>Name</span></a>
 </div></section>
@@ -78,7 +79,7 @@
 <h4 class="tsd-returns-title">Returns <a href="../modules/pipelines.html" class="tsd-signature-type" data-tsd-kind="Namespace">pipelines</a><span class="tsd-signature-symbol">.</span><a href="pipelines.ApplicationStage.html" class="tsd-signature-type" data-tsd-kind="Class">ApplicationStage</a></h4><aside class="tsd-sources">
 <p>Overrides cdk.Stage.constructor</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/pipelines/code-pipeline.ts#L303">lib/pipelines/code-pipeline.ts:303</a></li></ul></aside></li></ul></section></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/3c8801a5/lib/pipelines/code-pipeline.ts#L303">lib/pipelines/code-pipeline.ts:303</a></li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Properties</h2>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="_assemblyBuilder" class="tsd-anchor"></a>
@@ -88,7 +89,7 @@
 </div><aside class="tsd-sources">
 <p>Inherited from cdk.Stage._assemblyBuilder</p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:104</li></ul></aside></section>
+<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:112</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="account" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>account</span><a href="#account" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">account<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -96,12 +97,12 @@
 </div><aside class="tsd-sources">
 <p>Inherited from cdk.Stage.account</p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:98</li></ul></aside></section>
+<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:106</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private"><a id="asyncTask" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>async<wbr/>Task</span><a href="#asyncTask" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">async<wbr/>Task<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/pipelines/code-pipeline.ts#L301">lib/pipelines/code-pipeline.ts:301</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/3c8801a5/lib/pipelines/code-pipeline.ts#L301">lib/pipelines/code-pipeline.ts:301</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="node" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>node</span><a href="#node" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Node</span></div>
@@ -118,7 +119,20 @@
 </div><aside class="tsd-sources">
 <p>Inherited from cdk.Stage.parentStage</p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:115</li></ul></aside></section>
+<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:123</li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="policyValidationBeta1" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>policy<wbr/>Validation<wbr/>Beta1</span><a href="#policyValidationBeta1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">policy<wbr/>Validation<wbr/>Beta1<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">IPolicyValidationPluginBeta1</span><span class="tsd-signature-symbol">[]</span></div>
+<div class="tsd-comment tsd-typography"><p>Validation plugins to run during synthesis. If any plugin reports any violation,
+synthesis will be interrupted and the report displayed to the user.</p>
+
+<h3>Default</h3><ul>
+<li>no validation plugins are used</li>
+</ul>
+</div><aside class="tsd-sources">
+<p>Inherited from cdk.Stage.policyValidationBeta1</p>
+<ul>
+<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:134</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="region" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>region</span><a href="#region" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">region<span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -126,7 +140,7 @@
 </div><aside class="tsd-sources">
 <p>Inherited from cdk.Stage.region</p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:93</li></ul></aside></section>
+<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:101</li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="stageName" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagReadonly">Readonly</code> <span>stage<wbr/>Name</span><a href="#stageName" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature">stage<wbr/>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
@@ -135,7 +149,7 @@ hypens.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from cdk.Stage.stageName</p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:110</li></ul></aside></section></section>
+<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:118</li></ul></aside></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Accessors</h2>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="artifactId" class="tsd-anchor"></a>
@@ -150,7 +164,7 @@ will return an empty string.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <p>Inherited from cdk.Stage.artifactId</p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:136</li></ul></aside></li></ul></section>
+<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:151</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="assetOutdir" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>asset<wbr/>Outdir</span><a href="#assetOutdir" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-external">
@@ -161,7 +175,7 @@ will return an empty string.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <p>Inherited from cdk.Stage.assetOutdir</p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:128</li></ul></aside></li></ul></section>
+<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:143</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="outdir" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>outdir</span><a href="#outdir" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-external">
@@ -172,7 +186,7 @@ will return an empty string.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <p>Inherited from cdk.Stage.outdir</p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:124</li></ul></aside></li></ul></section></section>
+<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:139</li></ul></aside></li></ul></section></section>
 <section class="tsd-panel-group tsd-member-group">
 <h2>Methods</h2>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="synth" class="tsd-anchor"></a>
@@ -192,7 +206,7 @@ calls will return the same assembly.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">CloudAssembly</span></h4><aside class="tsd-sources">
 <p>Inherited from cdk.Stage.synth</p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:143</li></ul></aside></li></ul></section>
+<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:158</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="toString" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>to<wbr/>String</span><a href="#toString" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
@@ -211,7 +225,7 @@ calls will return the same assembly.</p>
 <li class="tsd-description">
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/pipelines.html" class="tsd-signature-type" data-tsd-kind="Namespace">pipelines</a><span class="tsd-signature-symbol">.</span><a href="pipelines.ApplicationStage.html" class="tsd-signature-type" data-tsd-kind="Class">ApplicationStage</a><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/7eac4181/lib/pipelines/code-pipeline.ts#L313">lib/pipelines/code-pipeline.ts:313</a></li></ul></aside></li></ul></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/3c8801a5/lib/pipelines/code-pipeline.ts#L313">lib/pipelines/code-pipeline.ts:313</a></li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="isConstruct" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>is<wbr/>Construct</span><a href="#isConstruct" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
@@ -259,7 +273,7 @@ this type-testing method instead.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">x</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Stage</span></h4><aside class="tsd-sources">
 <p>Inherited from cdk.Stage.isStage</p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:88</li></ul></aside></li></ul></section>
+<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:96</li></ul></aside></li></ul></section>
 <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a id="of" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>of</span><a href="#of" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-external">
@@ -276,7 +290,7 @@ on a nested stage, returns its parent.</p>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Stage</span></h4><aside class="tsd-sources">
 <p>Inherited from cdk.Stage.of</p>
 <ul>
-<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:83</li></ul></aside></li></ul></section></section></div>
+<li>Defined in node_modules/aws-cdk-lib/core/lib/stage.d.ts:91</li></ul></aside></li></ul></section></section></div>
 <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 <div class="tsd-navigation settings">
 <details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
@@ -317,6 +331,7 @@ on a nested stage, returns its parent.</p>
 <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="ApplicationStage.html#asyncTask" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>async<wbr/>Task</a></li>
 <li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="ApplicationStage.html#node" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>node</a></li>
 <li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="ApplicationStage.html#parentStage" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>parent<wbr/>Stage?</a></li>
+<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="ApplicationStage.html#policyValidationBeta1" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>policy<wbr/>Validation<wbr/>Beta1</a></li>
 <li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="ApplicationStage.html#region" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>region?</a></li>
 <li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="ApplicationStage.html#stageName" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>stage<wbr/>Name</a></li>
 <li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="ApplicationStage.html#artifactId" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-262144-path"></use><use href="#icon-262144-text"></use></svg>artifact<wbr/>Id</a></li>
