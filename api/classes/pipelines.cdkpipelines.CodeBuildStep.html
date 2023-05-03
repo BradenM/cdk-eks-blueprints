@@ -23,7 +23,7 @@
 on disk. If your current build instructions are in a file like
 <code>buildspec.yml</code> in your repository, extract them to a script
 (say, <code>build.sh</code>) and invoke that script as part of the build:</p>
-<pre><code class="language-ts"><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-5">pipelines</span><span class="hl-0">.</span><span class="hl-7">CodeBuildStep</span><span class="hl-0">(</span><span class="hl-1">&#39;Synth&#39;</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-5">commands:</span><span class="hl-0"> [</span><span class="hl-1">&#39;./build.sh&#39;</span><span class="hl-0">],</span><br/><span class="hl-0">});</span>
+<pre><code class="language-ts"><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-6">pipelines</span><span class="hl-1">.</span><span class="hl-0">CodeBuildStep</span><span class="hl-1">(</span><span class="hl-4">&#39;Synth&#39;</span><span class="hl-1">, {</span><br/><span class="hl-1">  </span><span class="hl-6">commands:</span><span class="hl-1"> [</span><span class="hl-4">&#39;./build.sh&#39;</span><span class="hl-1">],</span><br/><span class="hl-1">});</span>
 </code><button>Copy</button></pre>
 </div></section>
 <section class="tsd-panel tsd-hierarchy">
@@ -127,7 +127,7 @@ on disk. If your current build instructions are in a file like
 <div class="tsd-signature"><span class="tsd-kind-property">action<wbr/>Role</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">IRole</span></div>
 <div class="tsd-comment tsd-typography"><p>Custom execution role to be used for the Code Build Action</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-6">A</span><span class="hl-0"> </span><span class="hl-5">role</span><span class="hl-0"> </span><span class="hl-5">is</span><span class="hl-0"> </span><span class="hl-5">automatically</span><span class="hl-0"> </span><span class="hl-5">created</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-7">A</span><span class="hl-1"> </span><span class="hl-6">role</span><span class="hl-1"> </span><span class="hl-6">is</span><span class="hl-1"> </span><span class="hl-6">automatically</span><span class="hl-1"> </span><span class="hl-6">created</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -137,7 +137,7 @@ on disk. If your current build instructions are in a file like
 <div class="tsd-signature"><span class="tsd-kind-property">build<wbr/>Environment</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">BuildEnvironment</span></div>
 <div class="tsd-comment tsd-typography"><p>Build environment</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">value</span><span class="hl-0"> </span><span class="hl-5">specified</span><span class="hl-0"> </span><span class="hl-5">at</span><span class="hl-0"> </span><span class="hl-5">construction</span><span class="hl-0"> </span><span class="hl-5">time</span><span class="hl-0">, </span><span class="hl-5">use</span><span class="hl-0"> </span><span class="hl-5">defaults</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">value</span><span class="hl-1"> </span><span class="hl-6">specified</span><span class="hl-1"> </span><span class="hl-6">at</span><span class="hl-1"> </span><span class="hl-6">construction</span><span class="hl-1"> </span><span class="hl-6">time</span><span class="hl-1">, </span><span class="hl-6">use</span><span class="hl-1"> </span><span class="hl-6">defaults</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -147,7 +147,7 @@ on disk. If your current build instructions are in a file like
 <div class="tsd-signature"><span class="tsd-kind-property">cache</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">Cache</span></div>
 <div class="tsd-comment tsd-typography"><p>Caching strategy to use.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">cache</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">cache</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -173,7 +173,7 @@ on disk. If your current build instructions are in a file like
 <div class="tsd-signature"><span class="tsd-kind-property">env</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type ">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
 <div class="tsd-comment tsd-typography"><p>Environment variables to set</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">environment</span><span class="hl-0"> </span><span class="hl-5">variables</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">environment</span><span class="hl-1"> </span><span class="hl-6">variables</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="pipelines.cdkpipelines.ShellStep.html">ShellStep</a>.<a href="pipelines.cdkpipelines.ShellStep.html#env">env</a></p>
@@ -184,7 +184,7 @@ on disk. If your current build instructions are in a file like
 <div class="tsd-signature"><span class="tsd-kind-property">env<wbr/>From<wbr/>Cfn<wbr/>Outputs</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type ">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="pipelines.cdkpipelines.StackOutputReference.html" class="tsd-signature-type tsd-kind-class">StackOutputReference</a><span class="tsd-signature-symbol">&gt;</span></div>
 <div class="tsd-comment tsd-typography"><p>Set environment variables based on Stack Outputs</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">environment</span><span class="hl-0"> </span><span class="hl-5">variables</span><span class="hl-0"> </span><span class="hl-5">created</span><span class="hl-0"> </span><span class="hl-5">from</span><span class="hl-0"> </span><span class="hl-5">stack</span><span class="hl-0"> </span><span class="hl-5">outputs</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">environment</span><span class="hl-1"> </span><span class="hl-6">variables</span><span class="hl-1"> </span><span class="hl-6">created</span><span class="hl-1"> </span><span class="hl-6">from</span><span class="hl-1"> </span><span class="hl-6">stack</span><span class="hl-1"> </span><span class="hl-6">outputs</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="pipelines.cdkpipelines.ShellStep.html">ShellStep</a>.<a href="pipelines.cdkpipelines.ShellStep.html#envFromCfnOutputs">envFromCfnOutputs</a></p>
@@ -207,7 +207,7 @@ on disk. If your current build instructions are in a file like
 <p>A ProjectFileSystemLocation object specifies the identifier, location, mountOptions, mountPoint,
 and type of a file system created using Amazon Elastic File System.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">no</span><span class="hl-0"> </span><span class="hl-5">file</span><span class="hl-0"> </span><span class="hl-5">system</span><span class="hl-0"> </span><span class="hl-5">locations</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">no</span><span class="hl-1"> </span><span class="hl-6">file</span><span class="hl-1"> </span><span class="hl-6">system</span><span class="hl-1"> </span><span class="hl-6">locations</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -237,7 +237,7 @@ input properties. This list should not be modified directly.</p>
 <p>For deployment engines that support it, install commands will be classified
 differently in the job history from the regular <code>commands</code>.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">installation</span><span class="hl-0"> </span><span class="hl-5">commands</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">installation</span><span class="hl-1"> </span><span class="hl-6">commands</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="pipelines.cdkpipelines.ShellStep.html">ShellStep</a>.<a href="pipelines.cdkpipelines.ShellStep.html#installCommands">installCommands</a></p>
@@ -267,7 +267,7 @@ input properties. This list should not be modified directly.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">project<wbr/>Name</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>Name for the generated CodeBuild project</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">value</span><span class="hl-0"> </span><span class="hl-5">specified</span><span class="hl-0"> </span><span class="hl-5">at</span><span class="hl-0"> </span><span class="hl-5">construction</span><span class="hl-0"> </span><span class="hl-5">time</span><span class="hl-0">, </span><span class="hl-5">use</span><span class="hl-0"> </span><span class="hl-5">defaults</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">value</span><span class="hl-1"> </span><span class="hl-6">specified</span><span class="hl-1"> </span><span class="hl-6">at</span><span class="hl-1"> </span><span class="hl-6">construction</span><span class="hl-1"> </span><span class="hl-6">time</span><span class="hl-1">, </span><span class="hl-6">use</span><span class="hl-1"> </span><span class="hl-6">defaults</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -277,7 +277,7 @@ input properties. This list should not be modified directly.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">role</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">IRole</span></div>
 <div class="tsd-comment tsd-typography"><p>Custom execution role to be used for the CodeBuild project</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">value</span><span class="hl-0"> </span><span class="hl-5">specified</span><span class="hl-0"> </span><span class="hl-5">at</span><span class="hl-0"> </span><span class="hl-5">construction</span><span class="hl-0"> </span><span class="hl-5">time</span><span class="hl-0">, </span><span class="hl-5">use</span><span class="hl-0"> </span><span class="hl-5">defaults</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">value</span><span class="hl-1"> </span><span class="hl-6">specified</span><span class="hl-1"> </span><span class="hl-6">at</span><span class="hl-1"> </span><span class="hl-6">construction</span><span class="hl-1"> </span><span class="hl-6">time</span><span class="hl-1">, </span><span class="hl-6">use</span><span class="hl-1"> </span><span class="hl-6">defaults</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -287,7 +287,7 @@ input properties. This list should not be modified directly.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">role<wbr/>Policy<wbr/>Statements</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">PolicyStatement</span><span class="tsd-signature-symbol">[]</span></div>
 <div class="tsd-comment tsd-typography"><p>Policy statements to add to role used during the synth</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">value</span><span class="hl-0"> </span><span class="hl-5">specified</span><span class="hl-0"> </span><span class="hl-5">at</span><span class="hl-0"> </span><span class="hl-5">construction</span><span class="hl-0"> </span><span class="hl-5">time</span><span class="hl-0">, </span><span class="hl-5">use</span><span class="hl-0"> </span><span class="hl-5">defaults</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">value</span><span class="hl-1"> </span><span class="hl-6">specified</span><span class="hl-1"> </span><span class="hl-6">at</span><span class="hl-1"> </span><span class="hl-6">construction</span><span class="hl-1"> </span><span class="hl-6">time</span><span class="hl-1">, </span><span class="hl-6">use</span><span class="hl-1"> </span><span class="hl-6">defaults</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -297,7 +297,7 @@ input properties. This list should not be modified directly.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">security<wbr/>Groups</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">ISecurityGroup</span><span class="tsd-signature-symbol">[]</span></div>
 <div class="tsd-comment tsd-typography"><p>Which security group to associate with the script&#39;s project network interfaces.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">value</span><span class="hl-0"> </span><span class="hl-5">specified</span><span class="hl-0"> </span><span class="hl-5">at</span><span class="hl-0"> </span><span class="hl-5">construction</span><span class="hl-0"> </span><span class="hl-5">time</span><span class="hl-0">, </span><span class="hl-5">use</span><span class="hl-0"> </span><span class="hl-5">defaults</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">value</span><span class="hl-1"> </span><span class="hl-6">specified</span><span class="hl-1"> </span><span class="hl-6">at</span><span class="hl-1"> </span><span class="hl-6">construction</span><span class="hl-1"> </span><span class="hl-6">time</span><span class="hl-1">, </span><span class="hl-6">use</span><span class="hl-1"> </span><span class="hl-6">defaults</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -307,7 +307,7 @@ input properties. This list should not be modified directly.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">subnet<wbr/>Selection</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">SubnetSelection</span></div>
 <div class="tsd-comment tsd-typography"><p>Which subnets to use.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">value</span><span class="hl-0"> </span><span class="hl-5">specified</span><span class="hl-0"> </span><span class="hl-5">at</span><span class="hl-0"> </span><span class="hl-5">construction</span><span class="hl-0"> </span><span class="hl-5">time</span><span class="hl-0">, </span><span class="hl-5">use</span><span class="hl-0"> </span><span class="hl-5">defaults</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">value</span><span class="hl-1"> </span><span class="hl-6">specified</span><span class="hl-1"> </span><span class="hl-6">at</span><span class="hl-1"> </span><span class="hl-6">construction</span><span class="hl-1"> </span><span class="hl-6">time</span><span class="hl-1">, </span><span class="hl-6">use</span><span class="hl-1"> </span><span class="hl-6">defaults</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -319,7 +319,7 @@ input properties. This list should not be modified directly.</p>
 not complete. For valid values, see the timeoutInMinutes field in the AWS
 CodeBuild User Guide.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-5">Duration</span><span class="hl-0">.</span><span class="hl-7">hours</span><span class="hl-0">(</span><span class="hl-9">1</span><span class="hl-0">)</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-6">Duration</span><span class="hl-1">.</span><span class="hl-0">hours</span><span class="hl-1">(</span><span class="hl-9">1</span><span class="hl-1">)</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -329,7 +329,7 @@ CodeBuild User Guide.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">vpc</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">IVpc</span></div>
 <div class="tsd-comment tsd-typography"><p>The VPC where to execute the SimpleSynth.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">value</span><span class="hl-0"> </span><span class="hl-5">specified</span><span class="hl-0"> </span><span class="hl-5">at</span><span class="hl-0"> </span><span class="hl-5">construction</span><span class="hl-0"> </span><span class="hl-5">time</span><span class="hl-0">, </span><span class="hl-5">use</span><span class="hl-0"> </span><span class="hl-5">defaults</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">value</span><span class="hl-1"> </span><span class="hl-6">specified</span><span class="hl-1"> </span><span class="hl-6">at</span><span class="hl-1"> </span><span class="hl-6">construction</span><span class="hl-1"> </span><span class="hl-6">time</span><span class="hl-1">, </span><span class="hl-6">use</span><span class="hl-1"> </span><span class="hl-6">defaults</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -376,7 +376,7 @@ CodeBuild User Guide.</p>
 <div class="tsd-comment tsd-typography"><p>Additional configuration that can only be configured via BuildSpec</p>
 <p>Contains exported variables</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">Contains</span><span class="hl-0"> </span><span class="hl-5">the</span><span class="hl-0"> </span><span class="hl-5">exported</span><span class="hl-0"> </span><span class="hl-5">variables</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">Contains</span><span class="hl-1"> </span><span class="hl-6">the</span><span class="hl-1"> </span><span class="hl-6">exported</span><span class="hl-1"> </span><span class="hl-6">variables</span>
 </code><button>Copy</button></pre>
 </div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type ">BuildSpec</span></h4><aside class="tsd-sources">
@@ -522,7 +522,7 @@ engine, it just needs to contain the same data.</p>
 <p>The variable must be set in the shell of the CodeBuild step when
 it finishes its <code>post_build</code> phase.</p>
 
-<h3>Example</h3><pre><code class="language-ts"><span class="hl-2">// Access the output of one CodeBuildStep in another CodeBuildStep</span><br/><span class="hl-4">declare</span><span class="hl-0"> </span><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-6">pipeline</span><span class="hl-0">: </span><span class="hl-8">pipelines</span><span class="hl-0">.</span><span class="hl-8">CodePipeline</span><span class="hl-0">;</span><br/><br/><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-6">step1</span><span class="hl-0"> = </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-5">pipelines</span><span class="hl-0">.</span><span class="hl-7">CodeBuildStep</span><span class="hl-0">(</span><span class="hl-1">&#39;Step1&#39;</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-5">commands:</span><span class="hl-0"> [</span><span class="hl-1">&#39;export MY_VAR=hello&#39;</span><span class="hl-0">],</span><br/><span class="hl-0">});</span><br/><br/><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-6">step2</span><span class="hl-0"> = </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-5">pipelines</span><span class="hl-0">.</span><span class="hl-7">CodeBuildStep</span><span class="hl-0">(</span><span class="hl-1">&#39;Step2&#39;</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-5">env:</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-5">IMPORTED_VAR:</span><span class="hl-0"> </span><span class="hl-5">step1</span><span class="hl-0">.</span><span class="hl-7">exportedVariable</span><span class="hl-0">(</span><span class="hl-1">&#39;MY_VAR&#39;</span><span class="hl-0">),</span><br/><span class="hl-0">  },</span><br/><span class="hl-0">  </span><span class="hl-5">commands:</span><span class="hl-0"> [</span><span class="hl-1">&#39;echo $IMPORTED_VAR&#39;</span><span class="hl-0">],</span><br/><span class="hl-0">});</span>
+<h3>Example</h3><pre><code class="language-ts"><span class="hl-3">// Access the output of one CodeBuildStep in another CodeBuildStep</span><br/><span class="hl-2">declare</span><span class="hl-1"> </span><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-7">pipeline</span><span class="hl-1">: </span><span class="hl-8">pipelines</span><span class="hl-1">.</span><span class="hl-8">CodePipeline</span><span class="hl-1">;</span><br/><br/><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-7">step1</span><span class="hl-1"> = </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-6">pipelines</span><span class="hl-1">.</span><span class="hl-0">CodeBuildStep</span><span class="hl-1">(</span><span class="hl-4">&#39;Step1&#39;</span><span class="hl-1">, {</span><br/><span class="hl-1">  </span><span class="hl-6">commands:</span><span class="hl-1"> [</span><span class="hl-4">&#39;export MY_VAR=hello&#39;</span><span class="hl-1">],</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-7">step2</span><span class="hl-1"> = </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-6">pipelines</span><span class="hl-1">.</span><span class="hl-0">CodeBuildStep</span><span class="hl-1">(</span><span class="hl-4">&#39;Step2&#39;</span><span class="hl-1">, {</span><br/><span class="hl-1">  </span><span class="hl-6">env:</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-6">IMPORTED_VAR:</span><span class="hl-1"> </span><span class="hl-6">step1</span><span class="hl-1">.</span><span class="hl-0">exportedVariable</span><span class="hl-1">(</span><span class="hl-4">&#39;MY_VAR&#39;</span><span class="hl-1">),</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">  </span><span class="hl-6">commands:</span><span class="hl-1"> [</span><span class="hl-4">&#39;echo $IMPORTED_VAR&#39;</span><span class="hl-1">],</span><br/><span class="hl-1">});</span>
 </code><button>Copy</button></pre>
 </div>
 <div class="tsd-parameters">

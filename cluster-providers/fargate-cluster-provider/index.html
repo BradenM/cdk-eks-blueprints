@@ -1542,8 +1542,12 @@
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">fargateProfiles</span><span class="o">:</span><span class="w"> </span><span class="kt">Map</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">eks</span><span class="p">.</span><span class="nx">FargateProfileOptions</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Map</span><span class="p">([</span><span class="w"></span>
 <span class="w">    </span><span class="p">[</span><span class="s2">&quot;dynatrace&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">selectors</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">namespace</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dynatrace&quot;</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="p">}]</span><span class="w"></span>
 <span class="p">]);</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;blueprints-example-cluster&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;fargate-cluster&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">clusterProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">FargateClusterProvider</span><span class="p">({</span><span class="w"> </span><span class="nx">fargateProfiles</span><span class="p">,</span><span class="w"> </span><span class="nx">tags</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">clusterProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">FargateClusterProvider</span><span class="p">({</span><span class="w"> </span><span class="nx">fargateProfiles</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
 <span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;blueprint&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="nx">clusterProvider</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
 </code></pre></div>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
@@ -1569,8 +1573,16 @@
 <td>The subnets for the cluster.</td>
 </tr>
 <tr>
+<td>tags</td>
+<td>Tags to propagate to Cluster.</td>
+</tr>
+<tr>
 <td>privateCluster</td>
-<td>Public cluster, you will need to provide a list of subnets. There should be public and private subnets for EKS cluster to work. For more information see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a></td>
+<td>Public cluster, you will need to provide a list of subnets. There should be public and private subnets</td>
+</tr>
+<tr>
+<td>for EKS cluster to work. For more information see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>

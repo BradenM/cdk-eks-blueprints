@@ -50,7 +50,7 @@
 <div class="tsd-signature"><span class="tsd-kind-property">build<wbr/>Environment</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">BuildEnvironment</span></div>
 <div class="tsd-comment tsd-typography"><p>Partial build environment, will be combined with other build environments that apply</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">Non</span><span class="hl-0">-</span><span class="hl-5">privileged</span><span class="hl-0"> </span><span class="hl-5">build</span><span class="hl-0">, </span><span class="hl-6">SMALL</span><span class="hl-0"> </span><span class="hl-5">instance</span><span class="hl-0">, </span><span class="hl-5">LinuxBuildImage</span><span class="hl-0">.</span><span class="hl-6">STANDARD_6_0</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">Non</span><span class="hl-1">-</span><span class="hl-6">privileged</span><span class="hl-1"> </span><span class="hl-6">build</span><span class="hl-1">, </span><span class="hl-7">SMALL</span><span class="hl-1"> </span><span class="hl-6">instance</span><span class="hl-1">, </span><span class="hl-6">LinuxBuildImage</span><span class="hl-1">.</span><span class="hl-7">STANDARD_6_0</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -60,7 +60,7 @@
 <div class="tsd-signature"><span class="tsd-kind-property">cache</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">Cache</span></div>
 <div class="tsd-comment tsd-typography"><p>Caching strategy to use.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">cache</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">cache</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -73,7 +73,7 @@
 and type of a file system created using Amazon Elastic File System.
 Requires a vpc to be set and privileged to be set to true.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">no</span><span class="hl-0"> </span><span class="hl-5">file</span><span class="hl-0"> </span><span class="hl-5">system</span><span class="hl-0"> </span><span class="hl-5">locations</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">no</span><span class="hl-1"> </span><span class="hl-6">file</span><span class="hl-1"> </span><span class="hl-6">system</span><span class="hl-1"> </span><span class="hl-6">locations</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -85,7 +85,7 @@ Requires a vpc to be set and privileged to be set to true.</p>
 <p>The BuildSpec must be available inline--it cannot reference a file
 on disk.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">initial</span><span class="hl-0"> </span><span class="hl-5">BuildSpec</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">initial</span><span class="hl-1"> </span><span class="hl-6">BuildSpec</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -95,7 +95,7 @@ on disk.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">role<wbr/>Policy</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">PolicyStatement</span><span class="tsd-signature-symbol">[]</span></div>
 <div class="tsd-comment tsd-typography"><p>Policy statements to add to role</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">policy</span><span class="hl-0"> </span><span class="hl-5">statements</span><span class="hl-0"> </span><span class="hl-5">added</span><span class="hl-0"> </span><span class="hl-5">to</span><span class="hl-0"> </span><span class="hl-5">CodeBuild</span><span class="hl-0"> </span><span class="hl-5">Project</span><span class="hl-0"> </span><span class="hl-5">Role</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">policy</span><span class="hl-1"> </span><span class="hl-6">statements</span><span class="hl-1"> </span><span class="hl-6">added</span><span class="hl-1"> </span><span class="hl-6">to</span><span class="hl-1"> </span><span class="hl-6">CodeBuild</span><span class="hl-1"> </span><span class="hl-6">Project</span><span class="hl-1"> </span><span class="hl-6">Role</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -106,7 +106,7 @@ on disk.</p>
 <div class="tsd-comment tsd-typography"><p>Which security group(s) to associate with the project network interfaces.</p>
 <p>Only used if &#39;vpc&#39; is supplied.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">Security</span><span class="hl-0"> </span><span class="hl-5">group</span><span class="hl-0"> </span><span class="hl-5">will</span><span class="hl-0"> </span><span class="hl-5">be</span><span class="hl-0"> </span><span class="hl-5">automatically</span><span class="hl-0"> </span><span class="hl-5">created</span><span class="hl-0">.</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">Security</span><span class="hl-1"> </span><span class="hl-6">group</span><span class="hl-1"> </span><span class="hl-6">will</span><span class="hl-1"> </span><span class="hl-6">be</span><span class="hl-1"> </span><span class="hl-6">automatically</span><span class="hl-1"> </span><span class="hl-6">created</span><span class="hl-1">.</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -117,7 +117,7 @@ on disk.</p>
 <div class="tsd-comment tsd-typography"><p>Which subnets to use.</p>
 <p>Only used if &#39;vpc&#39; is supplied.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">All</span><span class="hl-0"> </span><span class="hl-5">private</span><span class="hl-0"> </span><span class="hl-5">subnets</span><span class="hl-0">.</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">All</span><span class="hl-1"> </span><span class="hl-6">private</span><span class="hl-1"> </span><span class="hl-6">subnets</span><span class="hl-1">.</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -129,7 +129,7 @@ on disk.</p>
 not complete. For valid values, see the timeoutInMinutes field in the AWS
 CodeBuild User Guide.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-5">Duration</span><span class="hl-0">.</span><span class="hl-7">hours</span><span class="hl-0">(</span><span class="hl-9">1</span><span class="hl-0">)</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-6">Duration</span><span class="hl-1">.</span><span class="hl-0">hours</span><span class="hl-1">(</span><span class="hl-9">1</span><span class="hl-1">)</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -139,7 +139,7 @@ CodeBuild User Guide.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">vpc</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">IVpc</span></div>
 <div class="tsd-comment tsd-typography"><p>The VPC where to create the CodeBuild network interfaces in.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-6">VPC</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-7">VPC</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>

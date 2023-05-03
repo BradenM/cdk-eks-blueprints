@@ -55,10 +55,10 @@ indicated.</p>
 <p>The directory names may be relative. For example, you can put
 the main input and an additional input side-by-side with the
 following configuration:</p>
-<pre><code class="language-ts"><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-6">script</span><span class="hl-0"> = </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-5">pipelines</span><span class="hl-0">.</span><span class="hl-7">ShellStep</span><span class="hl-0">(</span><span class="hl-1">&#39;MainScript&#39;</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-5">commands:</span><span class="hl-0"> [</span><span class="hl-1">&#39;npm ci&#39;</span><span class="hl-0">,</span><span class="hl-1">&#39;npm run build&#39;</span><span class="hl-0">,</span><span class="hl-1">&#39;npx cdk synth&#39;</span><span class="hl-0">],</span><br/><span class="hl-0">  </span><span class="hl-5">input:</span><span class="hl-0"> </span><span class="hl-5">pipelines</span><span class="hl-0">.</span><span class="hl-5">CodePipelineSource</span><span class="hl-0">.</span><span class="hl-7">gitHub</span><span class="hl-0">(</span><span class="hl-1">&#39;org/source1&#39;</span><span class="hl-0">, </span><span class="hl-1">&#39;main&#39;</span><span class="hl-0">),</span><br/><span class="hl-0">  </span><span class="hl-5">additionalInputs:</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-1">&#39;../siblingdir&#39;</span><span class="hl-5">:</span><span class="hl-0"> </span><span class="hl-5">pipelines</span><span class="hl-0">.</span><span class="hl-5">CodePipelineSource</span><span class="hl-0">.</span><span class="hl-7">gitHub</span><span class="hl-0">(</span><span class="hl-1">&#39;org/source2&#39;</span><span class="hl-0">, </span><span class="hl-1">&#39;main&#39;</span><span class="hl-0">),</span><br/><span class="hl-0">  }</span><br/><span class="hl-0">});</span>
+<pre><code class="language-ts"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-7">script</span><span class="hl-1"> = </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-6">pipelines</span><span class="hl-1">.</span><span class="hl-0">ShellStep</span><span class="hl-1">(</span><span class="hl-4">&#39;MainScript&#39;</span><span class="hl-1">, {</span><br/><span class="hl-1">  </span><span class="hl-6">commands:</span><span class="hl-1"> [</span><span class="hl-4">&#39;npm ci&#39;</span><span class="hl-1">,</span><span class="hl-4">&#39;npm run build&#39;</span><span class="hl-1">,</span><span class="hl-4">&#39;npx cdk synth&#39;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-6">input:</span><span class="hl-1"> </span><span class="hl-6">pipelines</span><span class="hl-1">.</span><span class="hl-6">CodePipelineSource</span><span class="hl-1">.</span><span class="hl-0">gitHub</span><span class="hl-1">(</span><span class="hl-4">&#39;org/source1&#39;</span><span class="hl-1">, </span><span class="hl-4">&#39;main&#39;</span><span class="hl-1">),</span><br/><span class="hl-1">  </span><span class="hl-6">additionalInputs:</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-4">&#39;../siblingdir&#39;</span><span class="hl-6">:</span><span class="hl-1"> </span><span class="hl-6">pipelines</span><span class="hl-1">.</span><span class="hl-6">CodePipelineSource</span><span class="hl-1">.</span><span class="hl-0">gitHub</span><span class="hl-1">(</span><span class="hl-4">&#39;org/source2&#39;</span><span class="hl-1">, </span><span class="hl-4">&#39;main&#39;</span><span class="hl-1">),</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">});</span>
 </code><button>Copy</button></pre>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">additional</span><span class="hl-0"> </span><span class="hl-5">inputs</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">additional</span><span class="hl-1"> </span><span class="hl-6">inputs</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -75,7 +75,7 @@ following configuration:</p>
 <div class="tsd-signature"><span class="tsd-kind-property">env</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
 <div class="tsd-comment tsd-typography"><p>Environment variables to set</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">environment</span><span class="hl-0"> </span><span class="hl-5">variables</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">environment</span><span class="hl-1"> </span><span class="hl-6">variables</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -89,7 +89,7 @@ access the <code>CfnOutput</code>s of those stacks to get access to
 --for example--automatically generated resource names or
 endpoint URLs.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">environment</span><span class="hl-0"> </span><span class="hl-5">variables</span><span class="hl-0"> </span><span class="hl-5">created</span><span class="hl-0"> </span><span class="hl-5">from</span><span class="hl-0"> </span><span class="hl-5">stack</span><span class="hl-0"> </span><span class="hl-5">outputs</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">environment</span><span class="hl-1"> </span><span class="hl-6">variables</span><span class="hl-1"> </span><span class="hl-6">created</span><span class="hl-1"> </span><span class="hl-6">from</span><span class="hl-1"> </span><span class="hl-6">stack</span><span class="hl-1"> </span><span class="hl-6">outputs</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -102,7 +102,7 @@ endpoint URLs.</p>
 the script is executed. Use <code>additionalInputs</code> to download file sets
 to other directories as well.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">input</span><span class="hl-0"> </span><span class="hl-5">specified</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">input</span><span class="hl-1"> </span><span class="hl-6">specified</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -114,7 +114,7 @@ to other directories as well.</p>
 <p>For deployment engines that support it, install commands will be classified
 differently in the job history from the regular <code>commands</code>.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">installation</span><span class="hl-0"> </span><span class="hl-5">commands</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">installation</span><span class="hl-1"> </span><span class="hl-6">commands</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -126,7 +126,7 @@ differently in the job history from the regular <code>commands</code>.</p>
 <p>After running the script, the contents of the given directory
 will be treated as the primary output of this Step.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">primary</span><span class="hl-0"> </span><span class="hl-5">output</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">primary</span><span class="hl-1"> </span><span class="hl-6">output</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>

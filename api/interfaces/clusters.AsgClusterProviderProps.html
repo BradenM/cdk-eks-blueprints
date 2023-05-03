@@ -27,7 +27,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">AsgClusterProviderProps</span></li></ul></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/cluster-providers/asg-cluster-provider.ts#L8">lib/cluster-providers/asg-cluster-provider.ts:8</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/cluster-providers/asg-cluster-provider.ts#L8">lib/cluster-providers/asg-cluster-provider.ts:8</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -71,6 +71,7 @@
 <a href="clusters.AsgClusterProviderProps.html#spotInterruptHandler" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>spot<wbr/>Interrupt<wbr/>Handler?</span></a>
 <a href="clusters.AsgClusterProviderProps.html#spotPrice" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>spot<wbr/>Price?</span></a>
 <a href="clusters.AsgClusterProviderProps.html#ssmSessionPermissions" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>ssm<wbr/>Session<wbr/>Permissions?</span></a>
+<a href="clusters.AsgClusterProviderProps.html#tags" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>tags?</span></a>
 <a href="clusters.AsgClusterProviderProps.html#terminationPolicies" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>termination<wbr/>Policies?</span></a>
 <a href="clusters.AsgClusterProviderProps.html#updatePolicy" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>update<wbr/>Policy?</span></a>
 <a href="clusters.AsgClusterProviderProps.html#version" class="tsd-index-link tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>version</span></a>
@@ -84,7 +85,7 @@
 <div class="tsd-signature"><span class="tsd-kind-property">allow<wbr/>All<wbr/>Outbound</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
 <div class="tsd-comment tsd-typography"><p>Whether the instances can initiate connections to anywhere by default</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-4">true</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-2">true</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#allowAllOutbound">allowAllOutbound</a></p>
@@ -97,7 +98,7 @@
 IP addresses associated with them.</p>
 <p><code>launchTemplate</code> and <code>mixedInstancesPolicy</code> must not be specified when this property is specified</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">Use</span><span class="hl-0"> </span><span class="hl-5">subnet</span><span class="hl-0"> </span><span class="hl-5">setting</span><span class="hl-0">.</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">Use</span><span class="hl-1"> </span><span class="hl-6">subnet</span><span class="hl-1"> </span><span class="hl-6">setting</span><span class="hl-1">.</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#associatePublicIpAddress">associatePublicIpAddress</a></p>
@@ -108,7 +109,7 @@ IP addresses associated with them.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">auto<wbr/>Scaling<wbr/>Group<wbr/>Name</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">Auto</span><span class="hl-0"> </span><span class="hl-5">generated</span><span class="hl-0"> </span><span class="hl-5">by</span><span class="hl-0"> </span><span class="hl-5">CloudFormation</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">Auto</span><span class="hl-1"> </span><span class="hl-6">generated</span><span class="hl-1"> </span><span class="hl-6">by</span><span class="hl-1"> </span><span class="hl-6">CloudFormation</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#autoScalingGroupName">autoScalingGroupName</a></p>
@@ -126,7 +127,7 @@ instance store volumes to attach to an instance when it is launched.</p>
 
 <h3>See</h3><p><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html</a></p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">Uses</span><span class="hl-0"> </span><span class="hl-5">the</span><span class="hl-0"> </span><span class="hl-5">block</span><span class="hl-0"> </span><span class="hl-5">device</span><span class="hl-0"> </span><span class="hl-5">mapping</span><span class="hl-0"> </span><span class="hl-4">of</span><span class="hl-0"> </span><span class="hl-5">the</span><span class="hl-0"> </span><span class="hl-6">AMI</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">Uses</span><span class="hl-1"> </span><span class="hl-6">the</span><span class="hl-1"> </span><span class="hl-6">block</span><span class="hl-1"> </span><span class="hl-6">device</span><span class="hl-1"> </span><span class="hl-6">mapping</span><span class="hl-1"> </span><span class="hl-2">of</span><span class="hl-1"> </span><span class="hl-6">the</span><span class="hl-1"> </span><span class="hl-7">AMI</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#blockDevices">blockDevices</a></p>
@@ -141,7 +142,7 @@ with the EKS cluster.</p>
 <p>If you wish to provide a custom user data script, set this to <code>false</code> and
 manually invoke <code>autoscalingGroup.addUserData()</code>.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-4">true</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-2">true</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#bootstrapEnabled">bootstrapEnabled</a></p>
@@ -152,7 +153,7 @@ manually invoke <code>autoscalingGroup.addUserData()</code>.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">bootstrap<wbr/>Options</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">BootstrapOptions</span></div>
 <div class="tsd-comment tsd-typography"><p>EKS node bootstrapping options.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">none</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">none</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#bootstrapOptions">bootstrapOptions</a></p>
@@ -167,7 +168,7 @@ interruption. After launching a new instance, it then terminates an old instance
 
 <h3>See</h3><p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-capacityrebalance">https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-capacityrebalance</a></p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-4">false</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-2">false</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#capacityRebalance">capacityRebalance</a></p>
@@ -178,7 +179,7 @@ interruption. After launching a new instance, it then terminates an old instance
 <div class="tsd-signature"><span class="tsd-kind-property">cluster<wbr/>Name</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>Name for the cluster.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">Automatically</span><span class="hl-0"> </span><span class="hl-5">generated</span><span class="hl-0"> </span><span class="hl-5">name</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">Automatically</span><span class="hl-1"> </span><span class="hl-6">generated</span><span class="hl-1"> </span><span class="hl-6">name</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from eks.CommonClusterOptions.clusterName</p>
@@ -189,7 +190,7 @@ interruption. After launching a new instance, it then terminates an old instance
 <div class="tsd-signature"><span class="tsd-kind-property">cooldown</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">Duration</span></div>
 <div class="tsd-comment tsd-typography"><p>Default scaling cooldown for this AutoScalingGroup</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-5">Duration</span><span class="hl-0">.</span><span class="hl-7">minutes</span><span class="hl-0">(</span><span class="hl-9">5</span><span class="hl-0">)</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-6">Duration</span><span class="hl-1">.</span><span class="hl-0">minutes</span><span class="hl-1">(</span><span class="hl-9">5</span><span class="hl-1">)</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#cooldown">cooldown</a></p>
@@ -208,7 +209,7 @@ step scaling policies, we strongly recommend that you enable the default instanc
 
 <h3>See</h3><p><a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html</a></p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-5">None</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-6">None</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#defaultInstanceWarmup">defaultInstanceWarmup</a></p>
@@ -221,7 +222,7 @@ step scaling policies, we strongly recommend that you enable the default instanc
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#desiredSize">desiredSize</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/cluster-providers/types.ts#L120">lib/cluster-providers/types.ts:120</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/cluster-providers/types.ts#L124">lib/cluster-providers/types.ts:124</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external"><a id="groupMetrics" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>group<wbr/>Metrics</span><a href="#groupMetrics" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">group<wbr/>Metrics</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">GroupMetrics</span><span class="tsd-signature-symbol">[]</span></div>
@@ -229,7 +230,7 @@ step scaling policies, we strongly recommend that you enable the default instanc
 To report all group metrics use <code>GroupMetrics.all()</code>
 Group metrics are reported in a granularity of 1 minute at no additional charge.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">no</span><span class="hl-0"> </span><span class="hl-5">group</span><span class="hl-0"> </span><span class="hl-5">metrics</span><span class="hl-0"> </span><span class="hl-5">will</span><span class="hl-0"> </span><span class="hl-5">be</span><span class="hl-0"> </span><span class="hl-5">reported</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">no</span><span class="hl-1"> </span><span class="hl-6">group</span><span class="hl-1"> </span><span class="hl-6">metrics</span><span class="hl-1"> </span><span class="hl-6">will</span><span class="hl-1"> </span><span class="hl-6">be</span><span class="hl-1"> </span><span class="hl-6">reported</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#groupMetrics">groupMetrics</a></p>
@@ -240,7 +241,7 @@ Group metrics are reported in a granularity of 1 minute at no additional charge.
 <div class="tsd-signature"><span class="tsd-kind-property">health<wbr/>Check</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">HealthCheck</span></div>
 <div class="tsd-comment tsd-typography"><p>Configuration for health checks</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">HealthCheck</span><span class="hl-0">.</span><span class="hl-5">ec2</span><span class="hl-0"> </span><span class="hl-3">with</span><span class="hl-0"> </span><span class="hl-5">no</span><span class="hl-0"> </span><span class="hl-5">grace</span><span class="hl-0"> </span><span class="hl-5">period</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">HealthCheck</span><span class="hl-1">.</span><span class="hl-6">ec2</span><span class="hl-1"> </span><span class="hl-5">with</span><span class="hl-1"> </span><span class="hl-6">no</span><span class="hl-1"> </span><span class="hl-6">grace</span><span class="hl-1"> </span><span class="hl-6">period</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#healthCheck">healthCheck</a></p>
@@ -253,7 +254,7 @@ Group metrics are reported in a granularity of 1 minute at no additional charge.
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#id">id</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/cluster-providers/types.ts#L103">lib/cluster-providers/types.ts:103</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/cluster-providers/types.ts#L107">lib/cluster-providers/types.ts:107</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external"><a id="ignoreUnmodifiedSizeProperties" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>ignore<wbr/>Unmodified<wbr/>Size<wbr/>Properties</span><a href="#ignoreUnmodifiedSizeProperties" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">ignore<wbr/>Unmodified<wbr/>Size<wbr/>Properties</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -264,7 +265,7 @@ will only be reset if it has been changed in the CDK app. If false, the
 sizes will always be changed back to what they were in the CDK app
 on deployment.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-4">true</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-2">true</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#ignoreUnmodifiedSizeProperties">ignoreUnmodifiedSizeProperties</a></p>
@@ -280,7 +281,7 @@ is charged a fee. When you disable detailed monitoring, CloudWatch generates met
 
 <h3>See</h3><p><a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics</a></p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">Monitoring</span><span class="hl-0">.</span><span class="hl-6">DETAILED</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">Monitoring</span><span class="hl-1">.</span><span class="hl-7">DETAILED</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#instanceMonitoring">instanceMonitoring</a></p>
@@ -297,14 +298,14 @@ is charged a fee. When you disable detailed monitoring, CloudWatch generates met
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#instanceType">instanceType</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/cluster-providers/types.ts#L127">lib/cluster-providers/types.ts:127</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/cluster-providers/types.ts#L131">lib/cluster-providers/types.ts:131</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external"><a id="keyName" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>key<wbr/>Name</span><a href="#keyName" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">key<wbr/>Name</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>Name of SSH keypair to grant access to instances</p>
 <p><code>launchTemplate</code> and <code>mixedInstancesPolicy</code> must not be specified when this property is specified</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-6">SSH</span><span class="hl-0"> </span><span class="hl-5">access</span><span class="hl-0"> </span><span class="hl-5">will</span><span class="hl-0"> </span><span class="hl-5">be</span><span class="hl-0"> </span><span class="hl-5">possible</span><span class="hl-0">.</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-7">SSH</span><span class="hl-1"> </span><span class="hl-6">access</span><span class="hl-1"> </span><span class="hl-6">will</span><span class="hl-1"> </span><span class="hl-6">be</span><span class="hl-1"> </span><span class="hl-6">possible</span><span class="hl-1">.</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#keyName">keyName</a></p>
@@ -315,7 +316,7 @@ is charged a fee. When you disable detailed monitoring, CloudWatch generates met
 <div class="tsd-signature"><span class="tsd-kind-property">machine<wbr/>Image<wbr/>Type</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">MachineImageType</span></div>
 <div class="tsd-comment tsd-typography"><p>Machine image type</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-5">MachineImageType</span><span class="hl-0">.</span><span class="hl-6">AMAZON_LINUX_2</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-6">MachineImageType</span><span class="hl-1">.</span><span class="hl-7">AMAZON_LINUX_2</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#machineImageType">machineImageType</a></p>
@@ -328,7 +329,7 @@ is charged a fee. When you disable detailed monitoring, CloudWatch generates met
 role to RBAC.</p>
 <p>This cannot be explicitly set to <code>true</code> if the cluster has kubectl disabled.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-4">true</span><span class="hl-0"> </span><span class="hl-3">if</span><span class="hl-0"> </span><span class="hl-5">the</span><span class="hl-0"> </span><span class="hl-5">cluster</span><span class="hl-0"> </span><span class="hl-5">has</span><span class="hl-0"> </span><span class="hl-5">kubectl</span><span class="hl-0"> </span><span class="hl-7">enabled</span><span class="hl-0"> (</span><span class="hl-5">which</span><span class="hl-0"> </span><span class="hl-5">is</span><span class="hl-0"> </span><span class="hl-5">the</span><span class="hl-0"> </span><span class="hl-5">default</span><span class="hl-0">).</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-2">true</span><span class="hl-1"> </span><span class="hl-5">if</span><span class="hl-1"> </span><span class="hl-6">the</span><span class="hl-1"> </span><span class="hl-6">cluster</span><span class="hl-1"> </span><span class="hl-6">has</span><span class="hl-1"> </span><span class="hl-6">kubectl</span><span class="hl-1"> </span><span class="hl-0">enabled</span><span class="hl-1"> (</span><span class="hl-6">which</span><span class="hl-1"> </span><span class="hl-6">is</span><span class="hl-1"> </span><span class="hl-6">the</span><span class="hl-1"> </span><span class="hl-6">default</span><span class="hl-1">).</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#mapRole">mapRole</a></p>
@@ -345,7 +346,7 @@ leave this property undefined.</p>
 
 <h3>See</h3><p><a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html</a></p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-5">none</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-6">none</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#maxInstanceLifetime">maxInstanceLifetime</a></p>
@@ -361,7 +362,7 @@ leave this property undefined.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#maxSize">maxSize</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/cluster-providers/types.ts#L115">lib/cluster-providers/types.ts:115</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/cluster-providers/types.ts#L119">lib/cluster-providers/types.ts:119</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="minSize" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>min<wbr/>Size</span><a href="#minSize" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">min<wbr/>Size</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div>
@@ -372,14 +373,14 @@ leave this property undefined.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#minSize">minSize</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/cluster-providers/types.ts#L109">lib/cluster-providers/types.ts:109</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/cluster-providers/types.ts#L113">lib/cluster-providers/types.ts:113</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="name" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>name</span><a href="#name" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">name</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The name for the cluster.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/cluster-providers/asg-cluster-provider.ts#L13">lib/cluster-providers/asg-cluster-provider.ts:13</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/cluster-providers/asg-cluster-provider.ts#L13">lib/cluster-providers/asg-cluster-provider.ts:13</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external"><a id="newInstancesProtectedFromScaleIn" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>new<wbr/>Instances<wbr/>Protected<wbr/>From<wbr/>Scale<wbr/>In</span><a href="#newInstancesProtectedFromScaleIn" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">new<wbr/>Instances<wbr/>Protected<wbr/>From<wbr/>Scale<wbr/>In</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -393,7 +394,7 @@ not be prematurely terminated.</p>
 <p>This flag must be enabled if the Auto Scaling Group will be associated with
 an ECS Capacity Provider with managed termination protection.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-4">false</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-2">false</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#newInstancesProtectedFromScaleIn">newInstancesProtectedFromScaleIn</a></p>
@@ -404,12 +405,12 @@ an ECS Capacity Provider with managed termination protection.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">node<wbr/>Group<wbr/>Subnets</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">SubnetSelection</span></div>
 <div class="tsd-comment tsd-typography"><p>Subnets for the autoscaling group where nodes (instances) will be placed.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-5">all</span><span class="hl-0"> </span><span class="hl-5">private</span><span class="hl-0"> </span><span class="hl-5">subnets</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-6">all</span><span class="hl-1"> </span><span class="hl-6">private</span><span class="hl-1"> </span><span class="hl-6">subnets</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#nodeGroupSubnets">nodeGroupSubnets</a></p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/cluster-providers/types.ts#L133">lib/cluster-providers/types.ts:133</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/cluster-providers/types.ts#L137">lib/cluster-providers/types.ts:137</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external"><a id="notifications" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>notifications</span><a href="#notifications" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">notifications</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">NotificationConfiguration</span><span class="tsd-signature-symbol">[]</span></div>
@@ -417,7 +418,7 @@ an ECS Capacity Provider with managed termination protection.</p>
 
 <h3>See</h3><p><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-notificationconfigurations">https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-notificationconfigurations</a></p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">fleet</span><span class="hl-0"> </span><span class="hl-5">change</span><span class="hl-0"> </span><span class="hl-5">notifications</span><span class="hl-0"> </span><span class="hl-5">will</span><span class="hl-0"> </span><span class="hl-5">be</span><span class="hl-0"> </span><span class="hl-5">sent</span><span class="hl-0">.</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">fleet</span><span class="hl-1"> </span><span class="hl-6">change</span><span class="hl-1"> </span><span class="hl-6">notifications</span><span class="hl-1"> </span><span class="hl-6">will</span><span class="hl-1"> </span><span class="hl-6">be</span><span class="hl-1"> </span><span class="hl-6">sent</span><span class="hl-1">.</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#notifications">notifications</a></p>
@@ -429,7 +430,7 @@ an ECS Capacity Provider with managed termination protection.</p>
 <div class="tsd-comment tsd-typography"><p>Determines whether a CloudFormation output with the name of the cluster
 will be synthesized.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-4">false</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-2">false</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from eks.CommonClusterOptions.outputClusterName</p>
@@ -441,7 +442,7 @@ will be synthesized.</p>
 <div class="tsd-comment tsd-typography"><p>Determines whether a CloudFormation output with the <code>aws eks update-kubeconfig</code> command will be synthesized. This command will include
 the cluster name and, if applicable, the ARN of the masters IAM role.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-4">true</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-2">true</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from eks.CommonClusterOptions.outputConfigCommand</p>
@@ -453,17 +454,17 @@ the cluster name and, if applicable, the ARN of the masters IAM role.</p>
 <div class="tsd-comment tsd-typography"><p>Is it a private only EKS Cluster?
 Defaults to private_and_public cluster, set to true for private cluster</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-4">false</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-2">false</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/cluster-providers/asg-cluster-provider.ts#L20">lib/cluster-providers/asg-cluster-provider.ts:20</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/cluster-providers/asg-cluster-provider.ts#L20">lib/cluster-providers/asg-cluster-provider.ts:20</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external"><a id="role" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>role</span><a href="#role" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">role</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">IRole</span></div>
 <div class="tsd-comment tsd-typography"><p>Role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-6">A</span><span class="hl-0"> </span><span class="hl-5">role</span><span class="hl-0"> </span><span class="hl-5">is</span><span class="hl-0"> </span><span class="hl-5">automatically</span><span class="hl-0"> </span><span class="hl-5">created</span><span class="hl-0"> </span><span class="hl-5">for</span><span class="hl-0"> </span><span class="hl-5">you</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-7">A</span><span class="hl-1"> </span><span class="hl-6">role</span><span class="hl-1"> </span><span class="hl-6">is</span><span class="hl-1"> </span><span class="hl-6">automatically</span><span class="hl-1"> </span><span class="hl-6">created</span><span class="hl-1"> </span><span class="hl-6">for</span><span class="hl-1"> </span><span class="hl-6">you</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from eks.CommonClusterOptions.role</p>
@@ -474,7 +475,7 @@ Defaults to private_and_public cluster, set to true for private cluster</p>
 <div class="tsd-signature"><span class="tsd-kind-property">security<wbr/>Group</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">ISecurityGroup</span></div>
 <div class="tsd-comment tsd-typography"><p>Security Group to use for Control Plane ENIs</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-6">A</span><span class="hl-0"> </span><span class="hl-5">security</span><span class="hl-0"> </span><span class="hl-5">group</span><span class="hl-0"> </span><span class="hl-5">is</span><span class="hl-0"> </span><span class="hl-5">automatically</span><span class="hl-0"> </span><span class="hl-5">created</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-7">A</span><span class="hl-1"> </span><span class="hl-6">security</span><span class="hl-1"> </span><span class="hl-6">group</span><span class="hl-1"> </span><span class="hl-6">is</span><span class="hl-1"> </span><span class="hl-6">automatically</span><span class="hl-1"> </span><span class="hl-6">created</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from eks.CommonClusterOptions.securityGroup</p>
@@ -497,7 +498,7 @@ cfn-init helper script. For an example, see the verify_instance_health
 command in the Auto Scaling rolling updates sample template:</p>
 <p><a href="https://github.com/awslabs/aws-cloudformation-templates/blob/master/aws/services/AutoScaling/AutoScalingRollingUpdates.yaml">https://github.com/awslabs/aws-cloudformation-templates/blob/master/aws/services/AutoScaling/AutoScalingRollingUpdates.yaml</a></p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">Do</span><span class="hl-0"> </span><span class="hl-5">not</span><span class="hl-0"> </span><span class="hl-5">wait</span><span class="hl-0"> </span><span class="hl-5">for</span><span class="hl-0"> </span><span class="hl-5">signals</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">Do</span><span class="hl-1"> </span><span class="hl-6">not</span><span class="hl-1"> </span><span class="hl-6">wait</span><span class="hl-1"> </span><span class="hl-6">for</span><span class="hl-1"> </span><span class="hl-6">signals</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#signals">signals</a></p>
@@ -509,7 +510,7 @@ command in the Auto Scaling rolling updates sample template:</p>
 <div class="tsd-comment tsd-typography"><p>Installs the AWS spot instance interrupt handler on the cluster if it&#39;s not
 already added. Only relevant if <code>spotPrice</code> is used.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-4">true</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-2">true</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#spotInterruptHandler">spotInterruptHandler</a></p>
@@ -522,7 +523,7 @@ already added. Only relevant if <code>spotPrice</code> is used.</p>
 launched when the price you specify exceeds the current Spot market price.</p>
 <p><code>launchTemplate</code> and <code>mixedInstancesPolicy</code> must not be specified when this property is specified</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-5">none</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-6">none</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#spotPrice">spotPrice</a></p>
@@ -541,12 +542,24 @@ the SSM Agent yourself. See
 <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html">Working with SSM Agent</a>
 in the SSM Developer Guide.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-4">false</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-2">false</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="clusters.AutoscalingNodeGroup.html">AutoscalingNodeGroup</a>.<a href="clusters.AutoscalingNodeGroup.html#ssmSessionPermissions">ssmSessionPermissions</a></p>
 <ul>
 <li>Defined in node_modules/aws-cdk-lib/aws-autoscaling/lib/auto-scaling-group.d.ts:281</li></ul></aside></section>
+<section class="tsd-panel tsd-member"><a id="tags" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>tags</span><a href="#tags" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">tags</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-symbol">{ </span><br/><span>    </span>[<span class="tsd-kind-index-signature">key</span>: <span class="tsd-signature-type">string</span>]<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span></div>
+<div class="tsd-comment tsd-typography"><p>Tags for the cluster</p>
+</div>
+<div class="tsd-type-declaration">
+<h4>Type declaration</h4>
+<ul class="tsd-parameters">
+<li class="tsd-parameter-index-signature">
+<h5><span class="tsd-signature-symbol">[</span><span class="tsd-kind-parameter">key</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span></h5></li></ul></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/cluster-providers/asg-cluster-provider.ts#L25">lib/cluster-providers/asg-cluster-provider.ts:25</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited tsd-is-external"><a id="terminationPolicies" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <code class="tsd-tag ts-flagReadonly">Readonly</code> <span>termination<wbr/>Policies</span><a href="#terminationPolicies" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">termination<wbr/>Policies</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">TerminationPolicy</span><span class="tsd-signature-symbol">[]</span></div>
@@ -607,7 +620,7 @@ is done and only new instances are launched with the new config.</p>
 <p>For example, to only select private subnets, supply the following:</p>
 <p><code>vpcSubnets: [{ subnetType: ec2.SubnetType.PRIVATE_WITH_EGRESS }]</code></p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">All</span><span class="hl-0"> </span><span class="hl-5">public</span><span class="hl-0"> </span><span class="hl-5">and</span><span class="hl-0"> </span><span class="hl-5">private</span><span class="hl-0"> </span><span class="hl-5">subnets</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">All</span><span class="hl-1"> </span><span class="hl-6">public</span><span class="hl-1"> </span><span class="hl-6">and</span><span class="hl-1"> </span><span class="hl-6">private</span><span class="hl-1"> </span><span class="hl-6">subnets</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from eks.CommonClusterOptions.vpcSubnets</p>
@@ -668,6 +681,7 @@ is done and only new instances are launched with the new config.</p>
 <li><a href="#spotInterruptHandler" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>spot<wbr/>Interrupt<wbr/>Handler</span></a></li>
 <li><a href="#spotPrice" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>spot<wbr/>Price</span></a></li>
 <li><a href="#ssmSessionPermissions" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>ssm<wbr/>Session<wbr/>Permissions</span></a></li>
+<li><a href="#tags" class=""><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>tags</span></a></li>
 <li><a href="#terminationPolicies" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>termination<wbr/>Policies</span></a></li>
 <li><a href="#updatePolicy" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>update<wbr/>Policy</span></a></li>
 <li><a href="#version" class="tsd-is-inherited tsd-is-external"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>version</span></a></li>

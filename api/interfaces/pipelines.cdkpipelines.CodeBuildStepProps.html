@@ -62,7 +62,7 @@
 <div class="tsd-signature"><span class="tsd-kind-property">action<wbr/>Role</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">IRole</span></div>
 <div class="tsd-comment tsd-typography"><p>Custom execution role to be used for the Code Build Action</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-6">A</span><span class="hl-0"> </span><span class="hl-5">role</span><span class="hl-0"> </span><span class="hl-5">is</span><span class="hl-0"> </span><span class="hl-5">automatically</span><span class="hl-0"> </span><span class="hl-5">created</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-7">A</span><span class="hl-1"> </span><span class="hl-6">role</span><span class="hl-1"> </span><span class="hl-6">is</span><span class="hl-1"> </span><span class="hl-6">automatically</span><span class="hl-1"> </span><span class="hl-6">created</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -77,10 +77,10 @@ indicated.</p>
 <p>The directory names may be relative. For example, you can put
 the main input and an additional input side-by-side with the
 following configuration:</p>
-<pre><code class="language-ts"><span class="hl-4">const</span><span class="hl-0"> </span><span class="hl-6">script</span><span class="hl-0"> = </span><span class="hl-4">new</span><span class="hl-0"> </span><span class="hl-5">pipelines</span><span class="hl-0">.</span><span class="hl-7">ShellStep</span><span class="hl-0">(</span><span class="hl-1">&#39;MainScript&#39;</span><span class="hl-0">, {</span><br/><span class="hl-0">  </span><span class="hl-5">commands:</span><span class="hl-0"> [</span><span class="hl-1">&#39;npm ci&#39;</span><span class="hl-0">,</span><span class="hl-1">&#39;npm run build&#39;</span><span class="hl-0">,</span><span class="hl-1">&#39;npx cdk synth&#39;</span><span class="hl-0">],</span><br/><span class="hl-0">  </span><span class="hl-5">input:</span><span class="hl-0"> </span><span class="hl-5">pipelines</span><span class="hl-0">.</span><span class="hl-5">CodePipelineSource</span><span class="hl-0">.</span><span class="hl-7">gitHub</span><span class="hl-0">(</span><span class="hl-1">&#39;org/source1&#39;</span><span class="hl-0">, </span><span class="hl-1">&#39;main&#39;</span><span class="hl-0">),</span><br/><span class="hl-0">  </span><span class="hl-5">additionalInputs:</span><span class="hl-0"> {</span><br/><span class="hl-0">    </span><span class="hl-1">&#39;../siblingdir&#39;</span><span class="hl-5">:</span><span class="hl-0"> </span><span class="hl-5">pipelines</span><span class="hl-0">.</span><span class="hl-5">CodePipelineSource</span><span class="hl-0">.</span><span class="hl-7">gitHub</span><span class="hl-0">(</span><span class="hl-1">&#39;org/source2&#39;</span><span class="hl-0">, </span><span class="hl-1">&#39;main&#39;</span><span class="hl-0">),</span><br/><span class="hl-0">  }</span><br/><span class="hl-0">});</span>
+<pre><code class="language-ts"><span class="hl-2">const</span><span class="hl-1"> </span><span class="hl-7">script</span><span class="hl-1"> = </span><span class="hl-2">new</span><span class="hl-1"> </span><span class="hl-6">pipelines</span><span class="hl-1">.</span><span class="hl-0">ShellStep</span><span class="hl-1">(</span><span class="hl-4">&#39;MainScript&#39;</span><span class="hl-1">, {</span><br/><span class="hl-1">  </span><span class="hl-6">commands:</span><span class="hl-1"> [</span><span class="hl-4">&#39;npm ci&#39;</span><span class="hl-1">,</span><span class="hl-4">&#39;npm run build&#39;</span><span class="hl-1">,</span><span class="hl-4">&#39;npx cdk synth&#39;</span><span class="hl-1">],</span><br/><span class="hl-1">  </span><span class="hl-6">input:</span><span class="hl-1"> </span><span class="hl-6">pipelines</span><span class="hl-1">.</span><span class="hl-6">CodePipelineSource</span><span class="hl-1">.</span><span class="hl-0">gitHub</span><span class="hl-1">(</span><span class="hl-4">&#39;org/source1&#39;</span><span class="hl-1">, </span><span class="hl-4">&#39;main&#39;</span><span class="hl-1">),</span><br/><span class="hl-1">  </span><span class="hl-6">additionalInputs:</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-4">&#39;../siblingdir&#39;</span><span class="hl-6">:</span><span class="hl-1"> </span><span class="hl-6">pipelines</span><span class="hl-1">.</span><span class="hl-6">CodePipelineSource</span><span class="hl-1">.</span><span class="hl-0">gitHub</span><span class="hl-1">(</span><span class="hl-4">&#39;org/source2&#39;</span><span class="hl-1">, </span><span class="hl-4">&#39;main&#39;</span><span class="hl-1">),</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">});</span>
 </code><button>Copy</button></pre>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">additional</span><span class="hl-0"> </span><span class="hl-5">inputs</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">additional</span><span class="hl-1"> </span><span class="hl-6">inputs</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="pipelines.cdkpipelines.ShellStepProps.html">ShellStepProps</a>.<a href="pipelines.cdkpipelines.ShellStepProps.html#additionalInputs">additionalInputs</a></p>
@@ -93,7 +93,7 @@ following configuration:</p>
 <p>This environment will be combined with the pipeline&#39;s default
 environment.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">Use</span><span class="hl-0"> </span><span class="hl-5">the</span><span class="hl-0"> </span><span class="hl-5">pipeline</span><span class="hl-1">&#39;s default build environmen</span><span class="hl-11">t</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">Use</span><span class="hl-1"> </span><span class="hl-6">the</span><span class="hl-1"> </span><span class="hl-6">pipeline</span><span class="hl-4">&#39;s default build environmen</span><span class="hl-11">t</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -103,7 +103,7 @@ environment.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">cache</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">Cache</span></div>
 <div class="tsd-comment tsd-typography"><p>Caching strategy to use.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">cache</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">cache</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -121,7 +121,7 @@ environment.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">env</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></div>
 <div class="tsd-comment tsd-typography"><p>Environment variables to set</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">environment</span><span class="hl-0"> </span><span class="hl-5">variables</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">environment</span><span class="hl-1"> </span><span class="hl-6">variables</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="pipelines.cdkpipelines.ShellStepProps.html">ShellStepProps</a>.<a href="pipelines.cdkpipelines.ShellStepProps.html#env">env</a></p>
@@ -136,7 +136,7 @@ access the <code>CfnOutput</code>s of those stacks to get access to
 --for example--automatically generated resource names or
 endpoint URLs.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">environment</span><span class="hl-0"> </span><span class="hl-5">variables</span><span class="hl-0"> </span><span class="hl-5">created</span><span class="hl-0"> </span><span class="hl-5">from</span><span class="hl-0"> </span><span class="hl-5">stack</span><span class="hl-0"> </span><span class="hl-5">outputs</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">environment</span><span class="hl-1"> </span><span class="hl-6">variables</span><span class="hl-1"> </span><span class="hl-6">created</span><span class="hl-1"> </span><span class="hl-6">from</span><span class="hl-1"> </span><span class="hl-6">stack</span><span class="hl-1"> </span><span class="hl-6">outputs</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="pipelines.cdkpipelines.ShellStepProps.html">ShellStepProps</a>.<a href="pipelines.cdkpipelines.ShellStepProps.html#envFromCfnOutputs">envFromCfnOutputs</a></p>
@@ -149,7 +149,7 @@ endpoint URLs.</p>
 <p>A ProjectFileSystemLocation object specifies the identifier, location, mountOptions, mountPoint,
 and type of a file system created using Amazon Elastic File System.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">no</span><span class="hl-0"> </span><span class="hl-5">file</span><span class="hl-0"> </span><span class="hl-5">system</span><span class="hl-0"> </span><span class="hl-5">locations</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">no</span><span class="hl-1"> </span><span class="hl-6">file</span><span class="hl-1"> </span><span class="hl-6">system</span><span class="hl-1"> </span><span class="hl-6">locations</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -162,7 +162,7 @@ and type of a file system created using Amazon Elastic File System.</p>
 the script is executed. Use <code>additionalInputs</code> to download file sets
 to other directories as well.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">input</span><span class="hl-0"> </span><span class="hl-5">specified</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">input</span><span class="hl-1"> </span><span class="hl-6">specified</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="pipelines.cdkpipelines.ShellStepProps.html">ShellStepProps</a>.<a href="pipelines.cdkpipelines.ShellStepProps.html#input">input</a></p>
@@ -175,7 +175,7 @@ to other directories as well.</p>
 <p>For deployment engines that support it, install commands will be classified
 differently in the job history from the regular <code>commands</code>.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">installation</span><span class="hl-0"> </span><span class="hl-5">commands</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">installation</span><span class="hl-1"> </span><span class="hl-6">commands</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="pipelines.cdkpipelines.ShellStepProps.html">ShellStepProps</a>.<a href="pipelines.cdkpipelines.ShellStepProps.html#installCommands">installCommands</a></p>
@@ -193,7 +193,7 @@ the BuildSpec using this field.</p>
 <p>The BuildSpec must be available inline--it cannot reference a file
 on disk.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">BuildSpec</span><span class="hl-0"> </span><span class="hl-5">completely</span><span class="hl-0"> </span><span class="hl-5">derived</span><span class="hl-0"> </span><span class="hl-5">from</span><span class="hl-0"> </span><span class="hl-5">other</span><span class="hl-0"> </span><span class="hl-5">properties</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">BuildSpec</span><span class="hl-1"> </span><span class="hl-6">completely</span><span class="hl-1"> </span><span class="hl-6">derived</span><span class="hl-1"> </span><span class="hl-6">from</span><span class="hl-1"> </span><span class="hl-6">other</span><span class="hl-1"> </span><span class="hl-6">properties</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -205,7 +205,7 @@ on disk.</p>
 <p>After running the script, the contents of the given directory
 will be treated as the primary output of this Step.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">primary</span><span class="hl-0"> </span><span class="hl-5">output</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">primary</span><span class="hl-1"> </span><span class="hl-6">output</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from <a href="pipelines.cdkpipelines.ShellStepProps.html">ShellStepProps</a>.<a href="pipelines.cdkpipelines.ShellStepProps.html#primaryOutputDirectory">primaryOutputDirectory</a></p>
@@ -216,7 +216,7 @@ will be treated as the primary output of this Step.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">project<wbr/>Name</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>Name for the generated CodeBuild project</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">Automatically</span><span class="hl-0"> </span><span class="hl-5">generated</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">Automatically</span><span class="hl-1"> </span><span class="hl-6">generated</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -226,7 +226,7 @@ will be treated as the primary output of this Step.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">role</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">IRole</span></div>
 <div class="tsd-comment tsd-typography"><p>Custom execution role to be used for the CodeBuild project</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-6">A</span><span class="hl-0"> </span><span class="hl-5">role</span><span class="hl-0"> </span><span class="hl-5">is</span><span class="hl-0"> </span><span class="hl-5">automatically</span><span class="hl-0"> </span><span class="hl-5">created</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-7">A</span><span class="hl-1"> </span><span class="hl-6">role</span><span class="hl-1"> </span><span class="hl-6">is</span><span class="hl-1"> </span><span class="hl-6">automatically</span><span class="hl-1"> </span><span class="hl-6">created</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -237,7 +237,7 @@ will be treated as the primary output of this Step.</p>
 <div class="tsd-comment tsd-typography"><p>Policy statements to add to role used during the synth</p>
 <p>Can be used to add acces to a CodeArtifact repository etc.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-5">policy</span><span class="hl-0"> </span><span class="hl-5">statements</span><span class="hl-0"> </span><span class="hl-5">added</span><span class="hl-0"> </span><span class="hl-5">to</span><span class="hl-0"> </span><span class="hl-5">CodeBuild</span><span class="hl-0"> </span><span class="hl-5">Project</span><span class="hl-0"> </span><span class="hl-5">Role</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-6">policy</span><span class="hl-1"> </span><span class="hl-6">statements</span><span class="hl-1"> </span><span class="hl-6">added</span><span class="hl-1"> </span><span class="hl-6">to</span><span class="hl-1"> </span><span class="hl-6">CodeBuild</span><span class="hl-1"> </span><span class="hl-6">Project</span><span class="hl-1"> </span><span class="hl-6">Role</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -249,7 +249,7 @@ will be treated as the primary output of this Step.</p>
 If no security group is identified, one will be created automatically.</p>
 <p>Only used if &#39;vpc&#39; is supplied.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">Security</span><span class="hl-0"> </span><span class="hl-5">group</span><span class="hl-0"> </span><span class="hl-5">will</span><span class="hl-0"> </span><span class="hl-5">be</span><span class="hl-0"> </span><span class="hl-5">automatically</span><span class="hl-0"> </span><span class="hl-5">created</span><span class="hl-0">.</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">Security</span><span class="hl-1"> </span><span class="hl-6">group</span><span class="hl-1"> </span><span class="hl-6">will</span><span class="hl-1"> </span><span class="hl-6">be</span><span class="hl-1"> </span><span class="hl-6">automatically</span><span class="hl-1"> </span><span class="hl-6">created</span><span class="hl-1">.</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -260,7 +260,7 @@ If no security group is identified, one will be created automatically.</p>
 <div class="tsd-comment tsd-typography"><p>Which subnets to use.</p>
 <p>Only used if &#39;vpc&#39; is supplied.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">All</span><span class="hl-0"> </span><span class="hl-5">private</span><span class="hl-0"> </span><span class="hl-5">subnets</span><span class="hl-0">.</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">All</span><span class="hl-1"> </span><span class="hl-6">private</span><span class="hl-1"> </span><span class="hl-6">subnets</span><span class="hl-1">.</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -272,7 +272,7 @@ If no security group is identified, one will be created automatically.</p>
 not complete. For valid values, see the timeoutInMinutes field in the AWS
 CodeBuild User Guide.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-5">Duration</span><span class="hl-0">.</span><span class="hl-7">hours</span><span class="hl-0">(</span><span class="hl-9">1</span><span class="hl-0">)</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-6">Duration</span><span class="hl-1">.</span><span class="hl-0">hours</span><span class="hl-1">(</span><span class="hl-9">1</span><span class="hl-1">)</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
@@ -282,7 +282,7 @@ CodeBuild User Guide.</p>
 <div class="tsd-signature"><span class="tsd-kind-property">vpc</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type ">IVpc</span></div>
 <div class="tsd-comment tsd-typography"><p>The VPC where to execute the SimpleSynth.</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-0">- </span><span class="hl-5">No</span><span class="hl-0"> </span><span class="hl-6">VPC</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-1">- </span><span class="hl-6">No</span><span class="hl-1"> </span><span class="hl-7">VPC</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>

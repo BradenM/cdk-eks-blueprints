@@ -1490,6 +1490,10 @@
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">clusterProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">GenericClusterProvider</span><span class="p">({</span><span class="w"></span>
 <span class="w">    </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="kt">KubernetesVersion.V1_24</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;blueprints-example-cluster&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;generic-cluster&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="nx">serviceIpv4Cidr</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;10.43.0.0/16&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// if needed use this to register an auth role integrate with RBAC</span><span class="w"></span>
 <span class="w">    </span><span class="nx">mastersRole</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprints.getResource</span><span class="p">(</span><span class="nx">context</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -1505,7 +1509,7 @@
 <span class="w">            </span><span class="nx">nodeGroupSubnets</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">subnetType</span><span class="o">:</span><span class="w"> </span><span class="kt">ec2.SubnetType.PRIVATE_WITH_EGRESS</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
 <span class="w">            </span><span class="nx">launchTemplate</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                </span><span class="c1">// You can pass Custom Tags to Launch Templates which gets propagated to worker nodes.</span><span class="w"></span>
-<span class="w">                </span><span class="nx">customTags</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                    </span><span class="s2">&quot;Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mng1&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">                    </span><span class="s2">&quot;Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Managed-Node-Group&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">                    </span><span class="s2">&quot;LaunchTemplate&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Custom&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1530,7 +1534,7 @@
 <span class="w">                </span><span class="p">}),</span><span class="w"></span>
 <span class="w">                </span><span class="nx">userData</span><span class="o">:</span><span class="w"> </span><span class="kt">userData</span><span class="p">,</span><span class="w"></span>
 <span class="w">                </span><span class="c1">// You can pass Custom Tags to Launch Templates which gets propagated to worker nodes.</span><span class="w"></span>
-<span class="w">                </span><span class="nx">customTags</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">                    </span><span class="s2">&quot;Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mng2&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">                    </span><span class="s2">&quot;Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Managed-Node-Group&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">                    </span><span class="s2">&quot;LaunchTemplate&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Custom&quot;</span><span class="p">,</span><span class="w"></span>
@@ -1557,6 +1561,10 @@ For example cluster allows passing <code>mastersRole</code>, <code>securityGroup
 <p>Example:
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">clusterProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">GenericClusterProvider</span><span class="p">({</span><span class="w"></span>
 <span class="w">    </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="kt">KubernetesVersion.V1_24</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;blueprints-example-cluster&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="s2">&quot;Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;generic-cluster&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// if needed use this to register an auth role to integrate with RBAC</span><span class="w"></span>
 <span class="w">    </span><span class="nx">mastersRole</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprints.getResource</span><span class="p">(</span><span class="nx">context</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">iam</span><span class="p">.</span><span class="nx">Role</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">scope</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;AdminRole&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">assumedBy</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">AccountRootPrincipal</span><span class="p">()</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
@@ -1623,6 +1631,10 @@ For example cluster allows passing <code>mastersRole</code>, <code>securityGroup
 <tr>
 <td>privateCluster</td>
 <td>If <code>true</code> Kubernetes API server is private.</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Tags to propagate to Cluster.</td>
 </tr>
 </tbody>
 </table>

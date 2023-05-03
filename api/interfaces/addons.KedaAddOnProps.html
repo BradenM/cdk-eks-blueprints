@@ -26,7 +26,7 @@
 <ul class="tsd-hierarchy">
 <li><span class="target">KedaAddOnProps</span></li></ul></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/keda/index.ts#L12">lib/addons/keda/index.ts:12</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/keda/index.ts#L12">lib/addons/keda/index.ts:12</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -59,7 +59,7 @@
 </div><aside class="tsd-sources">
 <p>Inherited from HelmAddOnUserProps.chart</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/helm-addon/kubectl-provider.ts#L24">lib/addons/helm-addon/kubectl-provider.ts:24</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/helm-addon/kubectl-provider.ts#L24">lib/addons/helm-addon/kubectl-provider.ts:24</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="dependencyMode" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>dependency<wbr/>Mode</span><a href="#dependencyMode" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">dependency<wbr/>Mode</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -69,12 +69,12 @@ Dependency mode is widely used in <code>aws-samples/eks-blueprints-add-ons</code
 Dependency mode requires the chart values to be wrapped within the chart name.
 This value is only used to turn off dependency mode in case customers choose to copy the whole helm chart into their repo</p>
 
-<h3>Default</h3><pre><code class="language-ts"><span class="hl-4">true</span>
+<h3>Default</h3><pre><code class="language-ts"><span class="hl-2">true</span>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <p>Inherited from HelmAddOnUserProps.dependencyMode</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/helm-addon/kubectl-provider.ts#L60">lib/addons/helm-addon/kubectl-provider.ts:60</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/helm-addon/kubectl-provider.ts#L60">lib/addons/helm-addon/kubectl-provider.ts:60</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="irsaRoles" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>irsa<wbr/>Roles</span><a href="#irsaRoles" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">irsa<wbr/>Roles</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
@@ -82,21 +82,21 @@ This value is only used to turn off dependency mode in case customers choose to 
 Service Account will be Created by CDK with IAM Roles Mapped (IRSA). In case if its empty, Keda will create the Service Account with out IAM Roles</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/keda/index.ts#L44">lib/addons/keda/index.ts:44</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/keda/index.ts#L44">lib/addons/keda/index.ts:44</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="kedaOperatorName" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>keda<wbr/>Operator<wbr/>Name</span><a href="#kedaOperatorName" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">keda<wbr/>Operator<wbr/>Name</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>Name of the KEDA operator</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/keda/index.ts#L20">lib/addons/keda/index.ts:20</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/keda/index.ts#L20">lib/addons/keda/index.ts:20</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="kedaServiceAccountName" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>keda<wbr/>Service<wbr/>Account<wbr/>Name</span><a href="#kedaServiceAccountName" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">keda<wbr/>Service<wbr/>Account<wbr/>Name</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>The name of the service account to use. If not set and create is true, a name is generated.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/keda/index.ts#L24">lib/addons/keda/index.ts:24</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/keda/index.ts#L24">lib/addons/keda/index.ts:24</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="name" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>name</span><a href="#name" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">name</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -104,7 +104,7 @@ Service Account will be Created by CDK with IAM Roles Mapped (IRSA). In case if 
 </div><aside class="tsd-sources">
 <p>Inherited from HelmAddOnUserProps.name</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/helm-addon/kubectl-provider.ts#L14">lib/addons/helm-addon/kubectl-provider.ts:14</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/helm-addon/kubectl-provider.ts#L14">lib/addons/helm-addon/kubectl-provider.ts:14</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="namespace" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>namespace</span><a href="#namespace" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">namespace</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -112,7 +112,7 @@ Service Account will be Created by CDK with IAM Roles Mapped (IRSA). In case if 
 </div><aside class="tsd-sources">
 <p>Inherited from HelmAddOnUserProps.namespace</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/helm-addon/kubectl-provider.ts#L19">lib/addons/helm-addon/kubectl-provider.ts:19</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/helm-addon/kubectl-provider.ts#L19">lib/addons/helm-addon/kubectl-provider.ts:19</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="podSecurityContextFsGroup" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>pod<wbr/>Security<wbr/>Context<wbr/>Fs<wbr/>Group</span><a href="#podSecurityContextFsGroup" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">pod<wbr/>Security<wbr/>Context<wbr/>Fs<wbr/>Group</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div>
@@ -120,7 +120,7 @@ Service Account will be Created by CDK with IAM Roles Mapped (IRSA). In case if 
 Check the workaround for SQS Scalar with IRSA <a href="https://github.com/kedacore/keda/issues/837#issuecomment-789037326">https://github.com/kedacore/keda/issues/837#issuecomment-789037326</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/keda/index.ts#L29">lib/addons/keda/index.ts:29</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/keda/index.ts#L29">lib/addons/keda/index.ts:29</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="release" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>release</span><a href="#release" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">release</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -128,7 +128,7 @@ Check the workaround for SQS Scalar with IRSA <a href="https://github.com/kedaco
 </div><aside class="tsd-sources">
 <p>Inherited from HelmAddOnUserProps.release</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/helm-addon/kubectl-provider.ts#L34">lib/addons/helm-addon/kubectl-provider.ts:34</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/helm-addon/kubectl-provider.ts#L34">lib/addons/helm-addon/kubectl-provider.ts:34</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="repository" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>repository</span><a href="#repository" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">repository</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -136,7 +136,7 @@ Check the workaround for SQS Scalar with IRSA <a href="https://github.com/kedaco
 </div><aside class="tsd-sources">
 <p>Inherited from HelmAddOnUserProps.repository</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/helm-addon/kubectl-provider.ts#L39">lib/addons/helm-addon/kubectl-provider.ts:39</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/helm-addon/kubectl-provider.ts#L39">lib/addons/helm-addon/kubectl-provider.ts:39</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="securityContextRunAsGroup" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>security<wbr/>Context<wbr/>Run<wbr/>As<wbr/>Group</span><a href="#securityContextRunAsGroup" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">security<wbr/>Context<wbr/>Run<wbr/>As<wbr/>Group</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div>
@@ -144,7 +144,7 @@ Check the workaround for SQS Scalar with IRSA <a href="https://github.com/kedaco
 Check the workaround for SQS Scalar with IRSA <a href="https://github.com/kedacore/keda/issues/837#issuecomment-789037326">https://github.com/kedacore/keda/issues/837#issuecomment-789037326</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/keda/index.ts#L34">lib/addons/keda/index.ts:34</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/keda/index.ts#L34">lib/addons/keda/index.ts:34</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="securityContextRunAsUser" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>security<wbr/>Context<wbr/>Run<wbr/>As<wbr/>User</span><a href="#securityContextRunAsUser" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">security<wbr/>Context<wbr/>Run<wbr/>As<wbr/>User</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">number</span></div>
@@ -152,7 +152,7 @@ Check the workaround for SQS Scalar with IRSA <a href="https://github.com/kedaco
 Check the workaround for SQS Scalar with IRSA <a href="https://github.com/kedacore/keda/issues/837#issuecomment-789037326">https://github.com/kedacore/keda/issues/837#issuecomment-789037326</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/keda/index.ts#L39">lib/addons/keda/index.ts:39</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/keda/index.ts#L39">lib/addons/keda/index.ts:39</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="skipVersionValidation" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>skip<wbr/>Version<wbr/>Validation</span><a href="#skipVersionValidation" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">skip<wbr/>Version<wbr/>Validation</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">boolean</span></div>
@@ -161,7 +161,7 @@ allows to skip validation for a particular helm add-on.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from HelmAddOnUserProps.skipVersionValidation</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/helm-addon/kubectl-provider.ts#L45">lib/addons/helm-addon/kubectl-provider.ts:45</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/helm-addon/kubectl-provider.ts#L45">lib/addons/helm-addon/kubectl-provider.ts:45</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member tsd-is-inherited"><a id="values" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>values</span><a href="#values" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">values</span><span class="tsd-signature-symbol">?:</span> <a href="../types/Values.html" class="tsd-signature-type tsd-kind-type-alias">Values</a></div>
@@ -169,7 +169,7 @@ allows to skip validation for a particular helm add-on.</p>
 </div><aside class="tsd-sources">
 <p>Inherited from HelmAddOnUserProps.values</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/helm-addon/kubectl-provider.ts#L50">lib/addons/helm-addon/kubectl-provider.ts:50</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/helm-addon/kubectl-provider.ts#L50">lib/addons/helm-addon/kubectl-provider.ts:50</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="version" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagOptional">Optional</code> <span>version</span><a href="#version" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">version</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span></div>
@@ -177,7 +177,7 @@ allows to skip validation for a particular helm add-on.</p>
 </div><aside class="tsd-sources">
 <p>Overrides HelmAddOnUserProps.version</p>
 <ul>
-<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/f215ea0f/lib/addons/keda/index.ts#L16">lib/addons/keda/index.ts:16</a></li></ul></aside></section></section></div>
+<li>Defined in <a href="https://github.com/aws-quickstart/ssp-amazon-eks/blob/bdd9987b/lib/addons/keda/index.ts#L16">lib/addons/keda/index.ts:16</a></li></ul></aside></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
