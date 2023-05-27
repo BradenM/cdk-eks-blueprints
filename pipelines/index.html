@@ -8,8 +8,14 @@
       
       
       
+      
+        <link rel="prev" href="../teams/aws-batch-on-eks-team/">
+      
+      
+        <link rel="next" href="../addons/">
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
     
     
       
@@ -17,11 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.20d9efc8.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
-        
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
       
       
 
@@ -47,14 +49,11 @@
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -74,7 +73,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Amazon EKS Blueprints Quick Start" class="md-header__button md-logo" aria-label="Amazon EKS Blueprints Quick Start" data-md-component="logo">
       
@@ -130,7 +131,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -142,7 +143,7 @@
         <a href="https://github.com/aws-quickstart/cdk-eks-blueprints" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     aws-quickstart/cdk-eks-blueprints
@@ -187,7 +188,7 @@
       <a href="https://github.com/aws-quickstart/cdk-eks-blueprints" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     aws-quickstart/cdk-eks-blueprints
@@ -283,17 +284,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
           Teams
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Teams" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Teams
@@ -359,7 +361,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
         
@@ -414,6 +416,13 @@
           <li class="md-nav__item">
   <a href="#using-aws-codecommit-as-codepipeline-repository-source" class="md-nav__link">
     Using AWS CodeCommit as CodePipeline repository source.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-aws-codestar-connection-as-codepipeline-repository-source" class="md-nav__link">
+    Using AWS CodeStar connection as CodePipeline repository source.
   </a>
   
 </li>
@@ -484,17 +493,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_8">
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
           AddOns
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="AddOns" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           AddOns
@@ -1288,17 +1298,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_9">
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
           Internal
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Internal" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
           Internal
@@ -1364,17 +1375,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_10">
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
           Cluster Providers
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Cluster Providers" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
           Cluster Providers
@@ -1468,17 +1480,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_11">
+        <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
           Resource Providers
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Resource Providers" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
           Resource Providers
@@ -1590,6 +1603,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#using-aws-codestar-connection-as-codepipeline-repository-source" class="md-nav__link">
+    Using AWS CodeStar connection as CodePipeline repository source.
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1651,10 +1671,8 @@
                 
                   
 
-  <a href="https://github.com/aws-quickstart/cdk-eks-blueprints/edit/master/docs/pipelines.md" title="Edit this page" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
 
 
 <h1 id="pipelines">Pipelines<a class="headerlink" href="#pipelines" title="Permanent link">&para;</a></h1>
@@ -1665,77 +1683,93 @@
 <p>Pipeline support requires enabling a setting for <em>modern</em> stack synthesis. This setting should be enabled for blueprints that leverage CDKv1 explicitly, for CDKv2 it is enabled by default.</p>
 <p>Creation of a pipeline starts with defining the blueprint that will be deployed across the pipeline stages.</p>
 <p>The framework allows defining a blueprint builder without instantiating the stack.</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">blueprints</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@aws-quickstart/eks-blueprints&#39;</span><span class="w"></span>
-<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">team</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;path/to/teams&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">blueprints</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@aws-quickstart/eks-blueprints&#39;</span>
+<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">team</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;path/to/teams&#39;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">account</span><span class="p">(</span><span class="nx">account</span><span class="p">)</span><span class="w"> </span><span class="c1">// the supplied default will fail, but build and synth will pass</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">region</span><span class="p">(</span><span class="s1">&#39;us-west-1&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(</span><span class="w"></span>
-<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">AwsLoadBalancerControllerAddOn</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">ExternalDnsAddOn</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">NginxAddOn</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">CalicoAddOn</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">MetricsServerAddOn</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">ClusterAutoScalerAddOn</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">ContainerInsightsAddOn</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">teams</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">team</span><span class="p">.</span><span class="nx">TeamRikerSetup</span><span class="p">);</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">account</span><span class="p">(</span><span class="nx">account</span><span class="p">)</span><span class="w"> </span><span class="c1">// the supplied default will fail, but build and synth will pass</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">region</span><span class="p">(</span><span class="s1">&#39;us-west-1&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(</span>
+<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">AwsLoadBalancerControllerAddOn</span><span class="p">,</span>
+<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">ExternalDnsAddOn</span><span class="p">,</span>
+<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">NginxAddOn</span><span class="p">,</span>
+<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">CalicoAddOn</span><span class="p">,</span>
+<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">MetricsServerAddOn</span><span class="p">,</span>
+<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">ClusterAutoScalerAddOn</span><span class="p">,</span>
+<span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">ContainerInsightsAddOn</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">teams</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">team</span><span class="p">.</span><span class="nx">TeamRikerSetup</span><span class="p">);</span>
 </code></pre></div>
 <p>The difference between the above code and a normal way of instantiating the stack is lack of <code>.build()</code> at the end of the blueprint definition.
 This code will produce a blueprint builder that can be instantiated inside the pipeline stages.</p>
 <h2 id="creating-a-pipeline">Creating a pipeline<a class="headerlink" href="#creating-a-pipeline" title="Permanent link">&para;</a></h2>
 <p>We can create a new <code>CodePipeline</code> resource via the following.</p>
 <h3 id="using-github-as-codepipeline-repository-source">Using GitHub as CodePipeline repository source.<a class="headerlink" href="#using-github-as-codepipeline-repository-source" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">blueprints</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@aws-quickstart/eks-blueprints&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">blueprints</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@aws-quickstart/eks-blueprints&#39;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">...;</span><span class="w"> </span><span class="c1">// configure your blueprint builder</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">...;</span><span class="w"> </span><span class="c1">// configure your blueprint builder</span>
 
-<span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">CodePipelineStack</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">name</span><span class="p">(</span><span class="s2">&quot;eks-blueprints-pipeline&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">repository</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">owner</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;aws-samples&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">repoUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cdk-eks-blueprints-patterns&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">credentialsSecretName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;github-token&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">targetRevision</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;main&#39;</span><span class="w"> </span><span class="c1">// optional, default is &quot;main&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
+<span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">CodePipelineStack</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">name</span><span class="p">(</span><span class="s2">&quot;eks-blueprints-pipeline&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">repository</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">owner</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;aws-samples&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">repoUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cdk-eks-blueprints-patterns&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">credentialsSecretName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;github-token&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">targetRevision</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;main&#39;</span><span class="w"> </span><span class="c1">// optional, default is &quot;main&quot;</span>
+<span class="w">    </span><span class="p">})</span>
 </code></pre></div>
 <p>Note: the above code depends on the AWS secret <code>github-token</code> defined in the target account/region. The secret may be fined in one main region, and replicated to all target regions.</p>
 <h3 id="using-aws-codecommit-as-codepipeline-repository-source">Using AWS CodeCommit as CodePipeline repository source.<a class="headerlink" href="#using-aws-codecommit-as-codepipeline-repository-source" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">blueprints</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@aws-quickstart/eks-blueprints&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">blueprints</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@aws-quickstart/eks-blueprints&#39;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">...;</span><span class="w"> </span><span class="c1">// configure your blueprint builder</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">...;</span><span class="w"> </span><span class="c1">// configure your blueprint builder</span>
 
-<span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">CodePipelineStack</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">name</span><span class="p">(</span><span class="s2">&quot;eks-blueprints-pipeline&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">repository</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">codeCommitRepoName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cdk-eks-blueprints-patterns&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// should be in the same region with pipeline-stack</span><span class="w"></span>
-<span class="w">        </span><span class="nx">targetRevision</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;master&#39;</span><span class="w"> </span><span class="c1">// optional, default is &quot;master&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
+<span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">CodePipelineStack</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">name</span><span class="p">(</span><span class="s2">&quot;eks-blueprints-pipeline&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">repository</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">codeCommitRepoName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cdk-eks-blueprints-patterns&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// should be in the same region with pipeline-stack</span>
+<span class="w">        </span><span class="nx">targetRevision</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;master&#39;</span><span class="w"> </span><span class="c1">// optional, default is &quot;master&quot;</span>
+<span class="w">    </span><span class="p">})</span>
+</code></pre></div>
+<h3 id="using-aws-codestar-connection-as-codepipeline-repository-source">Using AWS CodeStar connection as CodePipeline repository source.<a class="headerlink" href="#using-aws-codestar-connection-as-codepipeline-repository-source" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">blueprints</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@aws-quickstart/eks-blueprints&#39;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">...;</span><span class="w"> </span><span class="c1">// configure your blueprint builder</span>
+
+<span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">CodePipelineStack</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">name</span><span class="p">(</span><span class="s2">&quot;eks-blueprints-pipeline&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">codeBuildPolicies</span><span class="p">(</span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">DEFAULT_BUILD_POLICIES</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">owner</span><span class="p">(</span><span class="s1">&#39;aws-samples&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">repository</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">repoUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;blueprints-repo-codestar&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// repository name </span>
+<span class="w">        </span><span class="nx">codeStarConnectionArn</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;fill-in-codestar-arn&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// CodeStar connection ARN</span>
+<span class="w">        </span><span class="nx">targetRevision</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;main&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional, default is &quot;main&quot;</span>
+<span class="w">    </span><span class="p">})</span>
 </code></pre></div>
 <h2 id="creating-stages">Creating stages<a class="headerlink" href="#creating-stages" title="Permanent link">&para;</a></h2>
 <p>Once our pipeline is created, we need to define <code>stages</code> for the pipeline. To do so, we can leverage <code>blueprints.StackStage</code> convenience class and builder support for it. Let's continue leveraging the pipeline builder defined in the previous step.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">...;</span><span class="w"> </span><span class="c1">// configure your blueprint builder</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">...;</span><span class="w"> </span><span class="c1">// configure your blueprint builder</span>
 
-<span class="nx">blueprints</span><span class="p">.</span><span class="nx">CodePipelineStack</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">name</span><span class="p">(</span><span class="s2">&quot;blueprints-eks-pipeline&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">owner</span><span class="p">(</span><span class="s2">&quot;aws-samples&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">repository</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="c1">//  your repo info</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">stage</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;us-west-1-managed-blueprints-test&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-west-1&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1">// clone the blueprint to customize for the stage. You can add more add-ons, teams here.</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">stage</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;us-east-2-managed-blueprints-prod&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-east-2&#39;</span><span class="p">),</span><span class="w"> </span><span class="c1">// clone the blueprint to customize for the stage. You can add more add-ons, team, here.</span><span class="w"></span>
-<span class="w">        </span><span class="nx">stageProps</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nx">manualApprovals</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"></span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
+<span class="nx">blueprints</span><span class="p">.</span><span class="nx">CodePipelineStack</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">name</span><span class="p">(</span><span class="s2">&quot;blueprints-eks-pipeline&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">owner</span><span class="p">(</span><span class="s2">&quot;aws-samples&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">repository</span><span class="p">({</span>
+<span class="w">        </span><span class="c1">//  your repo info</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">stage</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;us-west-1-managed-blueprints-test&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-west-1&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1">// clone the blueprint to customize for the stage. You can add more add-ons, teams here.</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">stage</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;us-east-2-managed-blueprints-prod&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-east-2&#39;</span><span class="p">),</span><span class="w"> </span><span class="c1">// clone the blueprint to customize for the stage. You can add more add-ons, team, here.</span>
+<span class="w">        </span><span class="nx">stageProps</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">manualApprovals</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">})</span>
 </code></pre></div>
 <p>Consider adding <code>ArgoCDAddOn</code> with your specific workload bootstrap repository to automatically bootstrap workloads in the provisioned clusters.
 See <a href="../addons/argo-cd/#Bootstrapping">Bootstrapping</a> for more details.</p>
@@ -1743,106 +1777,106 @@ See <a href="../addons/argo-cd/#Bootstrapping">Bootstrapping</a> for more detail
 <p>In many case, when enterprises configure their SDLC environments, such as dev/test/staging/prod, each environment may contain more than a single cluster.
 It is convenient to provision and maintain (update/upgrade) such clusters in parallel within the limits of the environment. Such environments may be represented as waves of the pipeline. The wave concept is not limited to just a logical environment. It may represent any grouping of clusters that should be executed in parallel. An important advantage of running stages in parallel is the time gain associated with it. Each stage may potentially take tens of minutes (e.g. initial provisioning, upgrade, etc.) and as the number of clusters increase, the overall pipeline run may become very lengthy and won't provide enough agility for the enterprise. Running parallel stages within a wave provides roughly the time performance equivalent to a single stage.</p>
 <p>Pipeline functionality provides wave support to express waves with blueprints. You can mix individual stages and waves together. An individual stage can be viewed as a wave with a single stage.</p>
-<div class="highlight"><pre><span></span><code><span class="nx">blueprints</span><span class="p">.</span><span class="nx">CodePipelineStack</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">name</span><span class="p">(</span><span class="s2">&quot;eks-blueprints-pipeline&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">owner</span><span class="p">(</span><span class="s2">&quot;aws-samples&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">repository</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="c1">//...</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">stage</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;us-west-1-managed-blueprints&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-west-1&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">wave</span><span class="p">(</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// adding two clusters for dev env</span><span class="w"></span>
-<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dev&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">stages</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dev-west-1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-west-1&#39;</span><span class="p">).</span><span class="nx">account</span><span class="p">(</span><span class="nx">DEV_ACCOUNT</span><span class="p">)},</span><span class="w"> </span><span class="c1">// requires trust relationship with the code pipeline role</span><span class="w"></span>
-<span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dev-east-2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-east-2&#39;</span><span class="p">).</span><span class="nx">account</span><span class="p">(</span><span class="nx">DEV_ACCOUNT</span><span class="p">)},</span><span class="w"> </span><span class="c1">// See https://docs.aws.amazon.com/cdk/api/v1/docs/pipelines-readme.html#cdk-environment-bootstrapping</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="nx">blueprints</span><span class="p">.</span><span class="nx">CodePipelineStack</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">name</span><span class="p">(</span><span class="s2">&quot;eks-blueprints-pipeline&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">owner</span><span class="p">(</span><span class="s2">&quot;aws-samples&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">repository</span><span class="p">({</span>
+<span class="w">        </span><span class="c1">//...</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">stage</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;us-west-1-managed-blueprints&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-west-1&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">wave</span><span class="p">(</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// adding two clusters for dev env</span>
+<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dev&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">stages</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dev-west-1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-west-1&#39;</span><span class="p">).</span><span class="nx">account</span><span class="p">(</span><span class="nx">DEV_ACCOUNT</span><span class="p">)},</span><span class="w"> </span><span class="c1">// requires trust relationship with the code pipeline role</span>
+<span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dev-east-2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-east-2&#39;</span><span class="p">).</span><span class="nx">account</span><span class="p">(</span><span class="nx">DEV_ACCOUNT</span><span class="p">)},</span><span class="w"> </span><span class="c1">// See https://docs.aws.amazon.com/cdk/api/v1/docs/pipelines-readme.html#cdk-environment-bootstrapping</span>
 
-<span class="w">        </span><span class="p">]</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">wave</span><span class="p">(</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;prod&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">stages</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;prod-west-1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-west-1&#39;</span><span class="p">)},</span><span class="w"></span>
-<span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;prod-east-2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-east-2&#39;</span><span class="p">)},</span><span class="w"></span>
-<span class="w">        </span><span class="p">]</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">wave</span><span class="p">(</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;prod&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">stages</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;prod-west-1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-west-1&#39;</span><span class="p">)},</span>
+<span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;prod-east-2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-east-2&#39;</span><span class="p">)},</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">})</span>
 </code></pre></div>
 <h2 id="handling-build-time-access">Handling Build Time Access<a class="headerlink" href="#handling-build-time-access" title="Permanent link">&para;</a></h2>
 <p>CodePipeline leverages CodeBuild to build artifacts. During build time, add-ons may require various look-ups. For example, the add-on or stack may look up VPC, subnets, certificates, hosted zones as well as secrets. </p>
 <p>By default, such look-ups at build time are restricted by the CodeBuild role created by the pipeline dynamically. That means that builds that require look-ups will fail with access denied exception. </p>
 <p>Customers can configure the IAM policies used by the CodeBuild as part of the pipeline execution. The framework provides a convenience default build policies <code>blueprints.DEFAULT_BUILD_POLICIES</code> that enable look-ups (including secret look-ups).</p>
 <p>Example with default policies:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">pipeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">CodePipelineStack</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
-<span class="w">            </span><span class="p">.</span><span class="nx">name</span><span class="p">(</span><span class="s2">&quot;blueprints-pipeline-with-build-roles&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="p">.</span><span class="nx">owner</span><span class="p">(</span><span class="s1">&#39;aws-samples&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="p">.</span><span class="nx">codeBuildPolicies</span><span class="p">(</span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">DEFAULT_BUILD_POLICIES</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">pipeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">CodePipelineStack</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">name</span><span class="p">(</span><span class="s2">&quot;blueprints-pipeline-with-build-roles&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">owner</span><span class="p">(</span><span class="s1">&#39;aws-samples&#39;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">codeBuildPolicies</span><span class="p">(</span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">DEFAULT_BUILD_POLICIES</span><span class="p">)</span>
 </code></pre></div>
 <p>Example with customer supplied policies:</p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PolicyStatement</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;aws-cdk-lib/aws-iam&#39;</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PolicyStatement</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;aws-cdk-lib/aws-iam&#39;</span><span class="p">;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">pipeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">CodePipelineStack</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
-<span class="w">            </span><span class="p">.</span><span class="nx">name</span><span class="p">(</span><span class="s2">&quot;blueprints-pipeline-inaction&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="p">.</span><span class="nx">owner</span><span class="p">(</span><span class="s1">&#39;your-owner&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">pipeline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">CodePipelineStack</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">name</span><span class="p">(</span><span class="s2">&quot;blueprints-pipeline-inaction&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">owner</span><span class="p">(</span><span class="s1">&#39;your-owner&#39;</span><span class="p">)</span>
 <span class="w">            </span><span class="p">.</span><span class="nx">codeBuildPolicies</span><span class="p">([</span><span class="w"> </span>
-<span class="w">                </span><span class="ow">new</span><span class="w"> </span><span class="nx">PolicyStatement</span><span class="p">({</span><span class="w"></span>
-<span class="w">                    </span><span class="nx">resources</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">mySecretArn</span><span class="p">],</span><span class="w"></span>
+<span class="w">                </span><span class="ow">new</span><span class="w"> </span><span class="nx">PolicyStatement</span><span class="p">({</span>
+<span class="w">                    </span><span class="nx">resources</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">mySecretArn</span><span class="p">],</span>
 <span class="w">                    </span><span class="nx">actions</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w">    </span>
-<span class="w">                        </span><span class="s2">&quot;secretsmanager:GetSecretValue&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                        </span><span class="s2">&quot;secretsmanager:DescribeSecret&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">                    </span><span class="p">]</span><span class="w"></span>
-<span class="w">                </span><span class="p">})</span><span class="w"></span>
-<span class="w">            </span><span class="p">])</span><span class="w"></span>
-<span class="w">            </span><span class="p">.</span><span class="nx">build</span><span class="p">(...)</span><span class="w"></span>
+<span class="w">                        </span><span class="s2">&quot;secretsmanager:GetSecretValue&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="s2">&quot;secretsmanager:DescribeSecret&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="p">]</span>
+<span class="w">                </span><span class="p">})</span>
+<span class="w">            </span><span class="p">])</span>
+<span class="w">            </span><span class="p">.</span><span class="nx">build</span><span class="p">(...)</span>
 </code></pre></div>
 <h2 id="build-the-pipeline-stack">Build the pipeline stack<a class="headerlink" href="#build-the-pipeline-stack" title="Permanent link">&para;</a></h2>
 <p>Now that we have defined the blueprint builder, the pipeline with repository and stages we just need to invoke the build() step to create the stack.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">...;</span><span class="w"> </span><span class="c1">// configure your blueprint builder</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">...;</span><span class="w"> </span><span class="c1">// configure your blueprint builder</span>
 
-<span class="nx">blueprints</span><span class="p">.</span><span class="nx">CodePipelineStack</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">name</span><span class="p">(</span><span class="s2">&quot;eks-blueprints-pipeline&quot;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">owner</span><span class="p">(</span><span class="s2">&quot;aws-samples&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// owner of your repo</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">repository</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="c1">//  your repo info</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">stage</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;dev&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-west-1&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1">// clone the blueprint to customize for the stage. You can add more add-ons, teams here.</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">stage</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-east-2&#39;</span><span class="p">),</span><span class="w"> </span><span class="c1">// clone the blueprint to customize for the stage. You can add more add-ons, team, here.</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">stage</span><span class="p">({</span><span class="w"></span>
-<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;prod&#39;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-west-2&#39;</span><span class="p">),</span><span class="w"> </span><span class="c1">// clone the blueprint to customize for the stage. You can add more add-ons, team, here.</span><span class="w"></span>
-<span class="w">    </span><span class="p">})</span><span class="w"></span>
-<span class="w">    </span><span class="p">.</span><span class="nx">build</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;blueprints-pipeline-stack&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">props</span><span class="p">);</span><span class="w"> </span><span class="c1">// will produce the self-mutating pipeline in the target region and start provisioning the defined blueprints.</span><span class="w"></span>
+<span class="nx">blueprints</span><span class="p">.</span><span class="nx">CodePipelineStack</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">name</span><span class="p">(</span><span class="s2">&quot;eks-blueprints-pipeline&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">owner</span><span class="p">(</span><span class="s2">&quot;aws-samples&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// owner of your repo</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">repository</span><span class="p">({</span>
+<span class="w">        </span><span class="c1">//  your repo info</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">stage</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;dev&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-west-1&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1">// clone the blueprint to customize for the stage. You can add more add-ons, teams here.</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">stage</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;test&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-east-2&#39;</span><span class="p">),</span><span class="w"> </span><span class="c1">// clone the blueprint to customize for the stage. You can add more add-ons, team, here.</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">stage</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;prod&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">stackBuilder</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprint.clone</span><span class="p">(</span><span class="s1">&#39;us-west-2&#39;</span><span class="p">),</span><span class="w"> </span><span class="c1">// clone the blueprint to customize for the stage. You can add more add-ons, team, here.</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">build</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;blueprints-pipeline-stack&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">props</span><span class="p">);</span><span class="w"> </span><span class="c1">// will produce the self-mutating pipeline in the target region and start provisioning the defined blueprints.</span>
 </code></pre></div>
 <h2 id="deploying-pipelines">Deploying Pipelines<a class="headerlink" href="#deploying-pipelines" title="Permanent link">&para;</a></h2>
 <p>In order to deploy pipelines, each environment (account and region) where pipeline will either be running and each environment to which it will be deploying should be bootstrapped based on CodePipeline <a href="https://docs.aws.amazon.com/cdk/api/v1/docs/pipelines-readme.html#cdk-environment-bootstrapping">documentation</a>.</p>
 <p>Examples of bootstrapping (from the original documentation):</p>
 <p>To bootstrap an environment for provisioning the pipeline:</p>
-<p><div class="highlight"><pre><span></span><code>$ env <span class="nv">CDK_NEW_BOOTSTRAP</span><span class="o">=</span><span class="m">1</span> npx cdk bootstrap <span class="se">\</span>
-    <span class="o">[</span>--profile admin-profile-1<span class="o">]</span> <span class="se">\</span>
-    --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess <span class="se">\</span>
-    aws://111111111111/us-east-1
+<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>env<span class="w"> </span><span class="nv">CDK_NEW_BOOTSTRAP</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>npx<span class="w"> </span>cdk<span class="w"> </span>bootstrap<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">[</span>--profile<span class="w"> </span>admin-profile-1<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--cloudformation-execution-policies<span class="w"> </span>arn:aws:iam::aws:policy/AdministratorAccess<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>aws://111111111111/us-east-1
 </code></pre></div>
 To bootstrap a different environment for deploying CDK applications into using a pipeline in account 111111111111:</p>
-<div class="highlight"><pre><span></span><code>$ env <span class="nv">CDK_NEW_BOOTSTRAP</span><span class="o">=</span><span class="m">1</span> npx cdk bootstrap <span class="se">\</span>
-    <span class="o">[</span>--profile admin-profile-2<span class="o">]</span> <span class="se">\</span>
-    --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess <span class="se">\</span>
-    --trust <span class="m">11111111111</span> <span class="se">\</span>
-    aws://222222222222/us-east-2
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>env<span class="w"> </span><span class="nv">CDK_NEW_BOOTSTRAP</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>npx<span class="w"> </span>cdk<span class="w"> </span>bootstrap<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">[</span>--profile<span class="w"> </span>admin-profile-2<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--cloudformation-execution-policies<span class="w"> </span>arn:aws:iam::aws:policy/AdministratorAccess<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trust<span class="w"> </span><span class="m">11111111111</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>aws://222222222222/us-east-2
 </code></pre></div>
 <p>If you only want to trust an account to do lookups (e.g, when your CDK application has a Vpc.fromLookup() call), use the option --trust-for-lookup:</p>
-<div class="highlight"><pre><span></span><code>$ env <span class="nv">CDK_NEW_BOOTSTRAP</span><span class="o">=</span><span class="m">1</span> npx cdk bootstrap <span class="se">\</span>
-    <span class="o">[</span>--profile admin-profile-2<span class="o">]</span> <span class="se">\</span>
-    --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess <span class="se">\</span>
-    --trust-for-lookup <span class="m">11111111111</span> <span class="se">\</span>
-    aws://222222222222/us-east-2
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>env<span class="w"> </span><span class="nv">CDK_NEW_BOOTSTRAP</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>npx<span class="w"> </span>cdk<span class="w"> </span>bootstrap<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">[</span>--profile<span class="w"> </span>admin-profile-2<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--cloudformation-execution-policies<span class="w"> </span>arn:aws:iam::aws:policy/AdministratorAccess<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trust-for-lookup<span class="w"> </span><span class="m">11111111111</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>aws://222222222222/us-east-2
 </code></pre></div>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p>Blueprints Build can fail with AccessDenied exception during build phase. Typical error messages:</p>
@@ -1873,42 +1907,6 @@ If adding administrative access to the role solves the issue, you can then consi
       
         <footer class="md-footer">
   
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../teams/aws-batch-on-eks-team/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AWS Batch on EKS Team" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              AWS Batch on EKS Team
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../addons/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Overview
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1930,10 +1928,10 @@ If adding administrative access to the role solves the issue, you can then consi
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["tabs"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["tabs"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.8492ddcf.min.js"></script>
+      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   </body>
