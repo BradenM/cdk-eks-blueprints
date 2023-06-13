@@ -1601,6 +1601,7 @@
 <p><strong>IMPORTANT</strong></p>
 <p>CloudWatch does not automatically create all possible metrics from the log data, to help you manage your Container Insights costs. However, you can view additional metrics and additional levels of granularity by using CloudWatch Logs Insights to analyze the raw performance log events.</p>
 <p>Metrics collected by Container Insights are charged as custom metrics. For more information about <a href="https://aws.amazon.com/cloudwatch/pricing/">CloudWatch pricing</a>, see Amazon CloudWatch Pricing.</p>
+<p>Also it is important to note that this add-on can not co-exist with <code>adot-addon</code> on same EKS cluster. <code>adot-addon</code> and this add-on is mutually exclusive due to <code>adot-collector-sa</code> service account.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>Add the following as an add-on to your main.ts file to add Containers Insights to your cluster</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;source-map-support/register&#39;</span><span class="p">;</span>
@@ -1618,7 +1619,7 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Once the Container Insights add-on has been installed in your cluster, validate that the <a href="https://aws.amazon.com/otel">AWS Distro for Open Telemetry</a> (ADOT) and the FluentBit daemons are running. </p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>all<span class="w"> </span>-n<span class="w"> </span>amazon-cloudwatch<span class="w"> </span>
-kubectl<span class="w"> </span>get<span class="w"> </span>all<span class="w"> </span>-n<span class="w"> </span>amzn-cloudwatch-metrics
+kubectl<span class="w"> </span>get<span class="w"> </span>all<span class="w"> </span>-n<span class="w"> </span>amazon-metrics
 </code></pre></div>
 <p>You should see output similar to the following respectively (assuming two node cluster): </p>
 <div class="highlight"><pre><span></span><code>NAME                   READY   STATUS    RESTARTS   AGE
@@ -1629,11 +1630,11 @@ NAME                        DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE  
 daemonset.apps/fluent-bit   2         2         2       2            2           &lt;none&gt;          100s
 
 NAME                                 READY   STATUS    RESTARTS   AGE
-pod/adot-collector-daemonset-b2rpc   1/1     Running   0          106s
-pod/adot-collector-daemonset-k6tfw   1/1     Running   2          106s
+pod/adot-collector-daemonset-k7n4p   1/1     Running   0          2m4s
+pod/adot-collector-daemonset-qjdps   1/1     Running   0          114s
 
 NAME                                      DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
-daemonset.apps/adot-collector-daemonset   2         2         2       2            2           &lt;none&gt;          106s
+daemonset.apps/adot-collector-daemonset   2         2         2       2            2           &lt;none&gt;          73m
 </code></pre></div>
 <p>To enable or disable control plane logs with the console, run the following command in your terminal.</p>
 <div class="highlight"><pre><span></span><code>aws<span class="w"> </span>eks<span class="w"> </span>update-cluster-config<span class="w"> </span><span class="se">\</span>

@@ -1680,8 +1680,8 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <p>Create a directory that represents you project (e.g. <code>my-blueprints</code>) and then create a new <code>typescript</code> CDK project in that directory.</p>
 <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>n<span class="w"> </span><span class="c1"># may require sudo</span>
 n<span class="w"> </span>stable<span class="w"> </span><span class="c1"># may require sudo </span>
-npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>aws-cdk@2.81.0<span class="w"> </span><span class="c1"># may require sudo (Ubuntu) depending on configuration</span>
-cdk<span class="w"> </span>--version<span class="w"> </span><span class="c1"># must produce 2.81.0</span>
+npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>aws-cdk@2.83.1<span class="w"> </span><span class="c1"># may require sudo (Ubuntu) depending on configuration</span>
+cdk<span class="w"> </span>--version<span class="w"> </span><span class="c1"># must produce 2.83.1</span>
 mkdir<span class="w"> </span>my-blueprints
 <span class="nb">cd</span><span class="w"> </span>my-blueprints
 cdk<span class="w"> </span>init<span class="w"> </span>app<span class="w"> </span>--language<span class="w"> </span>typescript
@@ -1720,7 +1720,7 @@ cdk<span class="w"> </span>init<span class="w"> </span>app<span class="w"> </spa
 <p>Each combination of target account and region must be bootstrapped prior to deploying stacks. Bootstrapping is a process of creating IAM roles and lambda functions that can execute some of the common CDK constructs.</p>
 <p>For application of the EKS Blueprints Framework with <a href="https://aws.amazon.com/organizations/">AWS Organizations</a>, <a href="https://docs.aws.amazon.com/controltower/latest/userguide/aws-multi-account-landing-zone.html">Multi-account framework and Control Tower</a> consider a process to automatically or manually CDK-bootstrapping new (workload/environment) accounts when they are added to the organization. More info on account bootstrapping <a href="https://aws.amazon.com/blogs/mt/how-to-automate-the-creation-of-multiple-accounts-in-aws-control-tower/">here</a>.</p>
 <p><a href="https://docs.aws.amazon.com/cdk/latest/guide/bootstrapping.html">Bootstrap</a> your environment with the following command. </p>
-<div class="highlight"><pre><span></span><code>cdk<span class="w"> </span>bootstrap
+<div class="highlight"><pre><span></span><code>cdk<span class="w"> </span>bootstrap<span class="w"> </span>aws://&lt;your-account-number&gt;/&lt;region-to-bootstrap&gt;
 </code></pre></div>
 <p>Note: if the account/region combination used in the code example above is different from the initial combination used with <code>cdk bootstrap</code>, you will need to perform <code>cdk bootstrap</code> again to avoid error.</p>
 <p>Please reference <a href="https://docs.aws.amazon.com/cdk/latest/guide/home.html">CDK</a> usage doc for detail.</p>

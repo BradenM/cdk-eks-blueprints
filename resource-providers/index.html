@@ -1636,6 +1636,31 @@ A resource provider is a core Blueprints concept that enables customers to suppl
 <span class="w">        </span><span class="p">...</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Example implementation of a VPC Provider that creates a NAT Gateway </span>
+<span class="cm"> * which is available in all 3 AZs of the VPC while only being in one</span>
+<span class="cm"> */</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">OtherVpcResourceProvider</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">ResourceProvider</span><span class="o">&lt;</span><span class="nx">IVpc</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">provide</span><span class="p">(</span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="kt">ResourceContext</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">IVpc</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Vpc</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">scope</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&lt;vpc-name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">availabilityZones</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;us-east-1a&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;us-east-1b&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;us-east-1c&#39;</span><span class="p">],</span><span class="w"> </span><span class="c1">// VPC spans all AZs</span>
+<span class="w">            </span><span class="nx">subnetConfiguration</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">                </span><span class="nx">cidrMask</span><span class="o">:</span><span class="w"> </span><span class="kt">24</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;private&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">subnetType</span><span class="o">:</span><span class="w"> </span><span class="kt">SubnetType.PRIVATE_WITH_EGRESS</span>
+<span class="w">            </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">cidrMask</span><span class="o">:</span><span class="w"> </span><span class="kt">24</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;public&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">subnetType</span><span class="o">:</span><span class="w"> </span><span class="kt">SubnetType.PUBLIC</span>
+<span class="w">            </span><span class="p">}],</span>
+<span class="w">            </span><span class="nx">natGatewaySubnets</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">availabilityZones</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;us-east-1b&#39;</span><span class="p">]</span><span class="w"> </span><span class="c1">// NAT gateway only in 1 AZ </span>
+<span class="w">                </span><span class="nx">subnetType</span><span class="o">:</span><span class="w"> </span><span class="kt">SubnetType.PUBLIC</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Access to registered resources from other resource providers and/or add-ons and teams:</p>
 <div class="highlight"><pre><span></span><code><span class="cm">/**</span>
@@ -1700,7 +1725,8 @@ A resource provider is a core Blueprints concept that enables customers to suppl
 </code></pre></div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p><strong>Registering Resource Providers for a Blueprint</strong></p>
-<p>Note: <code>GlobalResources.HostedZone</code> and <code>GlobalResources.Certificate</code> are provided for convenience as commonly referenced constants.</p>
+<p>Note: <code>GlobalResources.HostedZone</code> and <code>GlobalResources.Certificate</code> are provided for convenience as commonly referenced constants.
+Full list of Resource Providers can be found <a href="https://aws-quickstart.github.io/cdk-eks-blueprints/api/modules/resources.html">here</a>.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">myVpcId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span><span class="w">  </span><span class="c1">// e.g. app.node.tryGetContext(&#39;my-vpc&#39;, &#39;default)  will look up property my-vpc in the cdk.json</span>
 
 <span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
@@ -1790,7 +1816,7 @@ A resource provider is a core Blueprints concept that enables customers to suppl
 <h2 id="implementing-custom-resource-providers">Implementing Custom Resource Providers<a class="headerlink" href="#implementing-custom-resource-providers" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Select the type of the resource that you need. Let's say it will be an FSx File System. Note: it must be one of the derivatives/implementations of <code>IResource</code> interface.</li>
-<li>Implement ResourceProvider interface:</li>
+<li>Implement <a href="https://aws-quickstart.github.io/cdk-eks-blueprints/api/interfaces/ResourceProvider.html"><code>ResourceProvider</code></a> interface:</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">MyResourceProvider</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">ResourceProvider</span><span class="o">&lt;</span><span class="nx">fsx</span><span class="p">.</span><span class="nx">IFileSystem</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">provide</span><span class="p">(</span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprints.ResourceContext</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">s3</span><span class="p">.</span><span class="nx">IBucket</span><span class="w"> </span><span class="p">{</span>

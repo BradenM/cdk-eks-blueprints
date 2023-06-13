@@ -1594,12 +1594,12 @@
 <span class="kd">const</span><span class="w"> </span><span class="nx">hostedZoneName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">addOn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">ExternalDnsAddOn</span><span class="p">({</span>
-<span class="w">    </span><span class="nx">hostedZoneProviders</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">hostedZoneName</span><span class="p">];</span><span class="w"> </span><span class="c1">// can be multiple</span>
+<span class="w">    </span><span class="nx">hostedZoneResources</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">hostedZoneName</span><span class="p">];</span><span class="w"> </span><span class="c1">// can be multiple</span>
 <span class="p">});</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
 <span class="w">  </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(</span><span class="nx">addOn</span><span class="p">)</span>
-<span class="w">  </span><span class="p">.</span><span class="nx">resourceProvider</span><span class="p">(</span><span class="nx">hostedZoneName</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">LookupHostedZoneProvider</span><span class="p">(</span><span class="nx">hostedZoneName</span><span class="p">))</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">resourceProvider</span><span class="p">(</span><span class="nx">hostedZoneName</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">LookupHostedZoneProvider</span><span class="p">(</span><span class="nx">hostedZoneName</span><span class="p">))</span>
 <span class="w">  </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(</span><span class="nx">addOn</span><span class="p">)</span>
 <span class="w">  </span><span class="p">.</span><span class="nx">build</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;my-stack-name&#39;</span><span class="p">);</span>
 </code></pre></div>
@@ -1640,18 +1640,18 @@ This provider will allow to bind to an existing hosted zone based on its name.</
 <span class="w">    </span><span class="c1">//  Register hosted zone1 under the name of MyHostedZone1</span>
 <span class="w">    </span><span class="p">.</span><span class="nx">resourceProvider</span><span class="p">(</span><span class="s2">&quot;MyHostedZone1&quot;</span><span class="p">,</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">LookupHostedZoneProvider</span><span class="p">(</span><span class="nx">myDomainName</span><span class="p">))</span>
 <span class="w">    </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">ExternalDnsAddOn</span><span class="p">({</span>
-<span class="w">        </span><span class="nx">hostedZoneProviders</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;MyHostedZone1&quot;</span><span class="p">];</span>
-<span class="w">    </span><span class="p">})</span>
+<span class="w">        </span><span class="nx">hostedZoneResources</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;MyHostedZone1&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}))</span>
 <span class="w">    </span><span class="p">.</span><span class="nx">build</span><span class="p">(...);</span>
 </code></pre></div>
 <p>If the hosted zone ID is known, then the recommended approach is to use a <code>ImportHostedZoneProvider</code> which bypasses any lookup calls.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">myHostedZoneId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
 <span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
 <span class="w">    </span><span class="c1">//  Register hosted zone1 under the name of MyHostedZone1</span>
-<span class="w">    </span><span class="p">.</span><span class="nx">resourceProvider</span><span class="p">(</span><span class="s2">&quot;MyHostedZone1&quot;</span><span class="p">,</span><span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">ImportHostedZoneProvider</span><span class="p">(</span><span class="nx">myHostedZoneId</span><span class="p">))</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">resourceProvider</span><span class="p">(</span><span class="s2">&quot;MyHostedZone1&quot;</span><span class="p">,</span><span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">ImportHostedZoneProvider</span><span class="p">(</span><span class="nx">myHostedZoneId</span><span class="p">))</span>
 <span class="w">    </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">ExternalDnsAddOn</span><span class="p">({</span>
-<span class="w">        </span><span class="nx">hostedZoneProviders</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;MyHostedZone1&quot;</span><span class="p">];</span>
-<span class="w">    </span><span class="p">})</span>
+<span class="w">        </span><span class="nx">hostedZoneResources</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;MyHostedZone1&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}))</span>
 <span class="w">    </span><span class="p">.</span><span class="nx">build</span><span class="p">(...);</span>
 </code></pre></div>
 <p><strong>Delegating Hosted Zone Provider</strong></p>
@@ -1685,10 +1685,10 @@ This provider will allow to bind to an existing hosted zone based on its name.</
 <span class="w">        </span><span class="nx">parentAccountId</span><span class="o">:</span><span class="w"> </span><span class="kt">parentDnsAccountId</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">delegatingRoleName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;DomainOperatorRole&#39;</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">wildcardSubdomain</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span>
-<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">}))</span>
 <span class="w">    </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">ExternalDnsAddOn</span><span class="p">({</span>
-<span class="w">        </span><span class="nx">hostedZoneProviders</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;MyHostedZone1&quot;</span><span class="p">];</span>
-<span class="w">    </span><span class="p">})</span>
+<span class="w">        </span><span class="nx">hostedZoneResources</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;MyHostedZone1&quot;</span><span class="p">];</span>
+<span class="w">    </span><span class="p">}))</span>
 </code></pre></div>
 <p>The parameter <code>wildcardSubdomain</code> above when set to true will also create a CNAME for <code>*.dev.myglobal-domain.com</code>. This is at the moment used for host based routing within EKS (e.g. with NGINX ingress).</p>
 <h2 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h2>

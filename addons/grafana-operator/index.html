@@ -1598,10 +1598,10 @@
 There should be list the grafana-operator namespace
 <div class="highlight"><pre><span></span><code>grafana-operator<span class="w">      </span>Active<span class="w">   </span>31m
 </code></pre></div>
-Verify if the pods are running correctly in flux-system namespace
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>grafana-operator<span class="w">  </span>
+Verify if everything is running correctly in the grafana-operator namespace
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>all<span class="w"> </span>-n<span class="w"> </span>grafana-operator<span class="w">  </span>
 </code></pre></div>
-There should list 3 pods starting with name flux-system
+This should list 1 pod, 1 service, 1 deployment, and 1 replica-set starting with name grafana-operator 
 For Eg:
 <div class="highlight"><pre><span></span><code>NAME<span class="w">                                                </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
 pod/grafana-operator-779956546b-q5tlf<span class="w">               </span><span class="m">2</span>/2<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>3m7s
