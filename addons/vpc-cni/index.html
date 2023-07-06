@@ -472,6 +472,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../apache-airflow/" class="md-nav__link">
+        Apache Airflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../aws-batch-on-eks/" class="md-nav__link">
         AWS Batch for EKS
       </a>
@@ -544,6 +558,20 @@
     <li class="md-nav__item">
       <a href="../aws-privateca-issuer/" class="md-nav__link">
         AWS Private CA Issuer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backstage/" class="md-nav__link">
+        Backstage
       </a>
     </li>
   
@@ -768,6 +796,20 @@
     <li class="md-nav__item">
       <a href="../grafana-operator/" class="md-nav__link">
         Grafana Operator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instana-addon/" class="md-nav__link">
+        IBM Instana
       </a>
     </li>
   
@@ -1410,6 +1452,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cluster-providers/import-cluster-provider/" class="md-nav__link">
+        Import Cluster Provider
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1452,7 +1508,119 @@
   
     <li class="md-nav__item">
       <a href="../../resource-providers/" class="md-nav__link">
-        Resource Providers
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/amp-provider/" class="md-nav__link">
+        AMP Resource Provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/certificate-providers/" class="md-nav__link">
+        Certificate Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/efs-providers/" class="md-nav__link">
+        EFS Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/hosted-zone-providers/" class="md-nav__link">
+        Hosted Zone Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/iam-role-providers/" class="md-nav__link">
+        IAM Role Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/kms-key-providers/" class="md-nav__link">
+        KMS Key Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/s3-providers/" class="md-nav__link">
+        S3 Bucket Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/vpc-providers/" class="md-nav__link">
+        VPC Resource Providers
       </a>
     </li>
   
@@ -1688,37 +1856,33 @@
 <div class="highlight"><pre><span></span><code><span class="c1"># Assuming cluster version is 1.19, below command shows versions of the vpc-cni add-on available for the specified cluster&#39;s version.</span>
 aws<span class="w"> </span>eks<span class="w"> </span>describe-addon-versions<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--addon-name<span class="w"> </span>vpc-cni<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--kubernetes-version<span class="w"> </span><span class="m">1</span>.23<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--kubernetes-version<span class="w"> </span><span class="m">1</span>.25<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--query<span class="w"> </span><span class="s2">&quot;addons[].addonVersions[].[addonVersion, compatibilities[].defaultVersion]&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--output<span class="w"> </span>text
 <span class="c1"># Output</span>
-v1.12.1-eksbuild.2
+v1.13.2-eksbuild.1
 False
-v1.12.1-eksbuild.1
+v1.13.0-eksbuild.1
 False
+v1.12.6-eksbuild.2
+False
+v1.12.6-eksbuild.1
+False
+v1.12.5-eksbuild.2
+False
+v1.12.5-eksbuild.1
+False
+v1.12.2-eksbuild.1
+True
 v1.12.0-eksbuild.2
 False
-v1.12.0-eksbuild.1
+v1.11.5-eksbuild.1
 False
 v1.11.4-eksbuild.3
 False
-v1.11.4-eksbuild.2
+v1.10.4-eksbuild.3
 False
-v1.11.4-eksbuild.1
-False
-v1.11.3-eksbuild.3
-False
-v1.11.3-eksbuild.2
-False
-v1.11.3-eksbuild.1
-False
-v1.11.2-eksbuild.3
-False
-...
-...
-v1.7.5-eksbuild.1
-False
-v1.6.3-eksbuild.2
+v1.0.0-eksbuild.preview
 False
 </code></pre></div></li>
 </ul>
@@ -1733,7 +1897,7 @@ aws<span class="w"> </span>eks<span class="w"> </span>describe-addon<span class=
 <span class="w">    </span>--query<span class="w"> </span><span class="s2">&quot;addon.addonVersion&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--output<span class="w"> </span>text
 <span class="c1"># Output</span>
-v1.12.1-eksbuild.2
+v1.13.0-eksbuild.1
 </code></pre></div>
 <h2 id="functionality">Functionality<a class="headerlink" href="#functionality" title="Permanent link">&para;</a></h2>
 <p>Applies VPC CNI add-on to Amazon EKS cluster. </p>

@@ -472,6 +472,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../apache-airflow/" class="md-nav__link">
+        Apache Airflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../aws-batch-on-eks/" class="md-nav__link">
         AWS Batch for EKS
       </a>
@@ -544,6 +558,20 @@
     <li class="md-nav__item">
       <a href="../aws-privateca-issuer/" class="md-nav__link">
         AWS Private CA Issuer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backstage/" class="md-nav__link">
+        Backstage
       </a>
     </li>
   
@@ -823,6 +851,20 @@
     <li class="md-nav__item">
       <a href="../grafana-operator/" class="md-nav__link">
         Grafana Operator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instana-addon/" class="md-nav__link">
+        IBM Instana
       </a>
     </li>
   
@@ -1403,6 +1445,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cluster-providers/import-cluster-provider/" class="md-nav__link">
+        Import Cluster Provider
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1445,7 +1501,119 @@
   
     <li class="md-nav__item">
       <a href="../../resource-providers/" class="md-nav__link">
-        Resource Providers
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/amp-provider/" class="md-nav__link">
+        AMP Resource Provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/certificate-providers/" class="md-nav__link">
+        Certificate Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/efs-providers/" class="md-nav__link">
+        EFS Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/hosted-zone-providers/" class="md-nav__link">
+        Hosted Zone Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/iam-role-providers/" class="md-nav__link">
+        IAM Role Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/kms-key-providers/" class="md-nav__link">
+        KMS Key Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/s3-providers/" class="md-nav__link">
+        S3 Bucket Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/vpc-providers/" class="md-nav__link">
+        VPC Resource Providers
       </a>
     </li>
   
@@ -1554,9 +1722,7 @@
 
 
 <h1 id="external-secrets-add-on">External Secrets Add-On<a class="headerlink" href="#external-secrets-add-on" title="Permanent link">&para;</a></h1>
-<p>External Secrets add-on is based
-on <a href="https://github.com/external-secrets/external-secrets">External Secrets Operator (ESO)</a> and allows integration with
-third-party secret stores like AWS Secrets Manager and inject the values into the EKS cluster as Kubernetes Secrets</p>
+<p>External Secrets add-on is based on <a href="https://github.com/external-secrets/external-secrets">External Secrets Operator (ESO)</a> and allows integration with third-party secret stores like AWS Secrets Manager, AWS Systems Manager Parameter Store and inject the values into the EKS cluster as Kubernetes Secrets.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">cdk</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;aws-cdk-lib&#39;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">blueprints</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@aws-quickstart/eks-blueprints&#39;</span><span class="p">;</span>
@@ -1571,7 +1737,8 @@ third-party secret stores like AWS Secrets Manager and inject the values into th
 </code></pre></div>
 <h2 id="cluster-secret-store">Cluster Secret Store<a class="headerlink" href="#cluster-secret-store" title="Permanent link">&para;</a></h2>
 <p>Create a <a href="https://external-secrets.io/v0.5.9/api-clustersecretstore/">ClusterSecretStore</a> which can be used by all
-ExternalSecrets from all namespaces</p>
+ExternalSecrets from all namespaces.</p>
+<p>Below example is for integration with AWS Secrets Manager:</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">eks</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;aws-cdk-lib/aws-eks&#39;</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">cluster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprint</span><span class="p">.</span><span class="nx">getClusterInfo</span><span class="p">().</span><span class="nx">cluster</span><span class="p">;</span>
@@ -1587,6 +1754,38 @@ ExternalSecrets from all namespaces</p>
 <span class="w">                </span><span class="nx">provider</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                    </span><span class="nx">aws</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                        </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;SecretsManager&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nx">region</span><span class="o">:</span><span class="w"> </span><span class="kt">region</span><span class="p">,</span>
+<span class="w">                        </span><span class="nx">auth</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                            </span><span class="nx">jwt</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                </span><span class="nx">serviceAccountRef</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;external-secrets-sa&quot;</span><span class="p">,</span>
+<span class="w">                                    </span><span class="nx">namespace</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;external-secrets&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="p">},</span>
+<span class="w">                            </span><span class="p">},</span>
+<span class="w">                        </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Below example is for integration with AWS Systems Manager Parameter Store:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">eks</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;aws-cdk-lib/aws-eks&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">cluster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprint</span><span class="p">.</span><span class="nx">getClusterInfo</span><span class="p">().</span><span class="nx">cluster</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">clusterSecretStore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">eks</span><span class="p">.</span><span class="nx">KubernetesManifest</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ClusterSecretStore&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">cluster</span><span class="o">:</span><span class="w"> </span><span class="kt">cluster</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">manifest</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">apiVersion</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;external-secrets.io/v1beta1&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">kind</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ClusterSecretStore&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">metadata</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="p">},</span>
+<span class="w">            </span><span class="nx">spec</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">provider</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nx">aws</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ParameterStore&quot;</span><span class="p">,</span>
 <span class="w">                        </span><span class="nx">region</span><span class="o">:</span><span class="w"> </span><span class="kt">region</span><span class="p">,</span>
 <span class="w">                        </span><span class="nx">auth</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                            </span><span class="nx">jwt</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>

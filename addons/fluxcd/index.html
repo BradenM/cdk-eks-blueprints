@@ -472,6 +472,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../apache-airflow/" class="md-nav__link">
+        Apache Airflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../aws-batch-on-eks/" class="md-nav__link">
         AWS Batch for EKS
       </a>
@@ -544,6 +558,20 @@
     <li class="md-nav__item">
       <a href="../aws-privateca-issuer/" class="md-nav__link">
         AWS Private CA Issuer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backstage/" class="md-nav__link">
+        Backstage
       </a>
     </li>
   
@@ -793,6 +821,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#secret-management-for-private-git-repositories-with-fluxcd" class="md-nav__link">
+    Secret Management for private Git repositories with FluxCD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration-options" class="md-nav__link">
     Configuration Options
   </a>
@@ -830,6 +865,20 @@
     <li class="md-nav__item">
       <a href="../grafana-operator/" class="md-nav__link">
         Grafana Operator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instana-addon/" class="md-nav__link">
+        IBM Instana
       </a>
     </li>
   
@@ -1410,6 +1459,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cluster-providers/import-cluster-provider/" class="md-nav__link">
+        Import Cluster Provider
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1452,7 +1515,119 @@
   
     <li class="md-nav__item">
       <a href="../../resource-providers/" class="md-nav__link">
-        Resource Providers
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/amp-provider/" class="md-nav__link">
+        AMP Resource Provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/certificate-providers/" class="md-nav__link">
+        Certificate Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/efs-providers/" class="md-nav__link">
+        EFS Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/hosted-zone-providers/" class="md-nav__link">
+        Hosted Zone Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/iam-role-providers/" class="md-nav__link">
+        IAM Role Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/kms-key-providers/" class="md-nav__link">
+        KMS Key Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/s3-providers/" class="md-nav__link">
+        S3 Bucket Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/vpc-providers/" class="md-nav__link">
+        VPC Resource Providers
       </a>
     </li>
   
@@ -1529,6 +1704,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#secret-management-for-private-git-repositories-with-fluxcd" class="md-nav__link">
+    Secret Management for private Git repositories with FluxCD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration-options" class="md-nav__link">
     Configuration Options
   </a>
@@ -1577,21 +1759,160 @@
 <span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">cdk</span><span class="p">.</span><span class="nx">App</span><span class="p">();</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">addOn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">FluxCDAddOn</span><span class="p">({</span>
-<span class="w">    </span><span class="nx">bootstrapRepo</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">repoUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://github.com/stefanprodan/podinfo&#39;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;podinfo&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">targetRevision</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;master&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;./kustomize&quot;</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nx">bootstrapValues</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="s2">&quot;region&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;us-east-1&quot;</span>
-<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">bootstrapRepo</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">repoUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://github.com/stefanprodan/podinfo&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;podinfo&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">targetRevision</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;master&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;./kustomize&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">bootstrapValues</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;region&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;us-east-1&quot;</span>
+<span class="w">  </span><span class="p">},</span>
 <span class="p">}),</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
 <span class="w">  </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(</span><span class="nx">addOn</span><span class="p">)</span>
 <span class="w">  </span><span class="p">.</span><span class="nx">build</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;my-stack-name&#39;</span><span class="p">);</span>
 </code></pre></div>
+<h2 id="secret-management-for-private-git-repositories-with-fluxcd">Secret Management for private Git repositories with FluxCD<a class="headerlink" href="#secret-management-for-private-git-repositories-with-fluxcd" title="Permanent link">&para;</a></h2>
+<p>Please follow the below steps if you are looking to setup FluxCD addon to read secrets and sync private Git repos:</p>
+<ol>
+<li>Please use the following CLI command to create a AWS Secrets Manager secret for <code>bearer-token-auth</code>.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SECRET_NAME</span><span class="o">=</span>bearer-token-auth
+<span class="nb">export</span><span class="w"> </span><span class="nv">GIT_BEARER_TOKEN</span><span class="o">=</span>&lt;YOUR_GIT_BEARER_TOKEN&gt;
+<span class="nb">export</span><span class="w"> </span><span class="nv">AWS_REGION</span><span class="o">=</span>&lt;YOUR_AWS_REGION&gt;
+aws<span class="w"> </span>secretsmanager<span class="w"> </span>create-secret<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span><span class="nv">$SECRET_NAME</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--description<span class="w"> </span><span class="s2">&quot;Your GIT BEARER TOKEN SECRET&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--secret-string<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">GIT_BEARER_TOKEN</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--region<span class="w"> </span><span class="nv">$AWS_REGION</span>
+</code></pre></div>
+<ol>
+<li>Below is the snippet showing the usage of adding <code>ExternalsSecretsAddOn</code> to read secrets from AWS Secrets Manager and configuring <code>FluxCDAddOn</code> to read private repositories.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">cdk</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;aws-cdk-lib&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">blueprints</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@aws-quickstart/eks-blueprints&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ExternalOperatorSecretAddon</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./externaloperatorsecretaddon&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">cdk</span><span class="p">.</span><span class="nx">App</span><span class="p">();</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">addOns</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">ClusterAddOn</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">ExternalsSecretsAddOn</span><span class="p">(),</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">FluxCDAddOn</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">bootstrapRepo</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">repoUrl</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;&lt;YOUR_PRIVATE_GIT_REPOSITORY&gt;&gt;&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;&lt;YOUR_FLUX_APP_NAME&gt;&gt;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">targetRevision</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;&lt;YOUR_TARGET_REVISION&gt;&gt;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;&lt;YOUR_FLUX_SYNC_PATH&gt;&gt;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">fluxVerifyMode</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;head&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">// This is the name of the kubernetes secret to be created by `ExternalSecret` shown in step 3.</span>
+<span class="w">        </span><span class="nx">fluxSecretRefName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;repository-creds&quot;</span><span class="w"> </span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">bootstrapValues</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;region&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;us-east-1&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">}),</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nx">ExternalOperatorSecretAddon</span><span class="p">(),</span>
+<span class="p">];</span>
+
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(</span><span class="nx">addOns</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">build</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;my-stack-name&#39;</span><span class="p">);</span>
+</code></pre></div>
+<ol>
+<li>Below is the code snippet <code>externaloperatorsecretaddon.ts</code> which shows the mechanism to setup <code>ClusterSecretStore</code> and <code>ExternalSecret</code> to read AWS Secrets Manager <code>bearer-token-auth</code> secret which is a GIT BEARER Token to sync private repositories :</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;source-map-support/register&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">blueprints</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@aws-quickstart/eks-blueprints&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">eks</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">&quot;aws-cdk-lib/aws-eks&quot;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Construct</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;constructs&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">dependable</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;@aws-quickstart/eks-blueprints/dist/utils&#39;</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">ExternalOperatorSecretAddon</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">ClusterAddOn</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">id?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">@dependable</span><span class="p">(</span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">ExternalsSecretsAddOn</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">deploy</span><span class="p">(</span><span class="nx">clusterInfo</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprints.ClusterInfo</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Construct</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">cluster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">clusterInfo</span><span class="p">.</span><span class="nx">cluster</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">secretStore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">eks</span><span class="p">.</span><span class="nx">KubernetesManifest</span><span class="p">(</span><span class="nx">clusterInfo</span><span class="p">.</span><span class="nx">cluster</span><span class="p">.</span><span class="nx">stack</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ClusterSecretStore&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">cluster</span><span class="o">:</span><span class="w"> </span><span class="kt">cluster</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">manifest</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nx">apiVersion</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;external-secrets.io/v1beta1&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nx">kind</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ClusterSecretStore&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nx">metadata</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;secret-manager-store&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nx">namespace</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="nx">spec</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nx">provider</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                            </span><span class="nx">aws</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                </span><span class="nx">service</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;SecretsManager&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="nx">region</span><span class="o">:</span><span class="w"> </span><span class="kt">clusterInfo.cluster.stack.region</span><span class="p">,</span>
+<span class="w">                                </span><span class="nx">auth</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                    </span><span class="nx">jwt</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                        </span><span class="nx">serviceAccountRef</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;external-secrets-sa&quot;</span><span class="p">,</span>
+<span class="w">                                            </span><span class="nx">namespace</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;external-secrets&quot;</span><span class="p">,</span>
+<span class="w">                                        </span><span class="p">},</span>
+<span class="w">                                    </span><span class="p">},</span>
+<span class="w">                                </span><span class="p">},</span>
+<span class="w">                            </span><span class="p">},</span>
+<span class="w">                        </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">        </span><span class="p">});</span>
+
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">externalSecret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">eks</span><span class="p">.</span><span class="nx">KubernetesManifest</span><span class="p">(</span><span class="nx">clusterInfo</span><span class="p">.</span><span class="nx">cluster</span><span class="p">.</span><span class="nx">stack</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ExternalSecret&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">cluster</span><span class="o">:</span><span class="w"> </span><span class="kt">cluster</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">manifest</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nx">apiVersion</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;external-secrets.io/v1beta1&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nx">kind</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ExternalSecret&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nx">metadata</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;git-admin-credentials&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nx">namespace</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;flux-system&quot;</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="nx">spec</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nx">secretStoreRef</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;secret-manager-store&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="nx">kind</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ClusterSecretStore&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="p">},</span>
+<span class="w">                        </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;repository-creds&quot;</span>
+<span class="w">                        </span><span class="p">},</span>
+<span class="w">                        </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                            </span><span class="p">{</span>
+<span class="w">                                </span><span class="nx">secretKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bearerToken&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="nx">remoteRef</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                                    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bearer-token-auth&quot;</span>
+<span class="w">                                </span><span class="p">},</span>
+<span class="w">                            </span><span class="p">},</span>
+<span class="w">                        </span><span class="p">],</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">        </span><span class="nx">externalSecret</span><span class="p">.</span><span class="nx">node</span><span class="p">.</span><span class="nx">addDependency</span><span class="p">(</span><span class="nx">secretStore</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">secretStore</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>Upon execution of the above blueprint, the above <code>ExternalSecret</code> Kubernetes resource will take care of creating a Kubernetes Secret as shown below in <code>flux-system</code> namespace :</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">repository-creds</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flux-system</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
+<span class="nt">data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">bearerToken</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt;BASE64 ENCODED SECRET OF YOUR_GIT_BEARER_TOKEN STORE in AWS SECRETS MANAGER&gt;&gt;</span>
+</code></pre></div>
+<p>As pointed, if you are looking to use <code>secretRef</code> to reference a secret for FluxCD addon to sync private Git repos, please make sure the referenced secret is already created in the namespace ahead of time in AWS Secrets Manager as shown above. You can use <a href="../external-secrets/">External Secrets Addon</a> to learn more about external secrets operator which allows integration with third-party secret stores like AWS Secrets Manager, AWS Systems Manager Parameter Store and inject the values into the EKS cluster as Kubernetes Secrets.</p>
 <h2 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>createNamespace</code>: (boolean) If you want CDK to create the namespace for you.</li>

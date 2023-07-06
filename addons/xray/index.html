@@ -472,6 +472,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../apache-airflow/" class="md-nav__link">
+        Apache Airflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../aws-batch-on-eks/" class="md-nav__link">
         AWS Batch for EKS
       </a>
@@ -544,6 +558,20 @@
     <li class="md-nav__item">
       <a href="../aws-privateca-issuer/" class="md-nav__link">
         AWS Private CA Issuer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backstage/" class="md-nav__link">
+        Backstage
       </a>
     </li>
   
@@ -768,6 +796,20 @@
     <li class="md-nav__item">
       <a href="../grafana-operator/" class="md-nav__link">
         Grafana Operator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instana-addon/" class="md-nav__link">
+        IBM Instana
       </a>
     </li>
   
@@ -1396,6 +1438,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cluster-providers/import-cluster-provider/" class="md-nav__link">
+        Import Cluster Provider
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1438,7 +1494,119 @@
   
     <li class="md-nav__item">
       <a href="../../resource-providers/" class="md-nav__link">
-        Resource Providers
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/amp-provider/" class="md-nav__link">
+        AMP Resource Provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/certificate-providers/" class="md-nav__link">
+        Certificate Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/efs-providers/" class="md-nav__link">
+        EFS Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/hosted-zone-providers/" class="md-nav__link">
+        Hosted Zone Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/iam-role-providers/" class="md-nav__link">
+        IAM Role Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/kms-key-providers/" class="md-nav__link">
+        KMS Key Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/s3-providers/" class="md-nav__link">
+        S3 Bucket Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/vpc-providers/" class="md-nav__link">
+        VPC Resource Providers
       </a>
     </li>
   
@@ -1541,8 +1709,8 @@
 
 <h1 id="aws-x-ray-add-on">AWS X-Ray Add-on<a class="headerlink" href="#aws-x-ray-add-on" title="Permanent link">&para;</a></h1>
 <p>This add-on is currently deprecated since the underlying manifests are incompatible with the latest versions of EKS. Please use <a href="../xray-adot-addon/">XRay Adot Add-on</a>.</p>
-<p><a href="https://aws.amazon.com/xray/">AWS X-Ray</a> helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture. The X-Ray addon provisions X-Ray daemon into an EKS cluster. This daemon exposes an internal endpoint <code>xray-service.xray-system.svc.cluster.local:2000</code> that could be leveraged to aggregate and post traces to the AWS X-Ray service. </p>
-<p>For instructions on getting started with X-Ray on EKS refer to the <a href="https://www.eksworkshop.com/intermediate/245_x-ray/">EKS Workshop X-Ray Section</a>.</p>
+<p><a href="https://aws.amazon.com/xray/">AWS X-Ray</a> helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture. The X-Ray addon provisions X-Ray daemon into an EKS cluster. This daemon exposes receives X-Ray SDK metrics and pushes the traces to X-Ray console. </p>
+<p>For instructions on getting started with X-Ray on EKS refer to the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy_servicelens_CloudWatch_agent_deploy_EKS.html">X-Ray Documentation</a>.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;source-map-support/register&#39;</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">cdk</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;aws-cdk-lib&#39;</span><span class="p">;</span>
@@ -1556,12 +1724,12 @@
 <span class="w">  </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(</span><span class="nx">addOn</span><span class="p">)</span>
 <span class="w">  </span><span class="p">.</span><span class="nx">build</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;my-stack-name&#39;</span><span class="p">);</span>
 </code></pre></div>
-<p>Once deployed, it allows applications to be instrumented with X-Ray by leveraging the X-Ray SDK.  Examples of such integration can be found on <a href="https://github.com/aws-samples/aws-xray-kubernetes">GitHub</a>.</p>
+<p>Once deployed, it allows applications to be instrumented with X-Ray by leveraging the X-Ray SDK.  Examples of such integration can be found on <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy_servicelens_CloudWatch_agent_deploy_EKS.html">AWS Docs</a>.</p>
 <h2 id="functionality">Functionality<a class="headerlink" href="#functionality" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Creates the <code>xray-system</code> namespace.</li>
-<li>Deploys the <a href="https://www.eksworkshop.com/intermediate/245_x-ray/x-ray-daemon/"><code>xray-daemon</code></a> manifests into the cluster.</li>
-<li>Configures Kubernetes service account with IRSA (<code>AWSXRayDaemonWriteAccess</code>) for communication between the cluster and the AWS X-Ray service </li>
+<li>Creates the <code>amazon-cloudwatch</code> namespace.</li>
+<li>Deploys the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy_servicelens_CloudWatch_agent_deploy_EKS.html"><code>xray-daemon</code></a> manifests into the cluster.</li>
+<li>Configures Node role with policies (<code>AWSXRayDaemonWriteAccess</code>) for communication between the cluster and the X-Ray service.</li>
 </ol>
 
 

@@ -472,6 +472,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../apache-airflow/" class="md-nav__link">
+        Apache Airflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../aws-batch-on-eks/" class="md-nav__link">
         AWS Batch for EKS
       </a>
@@ -544,6 +558,20 @@
     <li class="md-nav__item">
       <a href="../aws-privateca-issuer/" class="md-nav__link">
         AWS Private CA Issuer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backstage/" class="md-nav__link">
+        Backstage
       </a>
     </li>
   
@@ -768,6 +796,20 @@
     <li class="md-nav__item">
       <a href="../grafana-operator/" class="md-nav__link">
         Grafana Operator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instana-addon/" class="md-nav__link">
+        IBM Instana
       </a>
     </li>
   
@@ -1431,6 +1473,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cluster-providers/import-cluster-provider/" class="md-nav__link">
+        Import Cluster Provider
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1473,7 +1529,119 @@
   
     <li class="md-nav__item">
       <a href="../../resource-providers/" class="md-nav__link">
-        Resource Providers
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/amp-provider/" class="md-nav__link">
+        AMP Resource Provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/certificate-providers/" class="md-nav__link">
+        Certificate Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/efs-providers/" class="md-nav__link">
+        EFS Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/hosted-zone-providers/" class="md-nav__link">
+        Hosted Zone Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/iam-role-providers/" class="md-nav__link">
+        IAM Role Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/kms-key-providers/" class="md-nav__link">
+        KMS Key Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/s3-providers/" class="md-nav__link">
+        S3 Bucket Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/vpc-providers/" class="md-nav__link">
+        VPC Resource Providers
       </a>
     </li>
   
@@ -1654,6 +1822,9 @@
 <span class="w">    </span><span class="nx">effect</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;NoSchedule&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="p">}],</span>
 <span class="w">  </span><span class="nx">amiFamily</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;AL2&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">amiSelector</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;karpenter.sh/discovery/MyClusterName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;*&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nx">consolidation</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">enabled</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="p">},</span>
 <span class="w">  </span><span class="nx">ttlSecondsUntilExpired</span><span class="o">:</span><span class="w"> </span><span class="kt">2592000</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">weight</span><span class="o">:</span><span class="w"> </span><span class="kt">20</span><span class="p">,</span>
@@ -1686,12 +1857,12 @@ blueprints-addon-karpenter-54fd978b89-hclmp<span class="w">   </span><span class
 <li>Creates <code>karpenter</code> namespace.</li>
 <li>Creates Kubernetes Service Account, and associate AWS IAM Role with Karpenter Controller Policy attached using <a href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/setting-up-enable-IAM.html">IRSA</a>.</li>
 <li>Deploys Karpenter helm chart in the <code>karpenter</code> namespace, configuring cluster name and cluster endpoint on the controller by default.</li>
-<li>(Optionally) provisions a default Karpenter Provisioner CRD based on user-provided <a href="https://karpenter.sh/v0.12.1/provisioner/#specrequirements">spec.requirements</a>, <a href="https://karpenter.sh/v0.12.1/aws/provisioning/#amazon-machine-image-ami-family">AMI type</a>, taints and tags. If created, the provisioner will discover the EKS VPC subnets and security groups to launch the nodes with.</li>
+<li>(Optionally) provisions a default Karpenter Provisioner and AWSNodeTemplate CRD based on user-provided parameters such as <a href="https://karpenter.sh/docs/concepts/provisioners/#specrequirements">spec.requirements</a>, <a href="https://karpenter.sh/v0.12.1/aws/provisioning/#amazon-machine-image-ami-family">AMI type</a>,<a href="https://karpenter.sh/docs/concepts/provisioners/#specweight">weight</a>, <a href="https://karpenter.sh/docs/concepts/node-templates/#specsubnetselector">Subnet Selector</a>, and <a href="https://karpenter.sh/docs/concepts/node-templates/#specsecuritygroupselector">Security Group Selector</a>. If created, the provisioner will discover the EKS VPC subnets and security groups to launch the nodes with.</li>
 </ol>
 <p><strong>NOTE:</strong>
 1. The default provisioner is created only if both the subnet tags and the security group tags are provided.
-2. Provisioner spec requirement fields are not necessary, as karpenter will dynamically choose (i.e. leaving instance-type blank will let karpenter choose approrpriate sizing).
-3. Consolidation, which is a flag that enables , is supported on versions 0.15.0 and later. It is also mutually exclusive with <code>ttlSecondsAfterempty</code>, so if you provide both properties, the addon will throw an error.
+2. Provisioner spec requirement fields are not necessary, as karpenter will dynamically choose (i.e. leaving instance-type blank will let karpenter choose appropriate sizing).
+3. Consolidation, which is a flag that enables , is supported on versions 0.15.0 and later. It is also mutually exclusive with <code>ttlSecondsAfterEmpty</code>, so if you provide both properties, the addon will throw an error.
 4. Weight, which is a property to prioritize provisioners based on weight, is supported on versions 0.16.0 and later. Addon will throw an error if weight is provided for earlier versions.
 5. Interruption Handling, which is a native way to handle interruption due to involuntary interruption events, is supported on versions 0.19.0 and later. For interruption handling in the earlier versions, Karpenter supports using AWS Node Interruption Handler (which you will need to add as an add-on and <strong><em>must be in add-on array after the Karpenter add-on</em></strong> for it to work.</p>
 <h2 id="using-karpenter">Using Karpenter<a class="headerlink" href="#using-karpenter" title="Permanent link">&para;</a></h2>

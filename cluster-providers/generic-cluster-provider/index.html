@@ -470,6 +470,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../addons/apache-airflow/" class="md-nav__link">
+        Apache Airflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../addons/aws-batch-on-eks/" class="md-nav__link">
         AWS Batch for EKS
       </a>
@@ -542,6 +556,20 @@
     <li class="md-nav__item">
       <a href="../../addons/aws-privateca-issuer/" class="md-nav__link">
         AWS Private CA Issuer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../addons/backstage/" class="md-nav__link">
+        Backstage
       </a>
     </li>
   
@@ -766,6 +794,20 @@
     <li class="md-nav__item">
       <a href="../../addons/grafana-operator/" class="md-nav__link">
         Grafana Operator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../addons/instana-addon/" class="md-nav__link">
+        IBM Instana
       </a>
     </li>
   
@@ -1358,6 +1400,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import-cluster-provider/" class="md-nav__link">
+        Import Cluster Provider
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1400,7 +1456,119 @@
   
     <li class="md-nav__item">
       <a href="../../resource-providers/" class="md-nav__link">
-        Resource Providers
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/amp-provider/" class="md-nav__link">
+        AMP Resource Provider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/certificate-providers/" class="md-nav__link">
+        Certificate Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/efs-providers/" class="md-nav__link">
+        EFS Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/hosted-zone-providers/" class="md-nav__link">
+        Hosted Zone Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/iam-role-providers/" class="md-nav__link">
+        IAM Role Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/kms-key-providers/" class="md-nav__link">
+        KMS Key Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/s3-providers/" class="md-nav__link">
+        S3 Bucket Resource Providers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-providers/vpc-providers/" class="md-nav__link">
+        VPC Resource Providers
       </a>
     </li>
   
@@ -1492,7 +1660,21 @@
 <li><a href="../api/interfaces/FargateClusterProviderProps.html">Fargate Cluster</a></li>
 </ul>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">clusterProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">GenericClusterProvider</span><span class="p">({</span>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">windowsUserData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ec2</span><span class="p">.</span><span class="nx">UserData</span><span class="p">.</span><span class="nx">forWindows</span><span class="p">();</span>
+<span class="nx">windowsUserData</span><span class="p">.</span><span class="nx">addCommands</span><span class="p">(</span><span class="sb">`</span>
+<span class="sb">    $ErrorActionPreference = &#39;Stop&#39;</span>
+<span class="sb">    $EKSBootstrapScriptPath = &quot;C:\\\\Program Files\\\\Amazon\\\\EKS\\\\Start-EKSBootstrap.ps1&quot;</span>
+<span class="sb">    Try {</span>
+<span class="sb">    &amp; $EKSBootstrapScriptPath -EKSClusterName &#39;&lt;YOUR_CLUSTER_NAME&gt;&#39;</span>
+<span class="sb">    } Catch {</span>
+<span class="sb">    Throw $_</span>
+<span class="sb">    }</span>
+<span class="sb">`</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">ebsDeviceProps</span><span class="o">:</span><span class="w"> </span><span class="kt">ec2.EbsDeviceProps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">deleteOnTermination</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">volumeType</span><span class="o">:</span><span class="w"> </span><span class="kt">ec2.EbsDeviceVolumeType.GP2</span>
+<span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">clusterProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">GenericClusterProvider</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="kt">KubernetesVersion.V1_25</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="s2">&quot;Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;blueprints-example-cluster&quot;</span><span class="p">,</span>
@@ -1545,6 +1727,39 @@
 <span class="w">                    </span><span class="s2">&quot;Instance&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;SPOT&quot;</span>
 <span class="w">                </span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="c1">// Below is a Managed Windows Node Group Sample.</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mng3-windowsami&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">amiType</span><span class="o">:</span><span class="w"> </span><span class="kt">NodegroupAmiType.AL2_X86_64</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">instanceTypes</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="ow">new</span><span class="w"> </span><span class="nx">ec2</span><span class="p">.</span><span class="nx">InstanceType</span><span class="p">(</span><span class="s1">&#39;m5.4xlarge&#39;</span><span class="p">)],</span>
+<span class="w">            </span><span class="nx">desiredSize</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">minSize</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span><span class="w"> </span>
+<span class="w">            </span><span class="nx">nodeRole</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprints.getNamedResource</span><span class="p">(</span><span class="s2">&quot;node-role&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">iam</span><span class="p">.</span><span class="nx">Role</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">launchTemplate</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">blockDevices</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nx">deviceName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/dev/sda1&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nx">volume</span><span class="o">:</span><span class="w"> </span><span class="kt">ec2.BlockDeviceVolume.ebs</span><span class="p">(</span><span class="mf">50</span><span class="p">,</span><span class="w"> </span><span class="nx">ebsDeviceProps</span><span class="p">),</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">],</span>
+<span class="w">            </span><span class="nx">machineImage</span><span class="o">:</span><span class="w"> </span><span class="kt">ec2.MachineImage.genericWindows</span><span class="p">({</span>
+<span class="w">                </span><span class="s1">&#39;us-east-1&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ami-0e80b8d281637c6c1&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="s1">&#39;us-east-2&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ami-039ecff89038848a6&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="s1">&#39;us-west-1&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ami-0c0815035bf1efb6e&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="s1">&#39;us-west-2&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ami-029e1340b254a7667&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="s1">&#39;eu-west-1&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ami-09af50f599f7f882c&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="s1">&#39;eu-west-2&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ami-0bf1fec1eaef78230&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="p">}),</span>
+<span class="w">                </span><span class="nx">securityGroup</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprints.getNamedResource</span><span class="p">(</span><span class="s2">&quot;my-cluster-security-group&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">ec2</span><span class="p">.</span><span class="nx">ISecurityGroup</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="s2">&quot;Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mng3&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Managed-WindowsNode-Group&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;LaunchTemplate&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;WindowsLT&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;kubernetes.io/cluster/&lt;YOUR_CLUSTER_NAME&gt;&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;owned&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nx">userData</span><span class="o">:</span><span class="w"> </span><span class="kt">windowsUserData</span><span class="p">,</span>
+<span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nx">fargateProfiles</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
@@ -1573,7 +1788,7 @@ For example cluster allows passing <code>mastersRole</code>, <code>securityGroup
 <span class="w">    </span><span class="nx">mastersRole</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprints.getResource</span><span class="p">(</span><span class="nx">context</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">iam</span><span class="p">.</span><span class="nx">Role</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">scope</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;AdminRole&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">assumedBy</span><span class="o">:</span><span class="w"> </span><span class="kt">new</span><span class="w"> </span><span class="nx">AccountRootPrincipal</span><span class="p">()</span><span class="w"> </span><span class="p">});</span>
 <span class="w">    </span><span class="p">}),</span>
-<span class="w">    </span><span class="nx">securityGroup</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprints.getNamedResource</span><span class="p">(</span><span class="s2">&quot;my-cluster-security-group&quot;</span><span class="p">),</span><span class="w"> </span><span class="c1">// assumed to be register as a resource provider under name my-cluster-security-group</span>
+<span class="w">    </span><span class="nx">securityGroup</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprints.getNamedResource</span><span class="p">(</span><span class="s2">&quot;my-cluster-security-group&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">ec2</span><span class="p">.</span><span class="nx">ISecurityGroup</span><span class="p">,</span><span class="w"> </span><span class="c1">// assumed to be register as a resource provider under name my-cluster-security-group</span>
 <span class="w">    </span><span class="nx">managedNodeGroups</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mng1&quot;</span><span class="p">,</span>
@@ -1588,7 +1803,7 @@ For example cluster allows passing <code>mastersRole</code>, <code>securityGroup
 <span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
 <span class="w">    </span><span class="p">.</span><span class="nx">resourceProvider</span><span class="p">(</span><span class="s2">&quot;my-cluster-security-group&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">provide</span><span class="p">(</span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="kt">blueprints.ResourceContext</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">ec2</span><span class="p">.</span><span class="nx">ISecurityGroup</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">ec2</span><span class="p">.</span><span class="nx">SecurityGroup</span><span class="p">.</span><span class="nx">fromSecurityGroupId</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SG&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;sg-12345&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">mutable</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// example for look up</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">ec2</span><span class="p">.</span><span class="nx">SecurityGroup</span><span class="p">.</span><span class="nx">fromSecurityGroupId</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">scope</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SG&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;sg-12345&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">mutable</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// example for look up</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">})</span>
 <span class="w">    </span><span class="p">.</span><span class="nx">clusterProvider</span><span class="p">(</span><span class="nx">clusterProvider</span><span class="p">)</span>
@@ -1666,7 +1881,7 @@ For example cluster allows passing <code>mastersRole</code>, <code>securityGroup
 <span class="w">    </span><span class="p">]</span>
 <span class="p">});</span>
 </code></pre></div>
-<p>Note: consult the <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">official EKS documentation</a> for information ion the AMI release version that matches Kubernetes versions.</p>
+<p>Note: consult the <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-amis.html">official EKS documentation</a> for information ion the AMI release version that matches Kubernetes versions.</p>
 
 
 
