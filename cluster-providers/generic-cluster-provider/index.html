@@ -932,6 +932,20 @@
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/komodorio/komodor-eks-blueprints-addon" class="md-nav__link">
+        Komodor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../addons/kube-proxy/" class="md-nav__link">
         Kube Proxy
       </a>
@@ -1654,10 +1668,10 @@
 <h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
 <p>Full list of configuration options:</p>
 <ul>
-<li><a href="../api/interfaces/GenericClusterProviderProps.html">Generic Cluster Provider</a></li>
-<li><a href="../api/interfaces/ManagedNodeGroup.html">Managed Node Group</a></li>
-<li><a href="../api/interface/../interfaces/AutoscalingNodeGroup.html">Autoscaling Group</a></li>
-<li><a href="../api/interfaces/FargateClusterProviderProps.html">Fargate Cluster</a></li>
+<li><a href="../../api/interfaces/clusters.GenericClusterProviderProps.html">Generic Cluster Provider</a></li>
+<li><a href="../../api/interfaces/clusters.ManagedNodeGroup.html">Managed Node Group</a></li>
+<li><a href="../../api/interfaces/clusters.AutoscalingNodeGroup.html">Autoscaling Group</a></li>
+<li><a href="../../api/interfaces/clusters.FargateClusterProviderProps.html">Fargate Cluster</a></li>
 </ul>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">windowsUserData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ec2</span><span class="p">.</span><span class="nx">UserData</span><span class="p">.</span><span class="nx">forWindows</span><span class="p">();</span>
@@ -1867,7 +1881,7 @@ For example cluster allows passing <code>mastersRole</code>, <code>securityGroup
 <li><code>eks.default.private-cluster</code></li>
 </ul>
 <p>Configuration of the EC2 parameters through context parameters makes sense if you would like to apply default configuration to multiple clusters without the need to explicitly pass individual <code>GenericProviderClusterProps</code> to each cluster blueprint.</p>
-<p>You can find more details on the supported configuration options in the API documentation for the <a href="../api/interfaces/GenericClusterProviderProps.html">GenericClusterProviderProps</a>.</p>
+<p>You can find more details on the supported configuration options in the API documentation for the <a href="../../api/interfaces/clusters.GenericClusterProviderProps.html">GenericClusterProviderProps</a>.</p>
 <h2 id="upgrading-control-plane">Upgrading Control Plane<a class="headerlink" href="#upgrading-control-plane" title="Permanent link">&para;</a></h2>
 <p>Upgrading Kubernetes versions via cluster configuration at present won't impact the kubelet version running on the worker nodes. Worker nodes in-place upgrade requires explicit update of the individual node groups. The property that controls it for managed node groups is <code>amiReleaseVersion</code>. The following demonstrates how to do so.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">clusterProvider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">GenericClusterProvider</span><span class="p">({</span>

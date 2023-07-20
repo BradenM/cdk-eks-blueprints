@@ -1003,6 +1003,20 @@
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/komodorio/komodor-eks-blueprints-addon" class="md-nav__link">
+        Komodor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../kube-proxy/" class="md-nav__link">
         Kube Proxy
       </a>
@@ -1860,7 +1874,7 @@ Replace ${AWS_REGION} with your target region
 </code></pre></div>
 7) Purge the SQS queue to test scale in event
 Replace ${AWS_REGION} with your target region
-<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>sqs<span class="w"> </span>purge-queue<span class="w"> </span>--queue-url<span class="w"> </span>https://sqs.<span class="si">${</span><span class="nv">AWS_REGION</span><span class="si">}</span>.amazonaws.com/CCOUNT_NUMBER/sqs-consumer<span class="w">  </span>
+<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>sqs<span class="w"> </span>purge-queue<span class="w"> </span>--queue-url<span class="w"> </span><span class="s2">&quot;https://sqs.</span><span class="si">${</span><span class="nv">AWS_REGION</span><span class="si">}</span><span class="s2">.amazonaws.com/CCOUNT_NUMBER/sqs-consumer&quot;</span><span class="w">  </span>
 </code></pre></div>
 6) Verify if the nginx pod is scaledd in from 2 to 1 after teh cool down perion set (500 in this case)
 <div class="highlight"><pre><span></span><code><span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>sqs-consumer

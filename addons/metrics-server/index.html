@@ -934,6 +934,20 @@
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/komodorio/komodor-eks-blueprints-addon" class="md-nav__link">
+        Komodor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../kube-proxy/" class="md-nav__link">
         Kube Proxy
       </a>
@@ -1776,6 +1790,7 @@ blueprints-addon-metrics-server<span class="w">                               </
 <ol>
 <li>Deploys the metrics-server helm chart in <code>kube-system</code> namespace by default.</li>
 <li>Supports <a href="../#standard-helm-add-on-configuration-options">standard helm configuration options</a>.</li>
+<li>Supports <code>createNamespace</code> configuration to deploy the addon to a customized namespace.</li>
 </ol>
 <h2 id="testing-with-kubernetes-dashboard">Testing with Kubernetes Dashboard<a class="headerlink" href="#testing-with-kubernetes-dashboard" title="Permanent link">&para;</a></h2>
 <p>For testing, we will use the <a href="https://docs.aws.amazon.com/eks/latest/userguide/dashboard-tutorial.html">Kubernetes Dashboard</a> to view CPU and memory metrics of our cluster.</p>

@@ -1043,6 +1043,20 @@
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/komodorio/komodor-eks-blueprints-addon" class="md-nav__link">
+        Komodor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../kube-proxy/" class="md-nav__link">
         Kube Proxy
       </a>
@@ -1830,10 +1844,10 @@
 
 
 <h1 id="argo-cd-add-on">Argo CD Add-on<a class="headerlink" href="#argo-cd-add-on" title="Permanent link">&para;</a></h1>
-<p><a href="https://argoproj.github.io/argo-cd/">Argo CD</a> is a declarative, GitOps continuous delivery tool for Kubernetes. The Argo CD add-on provisions <a href="https://argoproj.github.io/argo-cd/">Argo CD</a> into an EKS cluster, and can optionally bootstrap your workloads from public and private Git repositories. </p>
+<p><a href="https://argo-cd.readthedocs.io/en/stable/">Argo CD</a> is a declarative, GitOps continuous delivery tool for Kubernetes. The Argo CD add-on provisions <a href="https://argo-cd.readthedocs.io/en/stable/">Argo CD</a> into an EKS cluster, and can optionally bootstrap your workloads from public and private Git repositories. </p>
 <p>The Argo CD add-on allows platform administrators to combine cluster provisioning and workload bootstrapping in a single step and enables use cases such as replicating an existing running production cluster in a different region in a matter of minutes. This is important for business continuity and disaster recovery cases as well as for cross-regional availability and geographical expansion.</p>
-<p>Please see the documentation below for details on automatic boostrapping with ArgoCD add-on. If you prefer manual bootstrapping (once your cluster is deployed with this add-on included), you can find instructions on getting started with Argo CD in our <a href="/getting-started/#deploy-workloads-with-argocd">Getting Started</a> guide.</p>
-<p>Full Argo CD project documentation <a href="https://argoproj.github.io/argo-cd/">can be found here</a>.</p>
+<p>Please see the documentation below for details on automatic boostrapping with ArgoCD add-on. If you prefer manual bootstrapping (once your cluster is deployed with this add-on included), you can find instructions on getting started with Argo CD in our <a href="../../getting-started/#deploy-workloads-with-argocd">Getting Started</a> guide.</p>
+<p>Full Argo CD project documentation <a href="https://argo-cd.readthedocs.io/en/stable/">can be found here</a>.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>To provision and maintain ArgoCD components without any bootstrapping, the add-on provides a no-argument constructor to get started. </p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="s1">&#39;source-map-support/register&#39;</span><span class="p">;</span>
@@ -1848,11 +1862,11 @@
 <span class="w">  </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(</span><span class="nx">addOn</span><span class="p">)</span>
 <span class="w">  </span><span class="p">.</span><span class="nx">build</span><span class="p">(</span><span class="nx">app</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;my-stack-name&#39;</span><span class="p">);</span>
 </code></pre></div>
-<p>The above will create an <code>argocd</code> namespace and install all Argo CD components. In order to bootstrap workloads you will need to change the default ArgoCD admin password and add repositories as specified in the <a href="https://argoproj.github.io/argo-cd/getting_started/#port-forwarding">Getting Started</a> documentation.</p>
+<p>The above will create an <code>argocd</code> namespace and install all Argo CD components. In order to bootstrap workloads you will need to change the default ArgoCD admin password and add repositories as specified in the <a href="https://argo-cd.readthedocs.io/en/stable/getting_started/#port-forwarding">Getting Started</a> documentation.</p>
 <h2 id="functionality">Functionality<a class="headerlink" href="#functionality" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Creates the namespace specified in the construction parameter (<code>argocd</code> by default).</li>
-<li>Deploys the <a href="https://argoproj.github.io/argo-helm"><code>argo-cd</code></a> Helm chart into the cluster.</li>
+<li>Deploys the <a href="https://argoproj.github.io/argo-helm/"><code>argo-cd</code></a> Helm chart into the cluster.</li>
 <li>Allows to specify <code>ApplicationRepository</code> selecting the required authentication method as SSH Key, username/password or username/token. Credentials are expected to be set in AWS Secrets Manager and replicated to the desired region. If bootstrap repository is specified, creates the initial bootstrap application which may be leveraged to bootstrap workloads and/or other add-ons through GitOps.</li>
 <li>Allows setting the initial admin password through AWS Secrets Manager, replicating to the desired region. </li>
 <li>Supports <a href="../#standard-helm-add-on-configuration-options">standard helm configuration options</a>.</li>
@@ -1868,7 +1882,7 @@
 <p>Inside ArgoCD, the admin password is stored as a <code>bcrypt</code> hash. This step will be performed by the framework and stored in the ArgoCD admin <code>secret</code>. </p>
 <p>You can change the admin password through the Secrets Manager, but it will require rerunning the provisioning pipeline to apply the change. </p>
 <h2 id="bootstrapping">Bootstrapping<a class="headerlink" href="#bootstrapping" title="Permanent link">&para;</a></h2>
-<p>The Blueprints framework provides an approach to bootstrap workloads and/or additional add-ons from a customer GitOps repository. In a general case, the bootstrap GitOps repository may contains an <a href="https://argoproj.github.io/argo-cd/operator-manual/cluster-bootstrapping/#app-of-apps-pattern">App of Apps</a> that points to all workloads and add-ons.  </p>
+<p>The Blueprints framework provides an approach to bootstrap workloads and/or additional add-ons from a customer GitOps repository. In a general case, the bootstrap GitOps repository may contains an <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern">App of Apps</a> that points to all workloads and add-ons.  </p>
 <p>In order to enable bootstrapping, the add-on allows passing an <code>ApplicationRepository</code> at construction time. The following repository types are supported at present:</p>
 <ol>
 <li>Public HTTP/HTTPS repositories (e.g., GitHub)</li>
@@ -1930,7 +1944,7 @@
 <p>The application promotion process in the above example is handled entirely through GitOps. Each stage specific App of Apps contains references to respective application GitOps repository for each stage (e.g referencing the release vs work branches or path-based within individual app GitOps repository).</p>
 <h3 id="gitops-for-eks-blueprints-addons">GitOps for EKS Blueprints AddOns<a class="headerlink" href="#gitops-for-eks-blueprints-addons" title="Permanent link">&para;</a></h3>
 <p>By default all AddOns defined in a blueprint are deployed to the cluster via CDK. You can opt-in to deploy them following the GitOps model via ArgoCD. You will need a repository contains all the AddOns you would like to deploy via ArgoCD, such as, <a href="https://github.com/aws-samples/eks-blueprints-add-ons">eks-blueprints-add-ons</a>. You then configure ArgoCD bootstrapping with this repository as shown above.</p>
-<p>There are two types of GitOps deployments via ArgoCD depending on whether you would like to adopt the <a href="https://argoproj.github.io/argo-cd/operator-manual/cluster-bootstrapping/#app-of-apps-pattern">App of Apps</a> strategy:</p>
+<p>There are two types of GitOps deployments via ArgoCD depending on whether you would like to adopt the <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern">App of Apps</a> strategy:</p>
 <ul>
 <li>CDK deploys the <code>Application</code> resource for each AddOn enabled, and ArgoCD deploys the actual AddOn via GitOps based on the <code>Application</code> resource. Example:</li>
 </ul>
@@ -2055,7 +2069,7 @@
 <span class="w">        </span><span class="p">}</span>
 <span class="w">     </span><span class="p">}))</span>
 </code></pre></div>
-<p>For more information, please refer to the <a href="https://github.com/argoproj/argo-helm/tree/master/charts/argo-cd">ArgoCD official documentation</a>.</p>
+<p>For more information, please refer to the <a href="https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd">ArgoCD official documentation</a>.</p>
 <h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h2>
 <ol>
 <li>

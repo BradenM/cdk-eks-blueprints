@@ -934,6 +934,20 @@
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/komodorio/komodor-eks-blueprints-addon" class="md-nav__link">
+        Komodor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../kube-proxy/" class="md-nav__link">
         Kube Proxy
       </a>
@@ -1890,17 +1904,17 @@
 <p>Custom values to pass to the chart. Config options: https://github.com/kubecost/cost-analyzer-helm-chart/blob/master/README.md#config-options </p>
 <h4 id="customprometheus-string-optional"><code>customPrometheus: string</code> (optional)<a class="headerlink" href="#customprometheus-string-optional" title="Permanent link">&para;</a></h4>
 <p>Kubecost comes bundled with a Prometheus installation. However, if you wish to integrate with an external Prometheus deployment, provide your local Prometheus service address with this format <code>http://..svc</code>.
-Note: integrating with an existing Prometheus is only officially supported under Kubecost paid plans and requires some extra configurations on your Prometheus: https://docs.kubecost.com/custom-prom.html</p>
+Note: integrating with an existing Prometheus is only officially supported under Kubecost paid plans and requires some extra configurations on your Prometheus: https://docs.kubecost.com/install-and-configure/install/custom-prom</p>
 <h4 id="installprometheusnodeexporter-boolean-optional"><code>installPrometheusNodeExporter: boolean</code> (optional)<a class="headerlink" href="#installprometheusnodeexporter-boolean-optional" title="Permanent link">&para;</a></h4>
 <p>Set to false to use an existing Node Exporter DaemonSet.
 Note: this requires your existing Node Exporter endpoint to be visible from the namespace where Kubecost is installed.
-https://github.com/kubecost/docs/blob/main/getting-started.md#using-an-existing-node-exporter</p>
+https://docs.kubecost.com/install-and-configure/install/getting-started#using-an-existing-node-exporter</p>
 <h4 id="repository-string-release-string-chart-string-optional"><code>repository: string</code>, <code>release: string</code>, <code>chart: string</code> (optional)<a class="headerlink" href="#repository-string-release-string-chart-string-optional" title="Permanent link">&para;</a></h4>
 <p>Additional options for customers who may need to supply their own private Helm repository.</p>
 <h2 id="support">Support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h2>
-<p>If you have any questions about Kubecost, get in touch with the team <a href="https://docs.kubecost.com/support-channels.html">on Slack</a>.</p>
+<p>If you have any questions about Kubecost, get in touch with the team <a href="https://docs.kubecost.com/kubecost-cloud/receiving-kubecost-cloud-support">on Slack</a>.</p>
 <h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
-<p>The Kubecost Blueprints AddOn is licensed under the Apache 2.0 license. <a href="https://github.com/kubecost/kubecost-blueprints-addon">Project repository</a></p>
+<p>The Kubecost Blueprints AddOn is licensed under the Apache 2.0 license. <a href="https://github.com/kubecost/kubecost-eks-blueprints-addon/">Project repository</a></p>
 
 
 

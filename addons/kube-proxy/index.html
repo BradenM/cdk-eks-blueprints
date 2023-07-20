@@ -932,6 +932,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/komodorio/komodor-eks-blueprints-addon" class="md-nav__link">
+        Komodor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -1737,7 +1751,7 @@
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">cdk</span><span class="p">.</span><span class="nx">App</span><span class="p">();</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">addOn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">KubeProxyAddOn</span><span class="p">(</span><span class="s1">&#39;v1.19.6-eksbuild.2&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// optionally specify the image version to pull or empty constructor</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">addOn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">addons</span><span class="p">.</span><span class="nx">KubeProxyAddOn</span><span class="p">(</span><span class="s1">&#39;v1.27.1-eksbuild.1&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// optionally specify the image version to pull or empty constructor for auto selection</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">blueprint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">EksBlueprint</span><span class="p">.</span><span class="nx">builder</span><span class="p">()</span>
 <span class="w">  </span><span class="p">.</span><span class="nx">addOns</span><span class="p">(</span><span class="nx">addOn</span><span class="p">)</span>
@@ -1745,18 +1759,18 @@
 </code></pre></div>
 <h2 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>version</code>: Pass in the kube-proxy plugin version compatible with kubernetes-cluster version as shown below
-<div class="highlight"><pre><span></span><code><span class="c1"># Assuming cluster version is 1.20, below command shows versions of the Kube-proxy add-on available for the specified cluster&#39;s version.</span>
+<li><code>version</code>: Optionally pass in the kube-proxy plugin version compatible with kubernetes-cluster version as shown below
+<div class="highlight"><pre><span></span><code><span class="c1"># Assuming cluster version is 1.27, below command shows versions of the Kube-proxy add-on available for the specified cluster&#39;s version.</span>
 aws<span class="w"> </span>eks<span class="w"> </span>describe-addon-versions<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--addon-name<span class="w"> </span>kube-proxy<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--kubernetes-version<span class="w"> </span><span class="m">1</span>.19<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--kubernetes-version<span class="w"> </span><span class="m">1</span>.27<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--query<span class="w"> </span><span class="s2">&quot;addons[].addonVersions[].[addonVersion, compatibilities[].defaultVersion]&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--output<span class="w"> </span>text
 <span class="c1"># Output</span>
-v1.19.6-eksbuild.2
-True
-v1.18.8-eksbuild.1
+v1.27.3-eksbuild.1
 False
+v1.27.1-eksbuild.1
+True
 </code></pre></div></li>
 </ul>
 <h1 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h1>
@@ -1772,7 +1786,7 @@ aws<span class="w"> </span>eks<span class="w"> </span>describe-addon<span class=
 <span class="w">    </span>--query<span class="w"> </span><span class="s2">&quot;addon.addonVersion&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--output<span class="w"> </span>text
 <span class="c1"># Output</span>
-v1.19.6-eksbuild.2
+v1.27.1-eksbuild.1
 </code></pre></div></p>
 <h2 id="functionality">Functionality<a class="headerlink" href="#functionality" title="Permanent link">&para;</a></h2>
 <p>Applies Kube-proxy add-on to Amazon EKS cluster.</p>

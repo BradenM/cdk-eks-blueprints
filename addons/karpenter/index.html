@@ -1017,6 +1017,20 @@
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/komodorio/komodor-eks-blueprints-addon" class="md-nav__link">
+        Komodor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../kube-proxy/" class="md-nav__link">
         Kube Proxy
       </a>
@@ -1857,7 +1871,7 @@ blueprints-addon-karpenter-54fd978b89-hclmp<span class="w">   </span><span class
 <li>Creates <code>karpenter</code> namespace.</li>
 <li>Creates Kubernetes Service Account, and associate AWS IAM Role with Karpenter Controller Policy attached using <a href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/setting-up-enable-IAM.html">IRSA</a>.</li>
 <li>Deploys Karpenter helm chart in the <code>karpenter</code> namespace, configuring cluster name and cluster endpoint on the controller by default.</li>
-<li>(Optionally) provisions a default Karpenter Provisioner and AWSNodeTemplate CRD based on user-provided parameters such as <a href="https://karpenter.sh/docs/concepts/provisioners/#specrequirements">spec.requirements</a>, <a href="https://karpenter.sh/v0.12.1/aws/provisioning/#amazon-machine-image-ami-family">AMI type</a>,<a href="https://karpenter.sh/docs/concepts/provisioners/#specweight">weight</a>, <a href="https://karpenter.sh/docs/concepts/node-templates/#specsubnetselector">Subnet Selector</a>, and <a href="https://karpenter.sh/docs/concepts/node-templates/#specsecuritygroupselector">Security Group Selector</a>. If created, the provisioner will discover the EKS VPC subnets and security groups to launch the nodes with.</li>
+<li>(Optionally) provisions a default Karpenter Provisioner and AWSNodeTemplate CRD based on user-provided parameters such as <a href="https://karpenter.sh/docs/concepts/provisioners/#specrequirements">spec.requirements</a>, <a href="https://karpenter.sh/docs/concepts/instance-types/">AMI type</a>,<a href="https://karpenter.sh/docs/concepts/provisioners/#specweight">weight</a>, <a href="https://karpenter.sh/v0.26/concepts/node-templates/#specsubnetselector">Subnet Selector</a>, and <a href="https://karpenter.sh/v0.28/concepts/node-templates/#specsecuritygroupselector">Security Group Selector</a>. If created, the provisioner will discover the EKS VPC subnets and security groups to launch the nodes with.</li>
 </ol>
 <p><strong>NOTE:</strong>
 1. The default provisioner is created only if both the subnet tags and the security group tags are provided.
@@ -1866,7 +1880,7 @@ blueprints-addon-karpenter-54fd978b89-hclmp<span class="w">   </span><span class
 4. Weight, which is a property to prioritize provisioners based on weight, is supported on versions 0.16.0 and later. Addon will throw an error if weight is provided for earlier versions.
 5. Interruption Handling, which is a native way to handle interruption due to involuntary interruption events, is supported on versions 0.19.0 and later. For interruption handling in the earlier versions, Karpenter supports using AWS Node Interruption Handler (which you will need to add as an add-on and <strong><em>must be in add-on array after the Karpenter add-on</em></strong> for it to work.</p>
 <h2 id="using-karpenter">Using Karpenter<a class="headerlink" href="#using-karpenter" title="Permanent link">&para;</a></h2>
-<p>To use Karpenter, you need to provision a Karpenter <a href="https://karpenter.sh/docs/provisioner/">provisioner CRD</a>. A single provisioner is capable of handling many different pod shapes.</p>
+<p>To use Karpenter, you need to provision a Karpenter <a href="https://karpenter.sh/docs/concepts/provisioners/">provisioner CRD</a>. A single provisioner is capable of handling many different pod shapes.</p>
 <p>This can be done in 2 ways:</p>
 <ol>
 <li>
@@ -1979,7 +1993,7 @@ blueprints-addon-karpenter-54fd978b89-hclmp<span class="w">   </span><span class
 <p>The property is changed to align with the naming convention of the provisioner, and to allow multiple operators (In vs NotIn). The values correspond similarly between the two, with type change being the only difference.</p>
 <ol>
 <li>
-<p>Certain upgrades require reapplying the CRDs since Helm does not maintain the lifecycle of CRDs. Please see the <a href="https://karpenter.sh/v0.16.0/upgrade-guide/#custom-resource-definition-crd-upgrades">official documentations</a> for details.</p>
+<p>Certain upgrades require reapplying the CRDs since Helm does not maintain the lifecycle of CRDs. Please see the <a href="https://karpenter.sh/v0.28/upgrade-guide/">official documentations</a> for details.</p>
 </li>
 <li>
 <p>Starting with v0.17.0, Karpenter's Helm chart package is stored in OCI (Open Container Initiative) registry. With this change, <a href="https://charts.karpenter.sh/">charts.karpenter.sh</a> is no longer updated to preserve older versions. You have to adjust for the following:</p>

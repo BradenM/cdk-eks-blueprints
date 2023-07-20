@@ -932,6 +932,20 @@
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/komodorio/komodor-eks-blueprints-addon" class="md-nav__link">
+        Komodor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../addons/kube-proxy/" class="md-nav__link">
         Kube Proxy
       </a>
@@ -1797,7 +1811,7 @@
 <li><code>eks.default.private-cluster</code></li>
 </ul>
 <p>Configuration of the EC2 parameters through context parameters makes sense if you would like to apply default configuration to multiple clusters without the need to explicitly pass <code>AsgClusterProviderProps</code> to each cluster blueprint.</p>
-<p>You can find more details on the supported configuration options in the API documentation for the <a href="../api/interfaces/AsgClusterProviderProps.html">AsgClusterProviderProps</a>.</p>
+<p>You can find more details on the supported configuration options in the API documentation for the <a href="../../api/interfaces/clusters.AsgClusterProviderProps.html">AsgClusterProviderProps</a>.</p>
 <h2 id="bottlerocket-asg">Bottlerocket ASG<a class="headerlink" href="#bottlerocket-asg" title="Permanent link">&para;</a></h2>
 <p><a href="https://aws.amazon.com/bottlerocket/">Bottlerocket</a> is a Linux-based open-source operating system that is purpose-built by Amazon Web Services for running containers. Customers can leverage the <code>AsgClusterProvider</code> to provision EKS clusters with Bottlerocket nodes. To do so, set the <code>machineImageType</code> property to <code>eks.MachineImageType.BOTTLEROCKET</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="kt">AsgClusterProviderProps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>

@@ -932,6 +932,20 @@
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/komodorio/komodor-eks-blueprints-addon" class="md-nav__link">
+        Komodor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../addons/kube-proxy/" class="md-nav__link">
         Kube Proxy
       </a>
@@ -1334,6 +1348,27 @@
         <li class="md-nav__item">
   <a href="#arrayconstraint" class="md-nav__link">
     ArrayConstraint
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genericregexstringcontraint" class="md-nav__link">
+    GenericRegexStringContraint
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compositeconstraint" class="md-nav__link">
+    CompositeConstraint
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internethoststringconstraint" class="md-nav__link">
+    InternetHostStringConstraint
   </a>
   
 </li>
@@ -1767,6 +1802,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#genericregexstringcontraint" class="md-nav__link">
+    GenericRegexStringContraint
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compositeconstraint" class="md-nav__link">
+    CompositeConstraint
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internethoststringconstraint" class="md-nav__link">
+    InternetHostStringConstraint
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#validateconstraints-function" class="md-nav__link">
     validateConstraints Function
   </a>
@@ -1817,32 +1873,47 @@
 <p>Constructor: 
 <div class="highlight"><pre><span></span><code><span class="ow">new</span><span class="w"> </span><span class="nx">StringConstraint</span><span class="p">(</span><span class="nx">minValue</span><span class="p">,</span><span class="w"> </span><span class="nx">maxValue</span><span class="p">);</span>
 </code></pre></div></p>
-<p>API reference <a href="/docs/api/classes/utils.StringConstraint.html">'here'</a></p>
+<p>API reference <a href="https://aws-quickstart.github.io/cdk-eks-blueprints/api/classes/utils.StringConstraint.html">'here'</a></p>
 <p>If given string length falls outside of these inclusive bounds throws detailed Zod error</p>
 <h2 id="urlstringconstraint">UrlStringConstraint<a class="headerlink" href="#urlstringconstraint" title="Permanent link">&para;</a></h2>
 <p>Constructor: 
 <div class="highlight"><pre><span></span><code><span class="ow">new</span><span class="w"> </span><span class="nx">UrlStringConstraint</span><span class="p">(</span><span class="nx">minValue</span><span class="p">,</span><span class="w"> </span><span class="nx">maxValue</span><span class="p">);</span>
 </code></pre></div></p>
-<p>API reference <a href="/docs/api/classes/utils.UrlStringConstraint.html">'here'</a></p>
+<p>API reference <a href="https://aws-quickstart.github.io/cdk-eks-blueprints/api/classes/utils.UrlStringConstraint.html">'here'</a></p>
 <p>If given string length falls outside of these inclusive bounds, or does not follow a proper URL format it throws detailed Zod error</p>
 <h2 id="numberconstraint">NumberConstraint<a class="headerlink" href="#numberconstraint" title="Permanent link">&para;</a></h2>
 <p>Constructor: 
 <div class="highlight"><pre><span></span><code><span class="ow">new</span><span class="w"> </span><span class="nx">NumberConstraint</span><span class="p">(</span><span class="nx">minValue</span><span class="p">,</span><span class="w"> </span><span class="nx">maxValue</span><span class="p">);</span>
 </code></pre></div></p>
-<p>API reference <a href="/docs/api/classes/utils.NumberConstraint.html">'here'</a></p>
+<p>API reference <a href="https://aws-quickstart.github.io/cdk-eks-blueprints/api/classes/utils.NumberConstraint.html">'here'</a></p>
 <p>If given number falls outside of these inclusive bounds throws detailed Zod error.</p>
 <h2 id="arrayconstraint">ArrayConstraint<a class="headerlink" href="#arrayconstraint" title="Permanent link">&para;</a></h2>
 <p>Constructor:
 <div class="highlight"><pre><span></span><code><span class="ow">new</span><span class="w"> </span><span class="nx">utils</span><span class="p">.</span><span class="nx">ArrayConstraint</span><span class="p">(</span><span class="nx">minValue</span><span class="p">,</span><span class="w"> </span><span class="nx">maxValue</span><span class="p">);</span>
 </code></pre></div></p>
-<p>API reference <a href="/docs/api/classes/utils.ArrayConstraint.html">'here'</a></p>
+<p>API reference <a href="https://aws-quickstart.github.io/cdk-eks-blueprints/api/classes/utils.ArrayConstraint.html">'here'</a></p>
 <p>If given array length falls outside of these inclusive bounds throws detailed Zod error.</p>
+<h2 id="genericregexstringcontraint">GenericRegexStringContraint<a class="headerlink" href="#genericregexstringcontraint" title="Permanent link">&para;</a></h2>
+<p>Constructor:
+<div class="highlight"><pre><span></span><code><span class="ow">new</span><span class="w"> </span><span class="nx">GenericRegexStringConstraint</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nb">RegExp</span><span class="p">(</span><span class="nx">regexString</span><span class="p">));</span>
+</code></pre></div></p>
+<p>If given string does not match the regular expression throws detailed Zod error.</p>
+<h2 id="compositeconstraint">CompositeConstraint<a class="headerlink" href="#compositeconstraint" title="Permanent link">&para;</a></h2>
+<p>Constructor:
+<div class="highlight"><pre><span></span><code><span class="ow">new</span><span class="w"> </span><span class="nx">CompositeConstraint</span><span class="p">(...</span><span class="nx">constraints</span><span class="p">);</span>
+</code></pre></div></p>
+<p>If given value does not comply with each of the constraints in the list throws detailed Zod error for first failure.</p>
+<h2 id="internethoststringconstraint">InternetHostStringConstraint<a class="headerlink" href="#internethoststringconstraint" title="Permanent link">&para;</a></h2>
+<p>Constructor:
+<div class="highlight"><pre><span></span><code><span class="ow">new</span><span class="w"> </span><span class="nx">InternetHostStringConstraint</span><span class="p">();</span>
+</code></pre></div></p>
+<p>If given string does not match RFC 1123 standards throws detailed Zod error.</p>
 <h2 id="validateconstraints-function">validateConstraints Function<a class="headerlink" href="#validateconstraints-function" title="Permanent link">&para;</a></h2>
 <p><div class="highlight"><pre><span></span><code><span class="nx">validateConstraints</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">constraints</span><span class="o">:</span><span class="w"> </span><span class="kt">ConstraintsType</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="nx">context</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">...object</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span>
 </code></pre></div>
 This is the entry point to use the framework. This function can validate either a single object or an array of objects against the provided constraints.</p>
 <h2 id="how-to-use-the-constraints-utilsts">How to use the constraints-utils.ts<a class="headerlink" href="#how-to-use-the-constraints-utilsts" title="Permanent link">&para;</a></h2>
-<p>You need two things when utilizing constraints-utils.ts and the following examples are from <a href="/lib/stacks/eks-blueprint-stack.ts">'here'</a></p>
+<p>You need two things when utilizing constraints-utils.ts and the following examples are from <a href="../../lib/stacks/eks-blueprint-stack.ts">'here'</a></p>
 <p>First you need a class with specified keys assigned to given constraints. </p>
 <p>Example with two keys: </p>
 <div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">BlueprintPropsConstraints</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">ConstraintsType</span><span class="o">&lt;</span><span class="nx">EksBlueprintProps</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>

@@ -932,6 +932,20 @@
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/komodorio/komodor-eks-blueprints-addon" class="md-nav__link">
+        Komodor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../addons/kube-proxy/" class="md-nav__link">
         Kube Proxy
       </a>
@@ -1782,10 +1796,11 @@
 <h3 id="option-1">Option 1<a class="headerlink" href="#option-1" title="Permanent link">&para;</a></h3>
 <p>Recommended option is to get the cluster information through the <code>DescribeCluster</code> API (requires <code>eks:DescribeCluster</code> permission at build-time) and then use it to instantiate the <code>ImportClusterProvider</code> and <strong>(very important)</strong> to set up the blueprint VPC. </p>
 <p>Make sure VPC is set to the VPC of the imported cluster, otherwise the blueprint by default will create a new VPC, which will be redundant and cause problems with some of the add-ons. </p>
-<p><strong>Note:</strong> <code>blueprints.describeCluster() is an asynchronous function, you should either use</code>await` or handle promise resolution chain. </p>
+<p><strong>Note:</strong> <code>blueprints.describeCluster()</code> is an asynchronous function, you should either use <code>await</code> or handle promise resolution chain. </p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">clusterName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;quickstart-cluster&quot;</span><span class="p">;</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;us-east-2&quot;</span><span class="p">;</span>
 
+<span class="kd">const</span><span class="w"> </span><span class="nx">kubectlRoleName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MyClusterAuthConfigRole&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// this is the role registered in the aws-auth config map in the target cluster </span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">sdkCluster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">blueprints</span><span class="p">.</span><span class="nx">describeCluster</span><span class="p">(</span><span class="nx">clusterName</span><span class="p">,</span><span class="w"> </span><span class="nx">region</span><span class="p">);</span><span class="w"> </span><span class="c1">// get cluster information using EKS APIs</span>
 
 <span class="cm">/**</span>
@@ -1829,6 +1844,7 @@ OIDC provider is expected to be passed in as well if you are planning to leverag
 <span class="w">        </span><span class="ow">new</span><span class="w"> </span><span class="nx">LookupOpenIdConnectProvider</span><span class="p">(</span><span class="s1">&#39;https://oidc.eks.us-east-2.amazonaws.com/id/B792B88BC60999B1A37D&#39;</span><span class="p">).</span><span class="nx">provide</span><span class="p">(</span><span class="nx">context</span><span class="p">)),</span>
 <span class="w">    </span><span class="nx">clusterCertificateAuthorityData</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;S0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCasdd234................&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">kubectlRoleArn</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;arn:...&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">clusterSecurityGroupId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;sg...&#39;</span><span class="p">;</span>
 <span class="p">});</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">vpcId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span><span class="w"> </span>

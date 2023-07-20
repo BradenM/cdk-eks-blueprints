@@ -1042,6 +1042,20 @@
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/komodorio/komodor-eks-blueprints-addon" class="md-nav__link">
+        Komodor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../addons/kube-proxy/" class="md-nav__link">
         Kube Proxy
       </a>
@@ -1848,8 +1862,8 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <p>Create a directory that represents you project (e.g. <code>my-blueprints</code>) and then create a new <code>typescript</code> CDK project in that directory.</p>
 <div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>n<span class="w"> </span><span class="c1"># may require sudo</span>
 n<span class="w"> </span>stable<span class="w"> </span><span class="c1"># may require sudo </span>
-npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>aws-cdk@2.86.0<span class="w"> </span><span class="c1"># may require sudo (Ubuntu) depending on configuration</span>
-cdk<span class="w"> </span>--version<span class="w"> </span><span class="c1"># must produce 2.86.0</span>
+npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>aws-cdk@2.88.0<span class="w"> </span><span class="c1"># may require sudo (Ubuntu) depending on configuration</span>
+cdk<span class="w"> </span>--version<span class="w"> </span><span class="c1"># must produce 2.88.0</span>
 mkdir<span class="w"> </span>my-blueprints
 <span class="nb">cd</span><span class="w"> </span>my-blueprints
 cdk<span class="w"> </span>init<span class="w"> </span>app<span class="w"> </span>--language<span class="w"> </span>typescript
@@ -1929,11 +1943,11 @@ arn:aws:cloudformation:us-east-1:115717706081:stack/east-test-1/e1b9e6a0-d5f6-11
 </code></pre></div>
 <p>You should see output that lists all namespaces in your cluster. </p>
 <h2 id="deploy-workloads-with-argocd">Deploy workloads with ArgoCD<a class="headerlink" href="#deploy-workloads-with-argocd" title="Permanent link">&para;</a></h2>
-<p>Next, let's walk you through how to deploy workloads to your cluster with ArgoCD. This approach leverages the <a href="https://argoproj.github.io/argo-cd/operator-manual/cluster-bootstrapping/#app-of-apps-pattern">App of Apps</a> pattern to deploy multiple workloads across multiple namespaces. The sample app of apps repository that we use in this getting started guide can be found <a href="https://github.com/aws-samples/eks-blueprints-workloads">here</a>.</p>
+<p>Next, let's walk you through how to deploy workloads to your cluster with ArgoCD. This approach leverages the <a href="https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern">App of Apps</a> pattern to deploy multiple workloads across multiple namespaces. The sample app of apps repository that we use in this getting started guide can be found <a href="https://github.com/aws-samples/eks-blueprints-workloads">here</a>.</p>
 <p>You can leverage <a href="../addons/argo-cd/#bootstrapping">Automatic Bootstrapping</a> for automatic onboarding of workloads. This feature may be leveraged even when workload repositories are not ready yet, as it creates a placeholder for future workloads and decouples workload onboarding for the infrastructure provisioning pipeline. The next steps, described in this guide apply for cases when customer prefer to bootstrap their workloads manually through ArgoCD UI console.</p>
 <h3 id="install-argocd-cli">Install ArgoCD CLI<a class="headerlink" href="#install-argocd-cli" title="Permanent link">&para;</a></h3>
 <p>These steps are needed for manual workload onboarding. For automatic bootstrapping please refer to the <a href="../addons/argo-cd/#bootstrapping">Automatic Bootstrapping</a>.</p>
-<p>Follow the instructions found <a href="https://argoproj.github.io/argo-cd/cli_installation/">here</a> as it will include instructions for your specific OS. You can test that the ArgoCD CLI was installed correctly using the following:</p>
+<p>Follow the instructions found <a href="https://argo-cd.readthedocs.io/en/stable/cli_installation/">here</a> as it will include instructions for your specific OS. You can test that the ArgoCD CLI was installed correctly using the following:</p>
 <div class="highlight"><pre><span></span><code>argocd version --short --client
 </code></pre></div>
 <p>You should see output similar to the following:</p>
@@ -1980,9 +1994,9 @@ arn:aws:cloudformation:us-east-1:115717706081:stack/east-test-1/e1b9e6a0-d5f6-11
 </code></pre></div>
 <p>Open up <code>localhost:4040</code> in your browser and you should see the application.</p>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
-<p>For information on onboarding teams to your clusters, see <a href="../teams"><code>Team</code> documentation</a>. </p>
-<p>For information on deploying Continuous Delivery pipelines for your infrastructure, see <a href="../pipelines"><code>Pipelines</code> documentation</a>.</p>
-<p>For information on supported add-ons, see <a href="../addons"><code>Add-on</code> documentation</a></p>
+<p>For information on onboarding teams to your clusters, see <a href="../teams/teams/"><code>Team</code> documentation</a>. </p>
+<p>For information on deploying Continuous Delivery pipelines for your infrastructure, see <a href="../pipelines/"><code>Pipelines</code> documentation</a>.</p>
+<p>For information on supported add-ons, see <a href="../addons/"><code>Add-on</code> documentation</a></p>
 <p>For information on Onboarding and managing workloads in your clusters, see <a href="https://github.com/aws-samples/eks-blueprints-workloads"><code>Workload</code> documentation</a>. </p>
 
 

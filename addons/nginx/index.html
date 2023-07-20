@@ -934,6 +934,20 @@
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/komodorio/komodor-eks-blueprints-addon" class="md-nav__link">
+        Komodor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../kube-proxy/" class="md-nav__link">
         Kube Proxy
       </a>
@@ -1844,8 +1858,8 @@ blueprints-addon-nginx-ingress-78b8567p4q6<span class="w">   </span><span class=
 <span class="w">        </span><span class="nt">pathType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Prefix</span>
 </code></pre></div>
 <p>After the above ingresses applied (ideally through a GitOps engine) you can now navigate to the specified hosts respectively:</p>
-<p><a href="http://riker.dev.my-domain.com">http://riker.dev.my-domain.com</a>
-<a href="http://troi.dev.my-domain.com">http://troi.dev.my-domain.com</a></p>
+<p><code>http://riker.dev.my-domain.com</code>
+  <code>http://troi.dev.my-domain.com</code></p>
 <h2 id="tls-termination-and-certificates">TLS Termination and Certificates<a class="headerlink" href="#tls-termination-and-certificates" title="Permanent link">&para;</a></h2>
 <p>You can configure the NGINX add-on to terminate TLS at the load balancer and supply an ACM certificate through the platform blueprint.</p>
 <p>A certificate can be registered using a named <a href="../../resource-providers/">resource provider</a>.</p>

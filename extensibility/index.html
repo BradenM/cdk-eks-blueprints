@@ -930,6 +930,20 @@
   
   
     <li class="md-nav__item">
+      <a href="https://github.com/komodorio/komodor-eks-blueprints-addon" class="md-nav__link">
+        Komodor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../addons/kube-proxy/" class="md-nav__link">
         Kube Proxy
       </a>
@@ -1850,7 +1864,7 @@
 <li><a href="../core-concepts/#add-on">Add-on</a>. Customers and partners can implement new add-ons which could be leveraged exactly the same way as the core add-ons (supplied by the framework).</li>
 <li><a href="../core-concepts/#resource-provider">Resource Provider</a>. This construct allows customers to create resources that can be reused across multiple add-ons and/or teams. For example, IAM roles, VPC, hosted zone. </li>
 <li><a href="../cluster-providers/">Cluster Provider</a>. This construct allows creation of custom code that provisions an EKS cluster with node groups. It can be leveraged to extend behavior such as control plane customization, custom settings for node groups.</li>
-<li><a href="./teams.md">Team</a>. This abstraction allows to create team templates for application and platform teams and set custom setting for network isolation, policies (network, security), software wiring (auto injection of proxies, team specific service mesh configuration) and other extensions pertinent to the teams. </li>
+<li><a href="../teams/teams/">Team</a>. This abstraction allows to create team templates for application and platform teams and set custom setting for network isolation, policies (network, security), software wiring (auto injection of proxies, team specific service mesh configuration) and other extensions pertinent to the teams. </li>
 </ul>
 <h2 id="add-on-extensions">Add-on Extensions<a class="headerlink" href="#add-on-extensions" title="Permanent link">&para;</a></h2>
 <p>In a general case, implementation of an add-on is a class which implements the <code>ClusterAddOn</code> interface.</p>
